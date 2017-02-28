@@ -1,0 +1,43 @@
+﻿@using epsi.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<p>
+    <a href="/bo/CakeFiller/create" class="btn btn-info"><i class="ace-icon fa fa-plus bigger-110"></i>Add new item</a>
+</p> 
+@(Html.Kendo().Grid<CakeFiller>()
+    .Name("CakeFillerGrid")
+    .Sortable()
+    //.Filterable()
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(p => p.CakeFillerId))
+        .Read(read => read.Action("Get", "CakeFiller"))
+        .Destroy(destroy => destroy.Action("Delete", "CakeFiller"))
+    )
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.CakeFillerId).Width(70);
+        columns.Bound(p => p.Name).Width(240);
+        columns.Bound(p => p.Price).Format("{0:0,0}").Width(240);
+        columns.Bound(p => p.FillerImage).Width(150);
+
+        columns.Bound(u => u.CakeFillerId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "CakeFiller") + "/#=CakeFillerId#'><span class='k-icon k-edit'></span>Edit</a>");
+        columns.Command(cmd =>
+        {
+
+            cmd.Destroy();
+        });
+
+
+    })
+
+
+)
+
+ 
+
