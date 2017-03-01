@@ -18,6 +18,10 @@ namespace epsi_static
                         "~/Content/lib/rs-plugin/css/settings.css"));
             bundles.Add(new ScriptBundle("~/css/bootexpert").Include(
                         "~/Content/css/lib/bootexpert-compose.css"));
+            bundles.Add(new ScriptBundle("~/css/slick").Include(
+                        "~/Content/lib/slick/slick.css",
+                        "~/Content/lib/slick/slick-theme.css"));
+
             bundles.Add(new ScriptBundle("~/js/modernizr").Include(
                         "~/Content/js/lib/modernizr-*"));
             bundles.Add(new ScriptBundle("~/js/jquery").Include(

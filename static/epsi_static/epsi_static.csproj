@@ -336,6 +336,7 @@
     <Content Include="Content\images\furniture\team\team3-100x100.jpg" />
     <Content Include="Content\images\furniture\team\team4-100x100.jpg" />
     <Content Include="Content\images\logo\epsi.png" />
+    <Content Include="Content\js\core.js" />
     <Content Include="Content\js\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\js\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="Content\js\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -490,6 +491,9 @@
     <Content Include="Views\Home\_productbycategory.cshtml" />
     <Content Include="Views\Home\_featuredproduct.cshtml" />
     <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\Home\_branch.cshtml" />
+    <Content Include="Views\Home\_newproduct.cshtml" />
+    <Content Include="Views\Home\_latestnews.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
