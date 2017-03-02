@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using epsi.Helper;
 
 namespace epsi.Areas.Admin.Controllers
 {
@@ -12,10 +13,10 @@ namespace epsi.Areas.Admin.Controllers
         private const string contentFolderRoot = "~/Content/";
         private const string prettyName = "Images/";
         private static readonly string[] foldersToCopy = new[] { "~/Content/shared/" };
-        private readonly epsi.Models.ThumbnailCreator thumbnailCreator;
+        private readonly ImageHelper.ThumbnailCreator thumbnailCreator;
         public ImageBrowserController()
         {
-            thumbnailCreator = new epsi.Models.ThumbnailCreator();
+            thumbnailCreator = new ImageHelper.ThumbnailCreator();
         }
 
         /// <summary>
