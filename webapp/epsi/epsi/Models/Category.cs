@@ -15,6 +15,7 @@ namespace epsi.Models
         public string Description { get; set; }
         [StringLength(200)]
         public string Tag { get; set; }
+        public int ParentId { get; set; }
         public bool IsDeleted { get; set; }
         public string PageURL { get; set; }
         public int SortNumber { get; set; }

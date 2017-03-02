@@ -31,6 +31,14 @@ namespace epsi.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
+            Category cate = new Category();
+            cate.CategoryId = 0;
+            cate.Name = "Select parent";
+            
+            var lstCate = db.Categorys.Where(p => p.ParentId == 0).ToList();
+            lstCate.Insert(0, cate);
+            ViewBag.Categorys = lstCate;
+
             var Category = new Category();
             return View(Category);
         }
@@ -71,7 +79,17 @@ namespace epsi.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Category = db.Categorys.FirstOrDefault(p => p.CategoryId == id); 
+
+            var Category = db.Categorys.FirstOrDefault(p => p.CategoryId == id);
+
+            Category cate = new Category();
+            cate.CategoryId = 0;
+            cate.Name = "Select parent";
+
+            var lstCate = db.Categorys.Where(p => p.ParentId == 0 && p.CategoryId != id).ToList();
+            lstCate.Insert(0, cate);
+            ViewBag.Categorys = lstCate;
+
             return View("Create",Category);
         }
 
