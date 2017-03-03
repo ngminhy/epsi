@@ -7,7 +7,7 @@ using epsi.Models;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using epsi.ViewModels;
-
+using epsi.Helper;
 namespace epsi.Areas.Admin.Controllers
 {
    [Authorize]
@@ -21,7 +21,7 @@ namespace epsi.Areas.Admin.Controllers
            
             ViewBag.OrderId = OrderId;
             var order = db.Orders.Where(p => p.OrderId == OrderId).FirstOrDefault();
-           order.State = epsi.Util.Common.GetOrderStatus(order.OrderStatusId);
+           order.State = UtilHelper.GetOrderStatus(order.OrderStatusId);
             ViewBag.order = order;
             return View();
             

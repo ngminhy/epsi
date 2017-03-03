@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace epsi.Util
+namespace epsi.Helper
 {
-    public static class Common
+    public static class UtilHelper
     {
         public static string GetOrderStatus(int st)
         {
@@ -33,4 +33,5 @@ namespace epsi.Util
             return ms;
         }
     }
+
 }
