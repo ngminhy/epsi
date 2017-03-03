@@ -153,17 +153,52 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, new { @class = "col-sm-3 control-label no-padding-right" })
+            @Html.LabelFor(model => model.CategoryId,"Parent Category", new { @class = "col-sm-3 control-label no-padding-right" })
             <div class="col-sm-9">
-                @(Html.Kendo().DropDownListFor(model => model.CategoryId)
+                @(Html.Kendo().DropDownListFor(model => model.CategoryId).Name("ParentId")
                           .DataTextField("Name")
                           .DataValueField("CategoryId")
-                          .BindTo(@ViewBag.Categorys)
+                          .DataSource(source =>
+                          {
+                              source.Read(read =>
+                              {
+                                  read.Action("GetCascadeCategories", "product");
+                              });
+                          })
                 )
                 @Html.ValidationMessageFor(model => model.CategoryId)
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId,"Child Category", new { @class = "col-sm-3 control-label no-padding-right" })
+            <div class="col-sm-9">
+                @(Html.Kendo().DropDownListFor(model => model.CategoryId).Name("CategoryId")
+                          .DataTextField("Name")
+                          .DataValueField("CategoryId")
+                           .DataSource(source =>
+                           {
+                               source.Read(read =>
+                               {
+                                   read.Action("GetCascadeSubCategories", "product")
+                                       .Data("filterSubCategory");
+                               })
+                               .ServerFiltering(true);
+                           })
+              .Enable(false)
+              .AutoBind(false)
+              .CascadeFrom("ParentId")
+                )
+                @Html.ValidationMessageFor(model => model.CategoryId)
+            </div>
+        </div>
+        <script>
+            function filterSubCategory() {
+                return {
+                    categories: $("#ParentId").val()
+                };
+            }
+        </script>
         <div class="form-group">
             @Html.LabelFor(model => model.PageURL, new { @class = "col-sm-3 control-label no-padding-right" })
             <div class="col-sm-9">

@@ -50,6 +50,21 @@ namespace epsi.Areas.Admin.Controllers
 
         }
 
+        public JsonResult GetCascadeCategories()
+        {
+           var category = db.Categorys.Where(p => p.Tag == "product" && p.ParentId==0 && p.IsDeleted==true).ToList();
+
+            return Json(category.Select(c => new { CategoryId = c.CategoryId, Name = c.Name }), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetCascadeSubCategories(int? categories)
+        {
+
+            var category = db.Categorys.Where(p => p.ParentId == categories && p.IsDeleted == true).ToList();
+
+            return Json(category.Select(c => new { CategoryId = c.CategoryId, Name = c.Name }), JsonRequestBehavior.AllowGet);
+        }
+
         // GET: /Admin/product/Create
 
         public ActionResult Create()

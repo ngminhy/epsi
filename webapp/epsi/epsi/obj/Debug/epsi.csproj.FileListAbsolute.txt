@@ -289,3 +289,4 @@ D:\my_project\epsivn\webapp\epsi\epsi\bin\uk-UA\Kendo.Mvc.resources.dll
 D:\my_project\epsivn\webapp\epsi\epsi\bin\zh-CN\Kendo.Mvc.resources.dll
 D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.dll
 D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.pdb
+D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.csprojResolveAssemblyReference.cache

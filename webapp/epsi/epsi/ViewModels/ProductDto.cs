@@ -21,6 +21,7 @@ namespace epsi.ViewModels
         public bool Active { get; set; }
         public string ImagesJson { get; set; }
         public int CategoryId { get; set; }
+        public int ParentId { get; set; }
         public string CategoryName { get; set; }
         public int BasePrice { get; set; }
         public int Price { get; set; }
@@ -34,6 +35,7 @@ namespace epsi.ViewModels
         {
             ProductId = model.ProductId;
             CategoryId = model.CategoryId;
+            ParentId = model.ParentId;
             BrandId = model.BrandId;
             Code = model.Code;
             CountryId = model.CountryId;

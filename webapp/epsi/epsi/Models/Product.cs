@@ -45,6 +45,7 @@ namespace epsi.Models
         public string ImagesJson { get; set; }
 
         public int CategoryId { get; set; }
+        public int ParentId { get; set; }
         public Category Category { get; set; }
         public string PageURL { get; set; }
         public int MaxFiller { get; set; }
@@ -54,6 +55,7 @@ namespace epsi.Models
         {
             ProductId = model.ProductId;
             CategoryId = model.CategoryId;
+            ParentId = model.ParentId;
             Code = model.Code;
             BrandId = model.BrandId;
             CountryId = model.CountryId;
