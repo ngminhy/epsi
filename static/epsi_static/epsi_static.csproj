@@ -382,6 +382,9 @@
     <Content Include="Content\lib\ntm\jquery.ntm.js" />
     <Content Include="Content\lib\prettyPhoto\js\jquery.prettyPhoto.js" />
     <Content Include="Content\lib\prettyPhoto\prettyPhoto.css" />
+    <Content Include="Content\lib\rotatingtweets\jquery.cycle.all.min.js" />
+    <Content Include="Content\lib\rotatingtweets\rotating_tweet.js" />
+    <Content Include="Content\lib\rotatingtweets\style.css" />
     <Content Include="Content\lib\rs-plugin\assets\arrowleft.png" />
     <Content Include="Content\lib\rs-plugin\assets\arrowright.png" />
     <Content Include="Content\lib\rs-plugin\assets\arrow_large_left.png" />

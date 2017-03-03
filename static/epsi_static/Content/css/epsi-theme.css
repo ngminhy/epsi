@@ -6545,10 +6545,10 @@ legend {
   text-align: center;
   line-height: 40px;
   z-index: 9999;
-  color: #2f2f2f;
-  background: #fff;
+  color: #fff;
+  background: #048de7;
   border-radius: 3px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #048de7;
   transition: all 0.4s ease 0s;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;

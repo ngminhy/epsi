@@ -8,8 +8,6 @@ namespace epsi_static
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/css/style").Include(
-                      "~/Content/css/epsi-*"));
             bundles.Add(new ScriptBundle("~/css/rsplugin").Include(
                         "~/Content/lib/rs-plugin/css/settings.css"));
             bundles.Add(new ScriptBundle("~/css/bootexpert").Include(

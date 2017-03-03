@@ -14,7 +14,10 @@
         <link href="/Content/css/lib/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         @Styles.Render("~/css/rsplugin")
         @Styles.Render("~/css/bootexpert")
-        @Styles.Render("~/css/style")
+        <link href="/Content/css/epsi-cache.skin.css" rel="stylesheet" type="text/css"/>
+        <link href="/Content/css/epsi-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="/Content/css/epsi-style.css" rel="stylesheet" type="text/css"/>
+        <!-- @Styles.Render("~/css/style") -->
         @Scripts.Render("~/js/modernizr")
         <!--[if lt IE 9]>
         <script src="/Content/js/lib/html5shiv.min.js"></script>
@@ -39,6 +42,7 @@
                 @{Html.RenderPartial("_footer");}
             </div>
         </div>
+        <div id="back-top" class="hidden-xs hidden-sm hidden-md"></div>
         <script type="text/javascript" src="/Content/js/lib/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="/Content/js/jquery-ui/jquery-ui.js"></script>
         <script type="text/javascript" src="/Content/js/lib/bootstrap.min.js"></script>
@@ -48,6 +52,8 @@
         <script type="text/javascript" src="/Content/lib/rs-plugin/rs.home.js"></script>
         <script type="text/javascript" src="/Content/lib/chosen/chosen.jquery.js"></script>
         <script type="text/javascript" src="/Content/lib/chosen/chosen.proto.min.js"></script>
+        <script type="text/javascript" src="/Content/lib/rotatingtweets/jquery.cycle.all.min.js"></script>
+        <script type="text/javascript" src="/Content/lib/rotatingtweets/rotating_tweet.js"></script>
         @Scripts.Render("~/js/prettyPhoto")
         <script type="text/javascript" src="/Content/lib/ntm/jquery.ntm.js"></script>
         @Scripts.Render("~/js/core")
