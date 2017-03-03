@@ -23,9 +23,23 @@ namespace epsi
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/bundles/css/botstrap").Include(
+                     "~/Content/bootstrap.css",                    
+                     "~/Content/bootexpert-compose.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/css/epsi").Include(                  
+                      "~/Content/epsi-*"));
+
+            bundles.Add(new StyleBundle("~/bundles/css/lib").Include(                     
+                     "~/Scripts/lib/rs-plugin/css/settings.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/js/lib").Include(                                      
+                      "~/Scripts/lib/prettyPhoto/js/jquery.prettyPhoto.js",
+                      "~/Scripts/lib/rs-plugin/rs.home.js",
+                      "~/Scripts/lib/chosen/chosen.jquery.js"));
+
+
+
         }
     }
 }

@@ -3,42 +3,68 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - Epsi.vn</title>
+   
+   
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext" rel="stylesheet" type="text/css" media="all" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300,500,700,100italic,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" type="text/css" media="all" />
+    @Styles.Render("~/bundles/css/botstrap")
+    @Styles.Render("~/bundles/css/lib")
+    @Styles.Render("~/bundles/css/epsi")
+    
+   <link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/lib/slick/slick.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/lib/slick/slick-theme.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 9]>
+    <script src="/Scripts/lib/html5shiv.min.js"></script>
+    <script src="/Scripts/lib/respond.min.js"></script>
+    <![endif]-->
     @Scripts.Render("~/bundles/modernizr")
+
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="wrapper ">
+        <div class="page-wrapper">
+            @{Html.RenderPartial("_header");}
+            <!-- Main Container -->
+            <div class="main-container">
+                <div class="page-content front-page">
+                    <article>
+                        <div class="entry-content">
+                            @RenderBody()
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            <!-- End Main Container -->
+            @{Html.RenderPartial("_footer");}
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
+  
+
+    <script src="/Scripts/lib/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="/Scripts/lib/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/Scripts/lib/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/Scripts/lib/rs-plugin/rs.home.js"></script>
+    <script type="text/javascript" src="/Scripts/lib/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="/Scripts/lib/chosen/chosen.proto.min.js"></script>
+    <script src="/Scripts/lib/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+
+    <script type="text/javascript" src="/Scripts/lib/ntm/jquery.ntm.js"></script>
+    <script src="/Scripts/core.js"></script>
+
+
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
