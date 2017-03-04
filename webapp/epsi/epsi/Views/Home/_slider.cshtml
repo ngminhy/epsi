@@ -1,127 +1,79 @@
-﻿<div class="phm_row hasteck_row phm_row-fluid home-slider full-width">
-    <div class="row-container">
-        <div class="parvez_column parvez_column_container parvez_col-sm-12">
-            <div class="parvez_wrapper">
-                <div class="parvez_revslider_element parvez_content_element">
-                    <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#bddde5;padding:0px;margin-top:0px;margin-bottom:0px;">
-                        <!-- START REVOLUTION SLIDER -->
-                        <div id="furniture_slider_5" class="rev_slider fullwidthabanner tp-overflow-hidden" style="display:none;">
-                            <ul>
-                                <!-- SLIDE  -->
-                                <li data-index="rs-1" data-transition="random" data-slotamount="9" data-masterspeed="600" data-saveperformance="on" data-thumb="Content/images/furniture/slider/ma_banner1-100x50.jpg" data-rotate="0" data-title="Slide-3" data-description="">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="~/Content/images/furniture/banner/10-Lightover-home-page2000x600.jpg" alt="" width="1920" height="600" data-bgposition="right bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                                    <!-- LAYERS -->
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption text1-1 lfb lft tp-resizeme" id="slide-3-layer-1"
-                                         data-x="425"
-                                         data-y="184"
-                                         data-width="auto"
-                                         data-height="auto"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="1000"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="3000"
-                                         style="z-index: 5; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
-                                        Bước vào thế giới của
-                                    </div>
+﻿@model IEnumerable<epsi.Models.Banner>
 
-                                    <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption text1-2 lfb lft tp-resizeme" id="slide-3-layer-2"
-                                         data-x="428"
-                                         data-y="253"
-                                         data-width="auto"
-                                         data-height="auto"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="1500"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="3500" style="z-index: 6; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
-                                        Philips Lighting
-                                    </div>
+    <div class="phm_row hasteck_row phm_row-fluid home-slider full-width">
+        <div class="row-container">
+            <div class="parvez_column parvez_column_container parvez_col-sm-12">
+                <div class="parvez_wrapper">
+                    <div class="parvez_revslider_element parvez_content_element">
+                        <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#bddde5;padding:0px;margin-top:0px;margin-bottom:0px;">
+                            <!-- START REVOLUTION SLIDER -->
+                            <div id="furniture_slider_5" class="rev_slider fullwidthabanner tp-overflow-hidden" style="display:none;">
+                                <ul>
+                                    @foreach (var item in Model)
+                                    {
+                                    <!-- SLIDE  -->
+                                        <li data-index="rs-1" data-transition="random" data-slotamount="9" data-masterspeed="600" data-saveperformance="on" data-thumb="@Url.Content(item.FullPath)" data-rotate="0" data-title="Slide-3" data-description="">
+                                            <!-- MAIN IMAGE -->
+                                            <img src="@Url.Content(item.FullPath)" alt="" width="1920" height="600" data-bgposition="right bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                            <!-- LAYERS -->
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption text1-1 lfb lft tp-resizeme" id="slide-3-layer-1"
+                                                 data-x="425"
+                                                 data-y="184"
+                                                 data-width="auto"
+                                                 data-height="auto"
+                                                 data-speed="1500"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-start="1000"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-responsive_offset="on"
+                                                 data-end="3000"
+                                                 style="z-index: 5; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
+                                                @item.Heading1
+                                            </div>
 
-                                    <!-- LAYER NR. 3 -->
-                                    <div class="tp-caption text1-3 lfb lft tp-resizeme" id="slide-3-layer-3"
-                                         data-x="425"
-                                         data-y="331"
-                                         data-width="548"
-                                         data-height="40"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="2000"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="4000"
-                                         style="z-index: 7; min-width: 548px; max-width: 548px; max-width: 40px; max-width: 40px; white-space: normal; color: rgba(255, 255, 255, 1.00);border-color:rgba(34, 34, 34, 1.00);">
-                                        Sản phẩm và lời khuyên, ý tưởng và nguồn cảm hứng. Bạn sẽ tìm thấy tất cả tại đây. Từ lời khuyên để thắp sáng ngôi nhà của bạn đến các cải tiến mới nhất cho con đường phía trước, Philips đều có đèn phù hợp với bạn.
-                                    </div>
-                                </li>
-                                <!-- SLIDE  -->
-                                <li data-index="rs-1" data-transition="random" data-slotamount="9" data-masterspeed="600" data-saveperformance="on" data-thumb="Content/images/furniture/slider/images_banner7_02-100x50.jpg" data-rotate="0" data-title="Slide-4" data-description="">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="~/Content/images/furniture/banner/homepage-carousel-2-2000x600.jpg" alt="" width="1920" height="600" data-bgposition="right bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                                    <!-- LAYERS -->
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption text1-1 lfr lft  tp-resizeme" id="slide-4-layer-1"
-                                         data-x="477"
-                                         data-y="150"
-                                         data-width="auto"
-                                         data-height="auto"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="1000"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="3000" style="z-index: 5; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
-                                        Khám phá
-                                    </div>
+                                            <!-- LAYER NR. 2 -->
+                                            <div class="tp-caption text1-2 lfb lft tp-resizeme" id="slide-3-layer-2"
+                                                 data-x="428"
+                                                 data-y="253"
+                                                 data-width="auto"
+                                                 data-height="auto"
+                                                 data-speed="1500"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-start="1500"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-responsive_offset="on"
+                                                 data-end="3500" style="z-index: 6; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
+                                                @item.Heading2
+                                            </div>
 
-                                    <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption text1-2 lfr lft tp-resizeme" id="slide-4-layer-2"
-                                         data-x="480"
-                                         data-y="214"
-                                         data-width="auto"
-                                         data-height="auto"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="1500"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="3500" style="z-index: 6; white-space: nowrap; color: rgba(4, 141, 231, 1.00);padding:0px 0px 0px 0px;border-color:rgba(255, 255, 255, 1.00);">
-                                        Philips của Tôi
-                                    </div>
+                                            <!-- LAYER NR. 3 -->
+                                            <div class="tp-caption text1-3 lfb lft tp-resizeme" id="slide-3-layer-3"
+                                                 data-x="425"
+                                                 data-y="331"
+                                                 data-width="548"
+                                                 data-height="40"
+                                                 data-speed="1500"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-start="2000"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-responsive_offset="on"
+                                                 data-end="4000"
+                                                 style="z-index: 7; min-width: 548px; max-width: 548px; max-width: 40px; max-width: 40px; white-space: normal; color: rgba(255, 255, 255, 1.00);border-color:rgba(34, 34, 34, 1.00);">
+                                                @item.Description
+                                            </div>
+                                        </li>
+                                    }
 
-                                    <!-- LAYER NR. 3 -->
-                                    <div class="tp-caption text1-3 lfr lft tp-resizeme" id="slide-4-layer-3"
-                                         data-x="478"
-                                         data-y="286"
-                                         data-width="548"
-                                         data-height="40"
-                                         data-speed="1500"
-                                         data-easing="Power3.easeInOut"
-                                         data-start="2000"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-responsive_offset="on"
-                                         data-end="4000"
-                                         style="z-index: 7; min-width: 548px; max-width: 548px; max-width: 40px; max-width: 40px; white-space: normal; color: rgba(255, 255, 255, 1.00);border-color:rgba(34, 34, 34, 1.00);">
-                                        Sản phẩm và lời khuyên, ý tưởng và nguồn cảm hứng. Bạn sẽ tìm thấy tất cả tại đây. Từ lời khuyên để thắp sáng ngôi nhà của bạn đến các cải tiến mới nhất cho con đường phía trước, Philips đều có đèn phù hợp với bạn.
-                                    </div>
-                                </li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
+                        <!-- END REVOLUTION SLIDER -->
                     </div>
-                    <!-- END REVOLUTION SLIDER -->
                 </div>
             </div>
         </div>
     </div>
-</div>

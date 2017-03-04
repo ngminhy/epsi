@@ -2,7 +2,7 @@
     ViewBag.Title = "Trang chủ";
 }
 
-@{Html.RenderPartial("_slider");}
+@{Html.RenderAction("slider", "Home");}
 @{Html.RenderPartial("_productbycategory");}
 @{Html.RenderPartial("_featuredproduct");}
 @{Html.RenderPartial("_branch");}
