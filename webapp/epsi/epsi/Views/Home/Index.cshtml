@@ -1,11 +1,16 @@
 ﻿@{
     ViewBag.Title = "Trang chủ";
 }
-
-@{Html.RenderAction("slider", "Home");}
-@{Html.RenderPartial("_productbycategory");}
-@{Html.RenderPartial("_featuredproduct");}
-@{Html.RenderPartial("_branch");}
-@{Html.RenderPartial("_newproduct");}
-@{Html.RenderPartial("_latestnews");}
+<div class="page-content front-page">
+    <article>
+        <div class="entry-content">
+            @{Html.RenderAction("slider", "Home");}
+            @{Html.RenderPartial("_productbycategory");}
+            @{Html.RenderPartial("_featuredproduct");}
+            @{Html.RenderPartial("_branch");}
+            @{Html.RenderPartial("_newproduct");}
+            @{Html.RenderPartial("_latestnews");}
+        </div>
+    </article>
+</div>
 
