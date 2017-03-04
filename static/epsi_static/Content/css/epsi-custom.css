@@ -4,3 +4,9 @@
 #search-box {
 	padding-top: 15px;
 }
+.header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.multicolumn_dropdown > ul.mega_dropdown > li {
+	padding: 5px !important;
+}
+.header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.multicolumn_dropdown > ul.mega_dropdown {
+	padding: 10px 20px !important;
+}
