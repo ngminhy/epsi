@@ -5207,7 +5207,7 @@ legend {
   margin-left: 10px;
 }
 .main-container .blog-page .readmore:hover {
-  background: #cc8200;
+  background: #048de7;
 }
 .main-container .blog-page .entry-meta-small,
 .main-container .blog-page .entry-meta {
@@ -5352,7 +5352,7 @@ legend {
 .main-container .blog-page .pagination a:hover,
 .main-container .blog-page .pagination span.current,
 .main-container .blog-page .pagination span:hover {
-  background: #2f2f2f;
+  background: #048de7;
 }
 .main-container .blog-page .page-links {
   margin: 15px 0;
