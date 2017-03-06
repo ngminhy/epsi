@@ -10,3 +10,17 @@
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.multicolumn_dropdown > ul.mega_dropdown {
 	padding: 10px 20px !important;
 }
+.main-container.contact-wrapper .entry-header {
+	background-color: #ededed;
+	margin-bottom: 30px;
+}
+.main-container.contact-wrapper .entry-header .entry-title {
+	color: #222222;
+}
+.main-container .page-content .button {
+	background-color: #048de7;
+}
+.main-container .page-content .button:hover {
+	background-color: #048de7;
+	text-decoration: underline;
+}

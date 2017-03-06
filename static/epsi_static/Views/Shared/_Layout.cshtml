@@ -30,14 +30,8 @@
             <div class="page-wrapper">
                 @{Html.RenderPartial("_header");}
                 <!-- Main Container -->
-                <div class="main-container">
-                    <div class="page-content front-page">
-                        <article>
-                            <div class="entry-content">
-                                @RenderBody()
-                            </div>
-                        </article>
-                    </div>
+                <div class="main-container @ViewBag.css">
+                    @RenderBody()
                 </div>
                 <!-- End Main Container -->
                 @{Html.RenderPartial("_footer");}
