@@ -27,7 +27,7 @@ h4,
 h5,
 h6 {
   color: #222222;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: 400;
   line-height: 1.35;
   margin: 0 0 10px;
@@ -343,7 +343,7 @@ legend {
   box-shadow: none;
   color: #ffffff;
   font-size: 12px;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: bold;
   height: 46px;
   line-height: 46px;
@@ -939,7 +939,7 @@ legend {
   color: #4d4d4d;
   cursor: pointer;
   float: left;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 11px;
   font-weight: 700;
   line-height: 40px;
@@ -1224,7 +1224,7 @@ legend {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .cart-toggler a i {
   margin-right: 5px;
@@ -1235,7 +1235,7 @@ legend {
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
   background: #fff;
   color: #222222;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   height: 0;
   overflow: hidden;
@@ -1352,7 +1352,7 @@ legend {
   text-transform: uppercase;
   width: 100%;
   font-weight: bold;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content .total .amount {
   float: right;
@@ -1372,7 +1372,7 @@ legend {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -1516,7 +1516,7 @@ legend {
 .header-container .horizontal-menu div.nav-menu > ul li a {
   color: #2b2b2b;
   display: block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   padding: 24px 20px;
   position: relative;
@@ -1653,7 +1653,7 @@ legend {
 .header-container .horizontal-menu .primary-menu-container ul.nav-menu li a {
   color: #2b2b2b;
   display: block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   padding: 24px 20px;
   position: relative;
@@ -1790,7 +1790,7 @@ legend {
 }
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li > a.item_link .link_content .link_text {
   color: #2b2b2b;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 16px;
   font-weight: 700;
   padding: 24px 20px;
@@ -1926,7 +1926,7 @@ legend {
 }
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.multicolumn_dropdown > ul.mega_dropdown > li > a .link_text {
   font-weight: bold;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.multicolumn_dropdown > ul.mega_dropdown > li > a:before {
   display: none;
@@ -2007,7 +2007,7 @@ legend {
 }
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.widgets_dropdown > ul.mega_dropdown > li > a .link_text {
   font-weight: bold;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 .header-container .horizontal-menu #saharan_mega_main_menu > .menu_holder .menu_inner > ul > li.widgets_dropdown > ul.mega_dropdown > li > a:before {
   display: none;
@@ -2300,7 +2300,7 @@ legend {
 .footer .footer-top .widget_ftproducts .shop-products .item-col .product-wrapper .list-col8 .gridview .price-box {
   color: #048de7;
   font-size: 13px;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   display: inline-block;
 }
 .footer .footer-top .widget_ftproducts .shop-products .item-col .product-wrapper .list-col8 .gridview .price-box ins {
@@ -2350,7 +2350,7 @@ legend {
   line-height: 1.7;
 }
 .map-wrapper .gmap_marker strong {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   display: inline-block;
   font-weight: normal;
   margin: 0 0 6px;
@@ -2381,7 +2381,7 @@ legend {
 }
 .map-custom strong {
   color: #048de7;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 24px;
   font-weight: 400;
 }
@@ -2406,7 +2406,7 @@ legend {
   margin: 0 0 60px;
 }
 .main-container .portfolio_header {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: 700;
   font-size: 70px;
   line-height: 1;
@@ -2485,7 +2485,7 @@ legend {
 }
 .main-container .toolbar .bootexpert-ordering .orderby-wrapper select {
   display: none;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -2559,7 +2559,7 @@ legend {
 .main-container .toolbar .bootexpert-pagination ul.page-numbers li a,
 .main-container .toolbar .bootexpert-pagination ul.page-numbers li span {
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   padding: 0;
   width: 40px;
@@ -2659,8 +2659,8 @@ legend {
 .main-container .shop-products .item-col .product-wrapper .price-box {
   color: #048de7;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  /*font-weight: 600;*/
   position: relative;
 }
 .main-container .shop-products .item-col .product-wrapper .price-box .special-price {
@@ -2688,9 +2688,9 @@ legend {
   display: none;
 }
 .main-container .shop-products .item-col .product-wrapper h2.product-name {
-  font-size: 13px;
+  font-size: 16px;
   margin: 5px 0 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .main-container .shop-products .item-col .product-wrapper h2.product-name a {
   color: #666666;
@@ -3267,7 +3267,7 @@ legend {
   margin-right: 6px;
 }
 .main-container .product-view .summary.single-product-info .short-description strong {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: normal;
 }
 .main-container .product-view .summary.single-product-info .cart {
@@ -3291,7 +3291,7 @@ legend {
 .main-container .product-view .summary.single-product-info .cart .variations .label {
   color: #222222;
   float: left;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   line-height: 42px;
   margin: 0 20px 10px 0;
@@ -3333,7 +3333,7 @@ legend {
 .main-container .product-view .summary.single-product-info .cart .single_variation_wrap .price {
   color: #048de7;
   float: left;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 18px;
   font-weight: 600;
   margin: 0;
@@ -3367,7 +3367,7 @@ legend {
   background: none;
   border: none;
   color: #222222;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 20px;
   font-weight: 400;
   height: 43px;
@@ -3510,7 +3510,7 @@ legend {
 .main-container .product-view .summary.single-product-info .product_meta .posted_in,
 .main-container .product-view .summary.single-product-info .product_meta .tagged_as {
   color: #787878;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   padding: 10px 0;
   border-top: 1px dashed #e5e5e5;
   text-transform: capitalize;
@@ -3588,7 +3588,7 @@ legend {
 .main-container .product-view .product .bootexpert-tabs ul.tabs li a {
   color: #2f2f2f;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -3648,7 +3648,7 @@ legend {
 }
 .main-container .product-view .product .bootexpert-tabs .panel .shop_attributes th {
   color: #222222;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   font-weight: normal;
   text-transform: uppercase;
@@ -3707,7 +3707,7 @@ legend {
   font-size: 15px;
 }
 .main-container .product-view .product .bootexpert-tabs #tab-reviews #reviews #comments .commentlist li .comment-text strong {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -3719,7 +3719,7 @@ legend {
   width: 100%;
 }
 .main-container .product-view .product .bootexpert-tabs #tab-reviews #reviews #review_form_wrapper .comment-form label {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: normal;
   margin: 0 0 5px;
   width: 100%;
@@ -3772,7 +3772,7 @@ legend {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -3944,7 +3944,7 @@ legend {
 }
 .main-container .page-content .shop_header ul li a {
   font-size: 12px;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: 700;
 }
 .main-container .page-content .shop_header ul li.active {
@@ -4009,7 +4009,7 @@ legend {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -4048,7 +4048,7 @@ legend {
 .main-container .page-content .entry-content .ui-accordion .parvez_accordion_section .ui-accordion-header {
   border: 1px solid #e5e5e5;
   background: #f2f2f2;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -4081,7 +4081,7 @@ legend {
   text-transform: uppercase;
 }
 .main-container .page-content .entry-content .bootexpert form label {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   margin: 0 0 5px;
 }
 .main-container .page-content .entry-content .bootexpert form fieldset {
@@ -4092,7 +4092,7 @@ legend {
 .main-container .page-content .entry-content .bootexpert form fieldset legend {
   border-bottom: none;
   color: #048de7;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   margin: 0 0 10px;
   padding: 0;
@@ -4113,7 +4113,7 @@ legend {
 }
 .main-container .page-content .entry-content .shop_table th {
   border-top: none;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   padding: 20px 10px;
   text-transform: uppercase;
   vertical-align: middle;
@@ -4183,7 +4183,7 @@ legend {
 .main-container .page-content .entry-content .shop_table .quantity .input-text {
   border: 1px solid #e5e5e5;
   color: #666666;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 15px;
   font-weight: normal;
   height: 35px;
@@ -4211,7 +4211,7 @@ legend {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -4454,7 +4454,7 @@ legend {
 .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-billing-fields label,
 .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-shipping-fields label {
   color: #222222;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   margin: 0 0 5px;
 }
 .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-billing-fields .input-text,
@@ -4539,7 +4539,7 @@ legend {
   margin: 0 0 15px;
 }
 .main-container .page-content .entry-content #order_review #payment .payment_methods label {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 .main-container .page-content .entry-content #order_review #payment .payment_methods .payment_box {
   background: none;
@@ -4608,7 +4608,7 @@ legend {
   width: 100%;
 }
 .main-container .page-content .entry-content .checkout-login form.login label {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   margin-bottom: 5px;
 }
 .main-container .page-content .entry-content .checkout-login form.login #rememberme {
@@ -4627,7 +4627,7 @@ legend {
   width: 370px;
 }
 .main-container .page-content .entry-content .checkout-done > p:first-child {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 20px;
   font-weight: 700;
   line-height: 1.35;
@@ -4664,7 +4664,7 @@ legend {
   width: 100%;
 }
 .main-container .page-content .entry-content .checkout-done .order_summary strong {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: normal;
   margin-top: 5px;
 }
@@ -5193,7 +5193,7 @@ legend {
 }
 .main-container .blog-page .readmore {
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   color: #048de7;
   text-transform: uppercase;
   color: #fff;
@@ -5219,7 +5219,7 @@ legend {
   float: left;
   margin: 0 0 10px;
   width: 100%;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 10px;
 }
 .main-container .blog-page .entry-meta-small i,
@@ -5339,7 +5339,7 @@ legend {
 .main-container .blog-page .pagination span {
   background: #cccccc;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   line-height: 40px;
   min-width: 40px;
   height: 40px;
@@ -5362,7 +5362,7 @@ legend {
   border-bottom: 2px solid transparent;
   color: #222222;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   line-height: 34px;
   padding: 0 8px;
@@ -5377,7 +5377,7 @@ legend {
   border-bottom: 2px solid transparent;
   color: #222222;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   line-height: 34px;
   padding: 0 8px;
@@ -5659,7 +5659,7 @@ legend {
 }
 .main-container .contact-page p.phone {
   font-size: 24px;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   color: #048de7;
   line-height: 1.2;
 }
@@ -5932,7 +5932,7 @@ legend {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -6196,7 +6196,7 @@ legend {
   color: #2f2f2f;
   font-size: 16px;
   text-transform: uppercase;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
 }
 #secondary .widget .widget_content {
   float: left;
@@ -6270,7 +6270,7 @@ legend {
   background: #fff;
   border: 1px solid #e5e5e5;
   color: #787878;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   float: left;
   width: 100%;
 }
@@ -6513,7 +6513,7 @@ legend {
 #secondary .widget .item-col .product-wrapper .list-col8 .price-box {
   color: #2f2f2f;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: 700;
   margin-top: 2px;
@@ -6618,7 +6618,7 @@ legend {
   width: 100%;
 }
 .newsletterpopup .widget.widget_wysija .widgettitle {
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-weight: bold;
   font-size: 50px;
   margin: 0 0 20px;
@@ -6724,7 +6724,7 @@ legend {
   border-radius: 0;
   color: #222222;
   float: none;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: 400;
   height: 40px;
@@ -6841,7 +6841,7 @@ legend {
   border-bottom: 2px solid transparent;
   color: #222222;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 12px;
   line-height: 34px;
   padding: 0 8px;
@@ -7226,7 +7226,7 @@ body.error404 .form404-wrapper a {
   box-shadow: none;
   color: #fff;
   display: inline-block;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: bold;
   height: 40px;
@@ -7365,7 +7365,7 @@ body.error404 .form404-wrapper a:hover {
 }
 .main-container .home-tabs .home-tabs-title li a {
   font-size: 20px;
-  font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+
   color: #666666;
   line-height: 35px;
   border-right: 1px solid #e5e5e5;
@@ -7766,7 +7766,7 @@ body.error404 .form404-wrapper a:hover {
     color: #fff;
     cursor: pointer;
     float: left;
-    font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+  
     font-size: 20px;
     font-weight: 400;
     height: 56px;
@@ -7812,7 +7812,7 @@ body.error404 .form404-wrapper a:hover {
     color: #666;
     display: block;
     float: left;
-    font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+  
     font-size: 14px;
     height: 40px;
     line-height: 40px;
@@ -7844,7 +7844,7 @@ body.error404 .form404-wrapper a:hover {
   }
   .nav-container .mobile-menu-container ul.nav-menu > li > ul.sub-menu > li > a {
     color: #666;
-    font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+  
   }
   .nav-container .mobile-menu-container ul.nav-menu > li > ul.sub-menu > li > a:hover {
     color: #048de7;
