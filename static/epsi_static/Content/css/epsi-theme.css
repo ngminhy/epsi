@@ -51,7 +51,7 @@ h6 {
   font-size: 16px;
 }
 p {
-  margin: 0 0 25px;
+  margin: 0 0 10px;
 }
 big {
   font-size: 125%;
@@ -2920,14 +2920,12 @@ legend {
 }
 .main-container .shop-products.list-view .item-col .product-wrapper .product-name {
   margin: 0 0 20px;
-  font-size: 20px;
-  font-weight: normal;
   border-bottom: 1px solid #e5e5e5;
   padding: 0 0 10px;
 }
 .main-container .shop-products.list-view .item-col .product-wrapper .price-box {
   float: left;
-  font-size: 18px;
+  font-size: 15px;
   margin: 15px 0 0;
 }
 .main-container .shop-products.list-view .item-col .product-wrapper .price-box del {
@@ -6145,8 +6143,8 @@ legend {
 }
 #secondary ul li a:before,
 #secondary ol li a:before {
-  content: "\f138";
-  font-family: FontAwesome;
+/*  content: "\f138";
+  font-family: FontAwesome;*/
   margin-right: 10px;
   vertical-align: middle;
 }

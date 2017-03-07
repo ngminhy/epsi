@@ -25,3 +25,62 @@
 	background-color: #048de7;
 	text-decoration: underline;
 }
+
+/*Toolbar*/
+.main-container .toolbar {
+    border-bottom: 1px solid #e5e5e5 !important;
+    padding: 10px 10px 10px 0px !important;
+}
+.main-container .toolbar .bootexpert-pagination {
+  	float: right;
+}
+.main-container .toolbar .bootexpert-pagination ul.page-numbers {
+	height: auto;
+	border: 0;
+	list-style: none;
+}
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li {
+	height: 26px;
+	margin: 0 5px;
+}
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li span,
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li a {
+	width: auto;
+	height: auto;
+	line-height: 23px;
+	display: block;
+	border: 0;
+	color: #666;
+	font-weight: 400;
+}
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li span:hover,
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li a:hover {
+	background: none;
+	color: #333;
+	text-decoration: underline;
+}
+.main-container .toolbar .bootexpert-pagination ul.page-numbers li span.current {
+	color: #333;
+	text-decoration: underline;
+	background: none;
+}
+.main-container .toolbar.tb-bottom {
+	border-bottom: 0px !important;
+}
+.main-container .toolbar.tb-bottom .bootexpert-pagination ul.page-numbers li span:hover, .main-container .toolbar.tb-bottom .bootexpert-pagination ul.page-numbers li span.current, .main-container .toolbar.tb-bottom .bootexpert-pagination ul.page-numbers li a:hover, .main-container .toolbar.tb-bottom .bootexpert-pagination ul.page-numbers li a.current {
+	background: none;
+}
+
+#secondary .widget .widget-title {
+	padding: 10px 10px 10px 0px !important;
+	line-height: 32px;
+}
+#secondary .widget .widget-title span {
+	font-size: 20px !important;
+}
+#secondary ul, #secondary ol {
+	list-style: none;
+}
+#secondary ul li, #secondary ol li {
+	list-style: none !important;
+}
