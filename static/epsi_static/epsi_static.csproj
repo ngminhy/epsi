@@ -346,6 +346,7 @@
     <Content Include="Content\images\furniture\team\team3-100x100.jpg" />
     <Content Include="Content\images\furniture\team\team4-100x100.jpg" />
     <Content Include="Content\images\logo\epsi.png" />
+    <Content Include="Content\images\marker.png" />
     <Content Include="Content\js\core.js" />
     <Content Include="Content\js\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\js\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -378,6 +379,7 @@
     <Content Include="Content\js\lib\bootstrap.min.js" />
     <Content Include="Content\js\lib\html5shiv.js" />
     <Content Include="Content\js\lib\jquery-2.1.1.min.js" />
+    <Content Include="Content\js\lib\jquery.gmap.js" />
     <Content Include="Content\js\lib\modernizr-2.8.3.min.js" />
     <Content Include="Content\js\lib\respond.js" />
     <Content Include="Content\lib\chosen\chosen-sprite%402x.png" />

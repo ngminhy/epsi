@@ -59,3 +59,36 @@
 		</div>
 	</div>
 </div>
+
+		<!-- Google Map js -->
+<script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+         var uluru = { lat: 10.726052, lng: 106.691866 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+
+        var contentString = '<div>CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ PHÁT TRIỂN EPSI</div><div>44 - 46 Đường Số 12, Tổ 2, KP 1, Biệt Thự Ven Sông, P.Tân Phong, Q.7, TP.HCM</div>'
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+</script>
+<script type='text/javascript' src="http://maps.google.com/maps/api/js?key=AIzaSyDQ0pDRDKSyAO4lm10ttEXa2_uoZmWQzHc&sensor=false&callback=initMap"></script>
+
+
+
