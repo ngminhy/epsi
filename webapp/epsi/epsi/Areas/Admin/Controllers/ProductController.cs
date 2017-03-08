@@ -32,15 +32,10 @@ namespace epsi.Areas.Admin.Controllers
                             {
                                 ProductId = p.ProductId,
                                 CategoryId = p.CategoryId,
-                                BrandId = p.BrandId,
-                                CountryId = p.CountryId,
                                 Code = p.Code,
-                                MaterialId = p.MaterialId,
 
                                 Description = p.Description,
                                 Tags = p.Tags,
-                                Folder = p.Folder,
-                                ImagesJson = p.ImagesJson,
                                 Name = p.Name,
                                 CategoryName = c.Name,
                                 PageURL = p.PageURL

@@ -15,12 +15,6 @@ namespace epsi.Models
         public string Name { get; set; }
         [StringLength(200)]
         public string Code { get; set; }
-        public int CountryId { get; set; }
-        public Category Country { get; set; }
-        public int BrandId { get; set; }
-        public Category Brand { get; set; }
-        public int MaterialId { get; set; }
-        public Category Material { get; set; }
 
         [StringLength(1000)]
         public string Description { get; set; }
@@ -32,6 +26,8 @@ namespace epsi.Models
         public string Tags { get; set; }
         public bool Active { get; set; }
         public bool IsSpecial { get; set; }
+        public bool IsNew { get; set; }
+        public bool IsHome { get; set; }
         public DateTime CreatedDate { get; set; }
         public int NumofViews { get; set; }
         public int BasePrice { get; set; }
@@ -39,13 +35,9 @@ namespace epsi.Models
         public int Price { get; set; }
         [StringLength(200)]
         public string MainImage { get; set; }
-        [StringLength(50)]
-        public string Folder { get; set; }
-        public string ImagesJson { get; set; }
 
         public int CategoryId { get; set; }
         public int ParentId { get; set; }
-        public Category Category { get; set; }
         public string PageURL { get; set; }
 
         public Product() { }
@@ -55,18 +47,15 @@ namespace epsi.Models
             CategoryId = model.CategoryId;
             ParentId = model.ParentId;
             Code = model.Code;
-            BrandId = model.BrandId;
-            CountryId = model.CountryId;
-            MaterialId = model.MaterialId;
             Description = model.Description;
             Tags = model.Tags;
-            Folder = model.Folder;
-            ImagesJson = model.ImagesJson;
             Name = model.Name;
             Content = model.Content;
             Active = model.Active;
             MainImage = model.MainImage;
             IsSpecial = model.IsSpecial;
+            IsNew = model.IsNew;
+            IsHome = model.IsHome;
             Price = model.Price;
             BasePrice = model.BasePrice;
             CreatedDate = DateTime.Now;

@@ -89,7 +89,9 @@
             @Html.LabelFor(model => model.Name, new { @class = "col-sm-3 control-label no-padding-right" })
             <div class="col-sm-9">
                 @Html.EditorFor(model => model.Name, new { @class = "form-control" })
-                @Html.EditorFor(model => model.IsSpecial) Homepage
+                @Html.EditorFor(model => model.IsHome) Homepage
+                @Html.EditorFor(model => model.IsSpecial) Special
+                @Html.EditorFor(model => model.IsNew) New
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
         </div>
@@ -206,18 +208,9 @@
                 @Html.ValidationMessageFor(model => model.PageURL)
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaxFiller, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.MaxFiller, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MaxFiller)
-            </div>
-        </div>
        
         <div class="editor-label">
             @Html.HiddenFor(model => model.ProductId)
-            @Html.HiddenFor(model => model.ImagesJson)
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label no-padding-right"></label>
