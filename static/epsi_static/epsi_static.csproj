@@ -514,6 +514,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_sidebarCategory.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

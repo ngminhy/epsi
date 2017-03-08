@@ -72,8 +72,9 @@
 }
 
 #secondary .widget .widget-title {
-	padding: 10px 10px 10px 0px !important;
+	padding: 10px 0px 10px 0px !important;
 	line-height: 32px;
+	margin: 0px;
 }
 #secondary .widget .widget-title span {
 	font-size: 20px !important;
@@ -83,4 +84,16 @@
 }
 #secondary ul li, #secondary ol li {
 	list-style: none !important;
+	border-bottom: 1px solid #eaeaea;
+    line-height: 36px;
+}
+#secondary ul li:last-child, #secondary ol li:last-child {
+	border: 0px;
+}
+ul.product-categories li a.title {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#secondary ul .children, #secondary ol .children {
+	padding-top: 0px !important;
 }
