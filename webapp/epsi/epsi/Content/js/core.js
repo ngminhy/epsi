@@ -642,4 +642,29 @@ Version: 1.0
         }
     });
 
+    var $subMenu = $('#saharan_mega_main_menu nav.menu_inner').find('li.multicolumn_dropdown');
+    $subMenu.each(function(){
+        var $dropdown = $(this).find('ul.mega_dropdown').first();
+        var $colSubmenu = $(this).find('li.col_sub_nav');
+        if($colSubmenu.length > 0) {
+            switch($colSubmenu.length) {
+                case 1:
+                    $dropdown.css({'width':'205px'});
+                    $colSubmenu.css({'width':'100%'});
+                    break;
+                case 2:
+                    $dropdown.css({'width':'480px'});
+                    $colSubmenu.each(function(){
+                        $(this).css({'width':'50%'});
+                    });
+                    break;
+                case 3:
+                    $dropdown.css({'width':'700px'});
+                    $colSubmenu.each(function(){
+                        $(this).css({'width':'33.3333333333%'});
+                    });
+                    break;
+            }
+        }
+    });
 })(jQuery);
