@@ -169,3 +169,9 @@ ul.product-categories li a.title {
 .main-container .banner-home-content2 .banner-box p {
 	margin: 0;
 }
+.main-container .shop-products.grid-view .item-col .product-wrapper .list-col8 .gridview .product-name-field {
+	margin-bottom: 5px;
+}
+.main-container .shop-products.grid-view .item-col .product-wrapper .list-col8 .gridview .product-name {
+	margin-bottom: 0px !important;
+}
