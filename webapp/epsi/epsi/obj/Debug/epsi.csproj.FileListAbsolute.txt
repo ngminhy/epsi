@@ -114,7 +114,6 @@ E:\epsi\epsi\webapp\epsi\epsi\bin\epsi.pdb
 E:\epsi\epsi\webapp\epsi\epsi\bin\Antlr3.Runtime.dll
 E:\epsi\epsi\webapp\epsi\epsi\bin\EntityFramework.dll
 E:\epsi\epsi\webapp\epsi\epsi\bin\EntityFramework.SqlServer.dll
-E:\epsi\epsi\webapp\epsi\epsi\bin\Kendo.Mvc.dll
 E:\epsi\epsi\webapp\epsi\epsi\bin\Microsoft.AI.Agent.Intercept.dll
 E:\epsi\epsi\webapp\epsi\epsi\bin\Microsoft.AI.DependencyCollector.dll
 E:\epsi\epsi\webapp\epsi\epsi\bin\Microsoft.AI.PerfCounterCollector.dll
