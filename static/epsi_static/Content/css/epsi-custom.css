@@ -180,11 +180,37 @@ ul.product-categories li a.title {
     background-color: #ededed;
     color: #222222;
     text-transform: uppercase;
-    letter-spacing: 5px;
     font-size: 30px;
     font-weight: bold;
 }
 .main-container .product-view .summary.single-product-info .product-id p {
 	margin-bottom: 0px !important;
 	color: #222222;
+}
+.main-container .blog-page.blog-page .post-thumbnail {
+	width: 25%;
+	border: 1px solid #e5e5e5;
+	padding: 5px;
+}
+.main-container .blog-page.blog-page .postinfo-wrapper {
+	width: 75%;
+	padding-left: 40px;
+}
+.main-container .blog-page .post {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 40px;
+	margin: 0 0 40px;
+}
+.main-container .blog-page .post:last-of-type {
+	border-bottom: 0px !important;
+	padding-bottom: 0px !important;
+}
+.main-container .blog-content-page {
+	padding-top: 40px;
+}
+.main-container .blog-page .pagination {
+	text-align: center;
+}
+.main-container .blog-page .entry-summary, .main-container .blog-page .entry-content {
+	text-align: justify;
 }
