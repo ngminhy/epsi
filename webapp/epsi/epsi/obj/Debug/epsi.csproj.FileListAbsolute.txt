@@ -193,7 +193,6 @@ E:\epsi\epsi\webapp\epsi\epsi\bin\zh-CN\Kendo.Mvc.resources.dll
 E:\epsi\epsi\webapp\epsi\epsi\obj\Debug\epsi.csprojResolveAssemblyReference.cache
 E:\epsi\epsi\webapp\epsi\epsi\obj\Debug\epsi.dll
 E:\epsi\epsi\webapp\epsi\epsi\obj\Debug\epsi.pdb
-D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.csprojResolveAssemblyReference.cache
 D:\my_project\epsivn\webapp\epsi\epsi\bin\ApplicationInsights.config
 D:\my_project\epsivn\webapp\epsi\epsi\bin\roslyn\csc.exe
 D:\my_project\epsivn\webapp\epsi\epsi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -289,5 +288,6 @@ D:\my_project\epsivn\webapp\epsi\epsi\bin\ru-RU\Kendo.Mvc.resources.dll
 D:\my_project\epsivn\webapp\epsi\epsi\bin\sv-SE\Kendo.Mvc.resources.dll
 D:\my_project\epsivn\webapp\epsi\epsi\bin\uk-UA\Kendo.Mvc.resources.dll
 D:\my_project\epsivn\webapp\epsi\epsi\bin\zh-CN\Kendo.Mvc.resources.dll
+D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.csprojResolveAssemblyReference.cache
 D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.dll
 D:\my_project\epsivn\webapp\epsi\epsi\obj\Debug\epsi.pdb
