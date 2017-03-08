@@ -37,7 +37,6 @@ namespace epsi.Models
         public int BasePrice { get; set; }
         public int Discount { get; set; }
         public int Price { get; set; }
-        public virtual List<Picture> Pictures { get; set; }
         [StringLength(200)]
         public string MainImage { get; set; }
         [StringLength(50)]
@@ -48,7 +47,6 @@ namespace epsi.Models
         public int ParentId { get; set; }
         public Category Category { get; set; }
         public string PageURL { get; set; }
-        public int MaxFiller { get; set; }
 
         public Product() { }
         public Product(ProductDto model)
@@ -73,7 +71,6 @@ namespace epsi.Models
             BasePrice = model.BasePrice;
             CreatedDate = DateTime.Now;
             PageURL = model.PageURL;
-            MaxFiller = model.MaxFiller;
         }
     }
 }
