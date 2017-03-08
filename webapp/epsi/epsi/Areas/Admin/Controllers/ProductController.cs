@@ -89,21 +89,6 @@ namespace epsi.Areas.Admin.Controllers
             {
                 if (string.IsNullOrEmpty(model.PageURL)) model.PageURL = ConvertToUnSign(model.Name.ToLower());
                 Product Product = new Product(model);                
-                if (model.ImagesJson != null)
-                {
-                    List<FileInfo> images = JsonConvert.DeserializeObject<List<FileInfo>>(model.ImagesJson);
-                    if (images.Any(p => p.EntryType == 0))
-                    {
-                        Product.Pictures = new List<Picture>();
-                        foreach (var image in images.Where(p => p.EntryType == 0))
-                        {
-                            Picture pic = new Picture();
-                            pic.Src = image.Name;
-                            pic.Size = image.Size;
-                            Product.Pictures.Add(pic);
-                        }
-                    }
-                }
                 db.Products.Add(Product);
                 db.SaveChanges();
             }

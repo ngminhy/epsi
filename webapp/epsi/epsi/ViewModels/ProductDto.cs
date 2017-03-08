@@ -52,7 +52,6 @@ namespace epsi.ViewModels
             BasePrice = model.BasePrice;
             Price = model.Price;
             PageURL = model.PageURL;
-            MaxFiller = model.MaxFiller;
 
         }
         public ProductDto()
