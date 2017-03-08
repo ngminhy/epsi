@@ -419,7 +419,7 @@ body {
 }
 .footer.furniture2 .widget-title {
   text-transform: uppercase;
-  margin: 10px 0 20px;
+  margin: 10px 0 15px;
   font-size: 16px;
 }
 .footer.furniture2 .footer-middle .footer-middle-inner {
@@ -913,7 +913,7 @@ body {
   right: 30px;
 }
 .main-container .product-view .summary.single-product-info {
-  width: 57%;
+  width: 60%;
 }
 .main-container .product-view .summary.single-product-info h2.product_title {
   border: 0;

@@ -5733,7 +5733,7 @@ legend {
   width: 100%;
 }
 .main-container .contact-page .contact-submit input {
-  letter-spacing: 4px;
+  /*letter-spacing: 4px;*/
   padding: 0 30px;
 }
 .main-container .contact-fom-info {
@@ -7955,7 +7955,7 @@ body.error404 .form404-wrapper a:hover {
     width: 100%;
   }
   .main-container .product-view .summary.single-product-info {
-    width: 100%;
+    width: 100% !important;
     padding-left: 0;
   }
   .header-container .top-bar {
