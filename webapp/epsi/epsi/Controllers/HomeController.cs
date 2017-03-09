@@ -56,11 +56,28 @@ namespace epsi.Controllers
         public ActionResult TopMenu()
         {
             var menus = db.Menus.Where(p => p.Tag == "Top").OrderBy(p => p.Order).ToList();
-            //foreach (var item in menus)
-            //{
-            //    item.SubMenus = db.Menus.Where(p => p.ParentId == item.MenuId && p.Tag == "Top").OrderByDescending(p => p.Order).ThenBy(p => p.MenuId).Select(p => new LinkDto() { Title = p.Text, Link = p.Link, MenuId = p.MenuId }).ToList();
-            //}
             return PartialView("_menu", menus);
+        }
+
+        public ActionResult MenuCategory()
+        {
+            var ListCategoryParent = db.Categorys.Where(p => p.Tag == "Product" && p.ParentId == 0).ToList();
+            return PartialView("_menuCategory", ListCategoryParent);
+        }
+        public ActionResult MenuCategoryChild(int parentId)
+        {
+            var ListCategoryChild = db.Categorys.Where(p => p.Tag == "Product" && p.ParentId == parentId).ToList();
+            return PartialView("_menuCategoryChild", ListCategoryChild);
+        }
+        public ActionResult MenuMobileCategory()
+        {
+            var ListCategoryParent = db.Categorys.Where(p => p.Tag == "Product" && p.ParentId == 0).ToList();
+            return PartialView("_menuMobileCategory", ListCategoryParent);
+        }
+        public ActionResult MenuMobileCategoryChild(int parentId)
+        {
+            var ListCategoryChild = db.Categorys.Where(p => p.Tag == "Product" && p.ParentId == parentId).ToList();
+            return PartialView("_menuMobileCategoryChild", ListCategoryChild);
         }
     }
 }

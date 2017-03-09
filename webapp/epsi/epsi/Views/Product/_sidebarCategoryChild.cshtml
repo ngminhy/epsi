@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<epsi.Models.Category>
     @foreach (var item in Model)
     {
-        <li><a href="/p/@Url.Content(item.PageURL)">@item.Name</a> @{ Html.RenderAction("CountProductbyCate", "Product", new { cateId = item.CategoryId });}</li>
+        <li><a href="/san-pham/@Url.Content(item.PageURL)">@item.Name</a> @{ Html.RenderAction("CountProductbyCate", "Product", new { cateId = item.CategoryId });}</li>
 
     }

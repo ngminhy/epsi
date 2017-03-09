@@ -1,4 +1,6 @@
-﻿<div class="nav-container">
+﻿@model IEnumerable<epsi.Models.Menu>
+
+<div class="nav-container">
     <div class="container">
         <div class="nav-inner clearfix">
             <div class="horizontal-menu">
@@ -8,203 +10,32 @@
                             <div class="mmm_fullwidth_container"></div>
                             <nav class="menu_inner">
                                 <ul>
-                                    <li class="active-menu-item">
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Trang chủ</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="multicolumn_dropdown drop_to_right children-menu">
-                                        <a href="#" class="item_link">
-                                            <span class="link_content">
-                                                <span class="link_text">Sản phẩm</span>
-                                            </span>
-                                        </a>
-                                        <ul class="mega_dropdown">
-                                            <li class="col_sub_nav default_dropdown drop_to_right children-menu">
-                                                <a href="#" class="item_link">
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.MenuId != 7)
+                                        {
+                                            <li class='@(Request.Url.AbsolutePath == item.Link ?  "active-menu-item" : "")'>
+                                                <a href="@Url.Content(item.Link)" class="item_link ">
                                                     <span class="link_content">
-                                                        <span class="link_text">Đèn Philips</span>
+                                                        <span class="link_text">@item.Text</span>
                                                     </span>
                                                 </a>
-                                                <ul class="mega_dropdown">
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn chùm</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn thả</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn ốp tường</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn ốp trần</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn phòng tắm</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn ngủ</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn bàn</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn sàn - đèn cây</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn trang trí - đổi màu</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn sân vườn</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
                                             </li>
-                                            <li class="col_sub_nav default_dropdown drop_to_right children-menu">
-                                                <a href="#" class="item_link ">
-                                                    <span class="link_content">
-                                                        <span class="link_text">Đèn chiếu sáng cơ bản</span>
-                                                    </span>
-                                                </a>
-                                                <ul class="mega_dropdown">
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn downlight</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn chiếu điểm</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Bóng đèn - bộ điện</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn chiếu điểm Philips</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="col_sub_nav default_dropdown drop_to_right children-menu">
-                                                <a href="#" class="item_link ">
-                                                    <span class="link_content">
-                                                        <span class="link_text">Đèn chiếu sáng chức năng</span>
-                                                    </span>
-                                                </a>
-                                                <ul class="mega_dropdown">
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn pha</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn chiếu cây</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="default_dropdown drop_to_right children-menu">
-                                                        <a href="#" class="item_link ">
-                                                            <span class="link_content">
-                                                                <span class="link_text">Đèn âm hồ nước</span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Giới thiệu</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Showroom</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Dự án</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Tin tức</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="item_link ">
-                                            <span class="link_content">
-                                                <span class="link_text">Liên hệ</span>
-                                            </span>
-                                        </a>
-                                    </li>
+                                        }
+                                        else
+                                        {
+                                            <li  class="@(Request.Url.AbsolutePath == item.Link ?  "active-menu-item" : "") multicolumn_dropdown drop_to_right children-menu">
+                                                    <a href="@Url.Content(item.Link)" class="item_link">
+                                                        <span class="link_content">
+                                                            <span class="link_text">@item.Text</span>
+                                                        </span>
+                                                    </a>
+                                                @{ Html.RenderAction("MenuCategory", "Home");}     
+                                                </li>
+                                        }
+
+                                    }
+         
                                 </ul>
                             </nav>
                         </div>
@@ -216,51 +47,34 @@
                         <div class="mbmenu-toggler">Menu<span class="mbmenu-icon"></span></div>
                         <nav class="mobile-menu-container">
                             <ul id="menu-horizontal-menu" class="nav-menu">
-                                <li class="first">
-                                    <a href="#">Trang chủ</a>
-                                </li>
-                                <li class="children-menu">
-                                    <a href="#">Sản phẩm</a>
-                                    <ul class="sub-menu">
-                                        <li class="children-menu">
-                                            <a href="#">Đèn Philips</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#">Đèn chùm</a></li>
-                                                <li><a href="#">Đèn thả</a></li>
-                                                <li><a href="#">Đèn ốp tường</a></li>
-                                                <li><a href="#">Đèn ốp trần</a></li>
-                                                <li><a href="#">Đèn phòng tắm</a></li>
-                                                <li><a href="#">Đèn ngủ</a></li>
-                                                <li><a href="#">Đèn bàn</a></li>
-                                                <li><a href="#">Đèn sàn - đèn cây</a></li>
-                                                <li><a href="#">Đèn trang trí - đổi màu</a></li>
-                                                <li><a href="#">Đèn sân vườn</a></li>
-                                            </ul>
+                                @foreach (var item in Model)
+                                {
+                                    if (item.MenuId != 7)
+                                    { 
+                                        <li class="first">
+                                            <a href="@Url.Content(item.Link)">@item.Text</a>
                                         </li>
-                                        <li class="children-menu">
-                                            <a href="#">Đèn chiếu sáng cơ bản</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#">Đèn downlight</a></li>
-                                                <li><a href="#">Đèn chiếu điểm</a></li>
-                                                <li><a href="#">Bóng đèn - bộ điện</a></li>
-                                                <li><a href="#">Đèn chiếu điểm Philips</a></li>
-                                            </ul>
+                                    }
+                                    else
+                                    {
+                                        <li class="multicolumn_dropdown drop_to_right children-menu">
+                                            <a href="@Url.Content(item.Link)" class="item_link">
+                                                <span class="link_content">
+                                                    <span class="link_text">@item.Text</span>
+                                                </span>
+                                            </a>
+                                            @{ Html.RenderAction("MenuCategory", "Home");}
                                         </li>
+
                                         <li class="children-menu">
-                                            <a href="#">Đèn chiếu sáng chức năng</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#">Đèn pha</a></li>
-                                                <li><a href="#">Đèn chiếu cây</a></li>
-                                                <li><a href="#">Đèn âm hồ nước</a></li>
-                                            </ul>
+                                            <a href="@Url.Content(item.Link)">@item.Text</a>
+                                            @{ Html.RenderAction("MenuMobileCategory", "Home");}
+                                   
                                         </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Giới thiệu</a></li>
-                                <li><a href="#">Showroom</a></li>
-                                <li><a href="#">Dự án</a></li>
-                                <li><a href="#">Tin tức</a></li>
-                                <li><a href="#">Liên hệ</a></li>
+                                                    }
+
+                                                }
+                               
                             </ul>
                         </nav>
                     </div>

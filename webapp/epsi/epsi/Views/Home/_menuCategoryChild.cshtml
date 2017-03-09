@@ -1,0 +1,14 @@
+﻿@model IEnumerable<epsi.Models.Category>
+
+<ul class="mega_dropdown">
+    @foreach (var item in Model)
+    {
+        <li class="default_dropdown drop_to_right children-menu">
+            <a href="/san-pham/@Url.Content(item.PageURL)" class="item_link ">
+                <span class="link_content">
+                    <span class="link_text">@item.Name</span>
+                </span>
+            </a>
+        </li>
+    }
+</ul>

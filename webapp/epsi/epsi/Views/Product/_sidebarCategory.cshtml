@@ -8,7 +8,7 @@
             @foreach (var item in Model)
             {
                 <li>
-                    <a href="/p/@Url.Content(item.PageURL)" class="title">@item.Name</a>  @{ Html.RenderAction("CountProductbyCate", "Product", new { cateId = item.CategoryId });}
+                    <a href="/san-pham/@Url.Content(item.PageURL)" class="title">@item.Name</a>  @{ Html.RenderAction("CountProductbyCate", "Product", new { cateId = item.CategoryId });}
                     <ul class="children">
                         @{ Html.RenderAction("SidebarCategoryChild", "Product",new { parentId=item.CategoryId});}
                     </ul>

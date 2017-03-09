@@ -16,7 +16,7 @@ namespace epsi
          
             routes.MapRoute(
              name: "product",
-             url: "p/{pageURL}",
+             url: "san-pham/{pageURL}",
              defaults: new { controller = "Product", action = "Index", pageURL = UrlParameter.Optional },
              namespaces: new String[] { "epsi.Controllers" }
           );
