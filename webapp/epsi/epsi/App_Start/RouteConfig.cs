@@ -20,7 +20,13 @@ namespace epsi
              defaults: new { controller = "Product", action = "Index", pageURL = UrlParameter.Optional },
              namespaces: new String[] { "epsi.Controllers" }
           );
-           routes.MapRoute(
+            routes.MapRoute(
+          name: "article",
+          url: "news/{pageURL}",
+          defaults: new { controller = "Article", action = "Index", pageURL = UrlParameter.Optional },
+          namespaces: new String[] { "epsi.Controllers" }
+       );
+            routes.MapRoute(
            name: "productdetail",
            url: "d/{pageURL}",
            defaults: new { controller = "Product", action = "Detail", pageURL = UrlParameter.Optional },

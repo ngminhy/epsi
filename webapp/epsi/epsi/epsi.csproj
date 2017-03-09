@@ -212,6 +212,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\QuickLinkController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -1801,6 +1802,7 @@
     <Content Include="Views\Home\_menuCategoryChild.cshtml" />
     <Content Include="Views\Home\_menuMobileCategory.cshtml" />
     <Content Include="Views\Home\_menuMobileCategoryChild.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

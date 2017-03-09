@@ -5146,12 +5146,11 @@ legend {
 .main-container .blog-page .entry-header {
   background: none;
   border: none;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   position: relative;
   text-align: left;
   padding: 0;
   font-size: 20px;
-  letter-spacing: 3px;
 }
 .main-container .blog-page .entry-header .entry-title {
   text-transform: uppercase;
@@ -5163,7 +5162,7 @@ legend {
   color: #048de7;
 }
 .main-container .blog-page .entry-title {
-  font-size: 24px;
+  font-size: 20px;
   padding: 0;
   text-align: left;
   text-transform: capitalize;
@@ -5184,7 +5183,7 @@ legend {
 .main-container .blog-page .entry-content {
   float: left;
   font-size: 14px;
-  margin: 20px 0;
+  margin: 5px 0;
   line-height: 30px;
   width: 100%;
 }

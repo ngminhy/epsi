@@ -27,19 +27,7 @@ namespace epsi.Controllers
                 var cateId = db.Categorys.Where(p => p.PageURL == pageURL && p.Tag == "Product" && p.IsDeleted).FirstOrDefault();
                 CategoryID = cateId.CategoryId;
             }
-
-                //if (!string.IsNullOrEmpty(pageURL))
-                //{
-                //    ViewBag.Title = ViewBag.Category.Name + (ViewBag.PageIndex > 1 ? " - Page: " + ViewBag.PageIndex : "");
-                //    ViewBag.Description = ViewBag.Category.Description;
-                //    CategoryID = ViewBag.CategoryID = ViewBag.Category.CategoryId;
-                //}
-                //else
-                //{
-                //    ViewBag.Title = "Tin tức" + (ViewBag.PageIndex > 1 ? " - Page: " + ViewBag.PageIndex : "");
-                //    ViewBag.CategoryID = 0;
-                //}
-                var products = db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId ==CategoryID) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
+            var products = db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId ==CategoryID) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
 
             ViewBag.TotalPage = (int)Math.Ceiling(((double)db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId == CategoryID) && p.Active).Count()) / pageSize);
             return View(products);

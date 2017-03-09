@@ -24,7 +24,7 @@
                                         }
                                         else
                                         {
-                                            <li  class="@(Request.Url.AbsolutePath == item.Link ?  "active-menu-item" : "") multicolumn_dropdown drop_to_right children-menu">
+                                            <li  class="@(Request.Url.AbsolutePath.IndexOf(item.Link) !=-1 ?  "active-menu-item" : "") multicolumn_dropdown drop_to_right children-menu">
                                                     <a href="@Url.Content(item.Link)" class="item_link">
                                                         <span class="link_content">
                                                             <span class="link_text">@item.Text</span>
