@@ -1796,6 +1796,7 @@
     <Content Include="Views\Product\_sidebarCategory.cshtml" />
     <Content Include="Views\Product\_sidebarCategoryChild.cshtml" />
     <Content Include="Views\Product\_CountProductByCate.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

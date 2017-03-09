@@ -10,7 +10,6 @@
         <div class="container">
             <div class="row">
                 <div id="secondary" class="col-xs-12 col-md-3 sidebar-category">
-                    @*@{Html.RenderPartial("_sidebarCategory");}*@
                     @{ Html.RenderAction("SidebarCategory", "Product");}
                 </div>
                 <div id="archive-product" class="col-xs-12 col-md-9">
@@ -69,7 +68,7 @@
                                                     <img src="/ImageBrowser/CropImage?path=@item.MainImage.Replace("~/content/images/","")" class="primary_image" alt="@item.Name" />
                                                 </a>
                                                 <span class="shadows"></span>
-                                                <a href="#" class="detail-link quickview">Chi tiết</a>
+                                                <a href="/d/@Url.Content(item.PageURL)" class="detail-link quickview">Chi tiết</a>
                                             </div>
                                         </div>
                                         <div class="list-col8">
@@ -79,7 +78,7 @@
                                                         <a href="#">@item.Name</a>
                                                     </h2>
                                                     <div class="product-id">
-                                                        <a href="#">@item.Code</a>
+                                                        <a href="/d/@Url.Content(item.PageURL)">@item.Code</a>
                                                     </div>
                                                 </div>
                                                 <div class="price-box">
@@ -98,10 +97,10 @@
                                             <div class="listview">
                                                 <div class="product-name-field">
                                                     <h2 class="product-name">
-                                                        <a href="#">@item.Name</a>
+                                                        <a href="/d/@Url.Content(item.PageURL)">@item.Name</a>
                                                     </h2>
                                                     <div class="product-id">
-                                                        <a href="#">@item.Code</a>
+                                                        <a href="/d/@Url.Content(item.PageURL)">@item.Code</a>
                                                     </div>
                                                 </div>
                                                 <div class="price-box">

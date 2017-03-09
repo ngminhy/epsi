@@ -7,7 +7,7 @@
                     <img src="/ImageBrowser/CropImage?path=@Model.MainImage.Replace("~/content/images/","")" class="primary_image" alt="@Model.Name " />
                 </a>
                 <span class="shadows"></span>
-                <a href="#" class="detail-link quickview">Chi tiết</a>
+                <a href="/d/@Url.Content(Model.PageURL)" class="detail-link quickview">Chi tiết</a>
             </div>
         </div>
         <div class="list-col8">

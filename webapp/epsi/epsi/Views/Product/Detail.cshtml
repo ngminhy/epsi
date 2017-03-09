@@ -1,0 +1,139 @@
+﻿@model epsi.Models.Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="product-page">
+        <div class="banner-home-content2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="banner-box banner-box1">
+                            <h2>HƯỚNG DẪN MUA HÀNG</h2>
+                            <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="banner-box banner-box2">
+                            <h2>HƯỚNG DẪN THANH TOÁN</h2>
+                            <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="banner-box banner-box3">
+                            <h2>HỖ TRỢ TRỰC TUYẾN</h2>
+                            <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-view">
+            <div class="product">
+                <div class="container">
+                    <div class="row">
+                        <div id="secondary" class="col-xs-12 col-md-3 sidebar-category">
+                            @{ Html.RenderAction("SidebarCategory", "Product");}
+                        </div>
+                        <div class="col-xs-12 col-md-9 content-box">
+                            @*<div class="single-product-image">
+                                <div class="images single-images gallery">
+                                    <a href="~/Content/images/furniture/product/1.jpg" class="bootexpert-main-image zoom" title="image1xxl-59" data-gal="prettyPhoto[gallery1]">
+                                        <img src="~/Content/images/furniture/product/1.jpg" class="attachment-shop_single" alt="image1xxl (59)"
+                                             title="image1xxl (59)" />
+                                    </a>
+                                    <a href="~/Content/images/furniture/product/1.jpg" class="zoom first" title="image1xxl (35)" data-gal="prettyPhoto[gallery1]">
+                                        <img src="~/Content/images/furniture/product/1.jpg" class="attachment-shop_single" alt="image1xxl (35)" />
+                                    </a>
+                                    <a href="~/Content/images/furniture/product/1.jpg" class="zoom" title="image1xxl (38)" data-gal="prettyPhoto[gallery1]">
+                                        <img src="~/Content/images/furniture/product/1.jpg" class="attachment-shop_single" alt="image1xxl (38)" />
+                                    </a>
+                                    <a href="~/Content/images/furniture/product/1.jpg" class="zoom last" title="image1xxl (31)" data-gal="prettyPhoto[gallery1]">
+                                        <img src="~/Content/images/furniture/product/1.jpg" class="attachment-shop_single" alt="image1xxl (31)" />
+                                    </a>
+                                </div>
+                                <div class="thumbnails single-thumbnails columns-3">
+                                    <div>
+                                        <img src="~/Content/images/furniture/product/3_6-185x185.jpg" alt="image1xxl (59)" />
+                                    </div>
+                                    <div>
+                                        <img src="~/Content/images/furniture/product/3_6-185x185.jpg" alt="image1xxl (35)" />
+                                    </div>
+                                    <div>
+                                        <img src="~/Content/images/furniture/product/3_6-185x185.jpg" alt="image1xxl (38)" />
+                                    </div>
+                                    <div>
+                                        <img src="~/Content/images/furniture/product/3_6-185x185.jpg" alt="image1xxl (31)" />
+                                    </div>
+                                </div>
+                            </div>*@
+
+                             <div class="single-product-image">
+                                <a href="#">
+                                    <img src="~/Content/images/furniture/product/1.jpg" class="attachment-shop_single"/>
+                                </a>
+                            </div> 
+
+                            <div class="summary entry-summary single-product-info">
+                                <h2 class="product_title entry-title">@Model.Name</h2>
+                                <div class="product-id">
+                                    <p>Mã sản phẩm: @Model.Code</p>
+                                </div>
+                                <div class="short-description">
+                                    <p>@Model.Description</p>
+                                </div>
+                                <div class="price-box">
+                                    <p class="price">
+                                        <ins><span class="amount">@string.Format("{0:0,0}", Model.Price) VNĐ</span></ins>
+                                    </p>
+                                </div>
+                                <form class="cart" method="post" enctype='multipart/form-data'>
+                                    <div class="quantity">
+                                        <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" />
+                                    </div>
+                                    <button type="submit" class="single_add_to_cart_button button alt">Thêm vào giỏ</button>
+                                </form>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="bootexpert-tabs wc-tabs-wrapper">
+                                <ul class="tabs parveztabs">
+                                    <li rel="tab-description" class="tab active">
+                                        <a>Thông tin chi tiết</a>
+                                    </li>
+                                    <li rel="tab-addi-info" class="tab">
+                                        <a>Thông số kỹ thuật</a>
+                                    </li>
+                                </ul>
+                                <div class="panel active" id="tab-description">
+                                    @Model.Content
+                                </div>
+                                <div class="panel" id="tab-addi-info">
+                                    <table class="shop_attributes">
+                                        <tbody>
+                                            <tr class="">
+                                                <th>Color</th>
+                                                <td class="product_weight">Rad, Black</td>
+                                            </tr>
+                                            <tr class="alt">
+                                                <th>Dimensions</th>
+                                                <td class="product_dimensions">10 x 20 x 30 cm</td>
+                                            </tr>
+                                            <tr class="">
+                                                <th>Size</th>
+                                                <td><p>L, M, S, XL</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+

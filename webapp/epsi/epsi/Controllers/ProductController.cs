@@ -61,5 +61,11 @@ namespace epsi.Controllers
             ViewBag.countproduct = db.Products.Where(p => p.Active && (p.ParentId == cateId || p.CategoryId == cateId)).Count();
             return PartialView("_CountProductByCate");
         }
+
+        public ActionResult Detail(string pageURL)
+        {
+            var product = db.Products.Where(p => p.Active && p.PageURL == pageURL).FirstOrDefault();
+            return View(product);
+        }
     }
 }
