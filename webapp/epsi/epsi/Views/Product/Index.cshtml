@@ -5,7 +5,7 @@
 }
 
 <div class="page-content">
-    <h1 class="page-title">Sản phẩm</h1>
+    <h1 class="page-title">@ViewBag.cateName</h1>
     <div class="shop_content">
         <div class="container">
             <div class="row">
@@ -15,14 +15,19 @@
                 <div id="archive-product" class="col-xs-12 col-md-9">
                     <div class="archive-border shop-sidebar left-sidebar">
                         <div class="toolbar">
-                            <div class="view-mode">
-                                <a href="#" class="grid  active" title="Grid">
-                                    <i class="fa fa-th-large"></i><span>Grid</span>
-                                </a>
-                                <a href="#" class="list " title="List">
-                                    <i class="fa fa-th-list"></i><span>List</span>
-                                </a>
-                            </div>
+                            @if (Model.Count() != 0)
+                            {
+                                <div class="view-mode">
+                                    <a href="#" class="grid  active" title="Grid">
+                                        <i class="fa fa-th-large"></i><span>Grid</span>
+                                    </a>
+                                    <a href="#" class="list " title="List">
+                                        <i class="fa fa-th-list"></i><span>List</span>
+                                    </a>
+                                </div>
+                            }
+                  
+                      
                             @if (ViewBag.TotalPage > 1)
                             {
                                 <nav class="bootexpert-pagination">
@@ -129,15 +134,26 @@
                             
                  
                         </div>
-                        <div class="toolbar tb-bottom">
-                            <div class="view-mode">
-                                <a href="#" class="grid  active" title="Grid">
-                                    <i class="fa fa-th-large"></i><span>Grid</span>
-                                </a>
-                                <a href="#" class="list " title="List">
-                                    <i class="fa fa-th-list"></i><span>List</span>
-                                </a>
+                        @if (Model.Count() == 0)
+                        {
+                            <div>
+                                <h2>Hiện tại danh mục này không có sản phẩm nào.</h2>
+                                <h2>Chúng tôi sẽ sớm cập nhập sản phẩm mới. Xin vui lòng quay trở lại sau.</h2>
                             </div>
+                        }
+                        <div class="toolbar tb-bottom">
+                            @if (Model.Count() != 0)
+                            {
+                                <div class="view-mode">
+                                    <a href="#" class="grid  active" title="Grid">
+                                        <i class="fa fa-th-large"></i><span>Grid</span>
+                                    </a>
+                                    <a href="#" class="list " title="List">
+                                        <i class="fa fa-th-list"></i><span>List</span>
+                                    </a>
+                                </div>
+                            }
+                    
                             @if (ViewBag.TotalPage > 1)
                             {
                                 <nav class="bootexpert-pagination">

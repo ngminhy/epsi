@@ -21,11 +21,12 @@ namespace epsi.Controllers
             int index = page.HasValue ? page.Value : 1;
             int CategoryID = 0;
             ViewBag.PageIndex = index;
-
+            ViewBag.cateName = "Sản phẩm";
             if (!string.IsNullOrEmpty(pageURL))
             {
                 var cateId = db.Categorys.Where(p => p.PageURL == pageURL && p.Tag == "Product" && p.IsDeleted).FirstOrDefault();
                 CategoryID = cateId.CategoryId;
+                ViewBag.cateName = cateId.Name;
             }
             var products = db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId ==CategoryID) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
 
