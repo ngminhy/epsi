@@ -667,4 +667,30 @@ Version: 1.0
             }
         }
     });
+
+    if ($('#related-news').length) {
+        var relatedNews = $('#related-news');
+        var relatedTop = $('#related-news').offset().top;
+        var relatedHeight = $('#related-news').height();
+
+        $(window).scroll(function(){
+            var limit = $('.footer').offset().top - relatedHeight - 20;
+            var windowTop = $(window).scrollTop();
+
+            if (relatedTop < windowTop){
+                relatedNews.css({ position: 'fixed', top: 0 });
+                relatedNews.addClass('fixed-box');
+            }
+            else {
+                relatedNews.css('position','static');
+                relatedNews.removeClass('fixed-box');
+            }
+            
+            if (limit < windowTop) {
+                var diff = limit - windowTop;
+                relatedNews.css({top: diff});
+            }
+        });
+    }
+
 })(jQuery);

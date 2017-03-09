@@ -72,7 +72,7 @@
 }
 
 #secondary .widget .widget-title {
-	padding: 10px 0px 10px 0px !important;
+	padding: 10px 0px 10px 0px;
 	line-height: 32px;
 	margin: 0px;
 }
@@ -187,15 +187,6 @@ ul.product-categories li a.title {
 	margin-bottom: 0px !important;
 	color: #222222;
 }
-.main-container .blog-page.blog-page .post-thumbnail {
-	width: 25%;
-	border: 1px solid #e5e5e5;
-	padding: 5px;
-}
-.main-container .blog-page.blog-page .postinfo-wrapper {
-	width: 75%;
-	padding-left: 40px;
-}
 .main-container .blog-page .post {
 	border-bottom: 1px solid #e5e5e5;
 	padding-bottom: 40px;
@@ -206,11 +197,35 @@ ul.product-categories li a.title {
 	padding-bottom: 0px !important;
 }
 .main-container .blog-content-page {
-	padding-top: 40px;
+	padding-top: 30px;
+}
+.main-container .blog-content-page .blog-page.single {
+	padding-top: 10px;
 }
 .main-container .blog-page .pagination {
 	text-align: center;
 }
 .main-container .blog-page .entry-summary, .main-container .blog-page .entry-content {
 	text-align: justify;
+}
+.main-container .blog-page .social-sharing {
+	border-bottom: 0px;
+}
+.widget.widget_road_widgets.fixed-box {
+	width: 21.4% !important;
+}
+#related-news .recent-posts ul li {
+	border-bottom: 1px solid #eaeaea !important;
+	margin: 0px !important;
+	padding: 15px 0px 15px 0px !important;
+}
+#related-news h3.widget-title {
+	padding-bottom: : 0px !important;
+	padding-top: 5px !important;
+}
+#related-news .recent-posts ul li .post-wrapper .post-info .post-title {
+	font-size: 12px !important;
+}
+#related-news {
+	padding-top: 0px !important;
 }
