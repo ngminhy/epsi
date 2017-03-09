@@ -1,85 +1,13 @@
-﻿<div class="phm_row hasteck_row phm_row-fluid latest-posts">
+﻿@model IEnumerable<epsi.Models.Article>
+<div class="phm_row hasteck_row phm_row-fluid latest-posts">
     <div class="row-container">
         <div class="parvez_column parvez_column_container parvez_col-sm-12">
             <div class="parvez_wrapper">
                 <div id="posts-carousel-2" class="posts-carousel">
-                    <div class="item-col">
-                        <div class="post-wrapper">
-                            <div class="post-thumb">
-                                <a href="">
-									<img src="~/Content/images/furniture/blog/1-500x500.jpg" class="attachment-road-post-thumb" alt="1" />
-								</a>
-                            </div>
-                            <div class="post-info">
-                                <div class="post-header">
-                                    <h3 class="post-title"><a href="">Hướng đến sự đổi mới thực sự có ý nghĩa đối với bạn.</a></h3>
-                                </div>
-                                <div class="post-excerpt">
-                                    <p>Lịch sử lâu dài về quá trình cải tiến của Philips đưa chúng tôi trở lại lúc ban đầu, khi chúng tôi mang ánh sáng đến cho Châu Âu bằng những công nghệ chiếu sáng tiên phong. Kể từ đó, các đổi mới của chúng tôi đã cải thiện cuộc sống của mọi người trên toàn thế giới. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-col">
-                        <div class="post-wrapper">
-                            <div class="post-thumb">
-                                <a href=""><img src="~/Content/images/furniture/blog/2-500x500.jpg" class="attachment-road-post-thumb" alt="2" /></a>
-                            </div>
-                            <div class="post-info">
-                                <div class="post-header">
-                                    <h3 class="post-title"><a href="~/Content/images/furniture/blog">Hy vọng vào những điều bất ngờ</a></h3>
-                                </div>
-                                <div class="post-excerpt">
-                                    <p>Bệnh tim có thể xảy ra với bất cứ ai, bất cứ lúc nào và bất cứ đâu. Hãy bỏ chút thời gian để tìm hiểu về máy phục hồi tim (CPR) và máy khử rung tim tự động (AED), bạn có thể cứu mình khỏi hậu quả của căn bệnh này. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-col">
-                        <div class="post-wrapper">
-                            <div class="post-thumb">
-                                <a href=""><img src="~/Content/images/furniture/blog/3-500x500.jpg" class="attachment-road-post-thumb" alt="3" /></a>
-                            </div>
-                            <div class="post-info">
-                                <div class="post-header">
-                                    <h3 class="post-title"><a href="">Một thế kỷ dành cho việc nghiên cứu cải thiện đời sống</a></h3>
-                                </div>
-                                <div class="post-excerpt">
-                                    <p>Năm 2014 đánh dấu 100 năm kể từ khi Philips Research được thành lập. Anton và Gerard Philips đã sáng lập Phòng thí nghiệm Natuurkundig Laboratorium vào năm 1914 tại Eindhoven, Hà Lan. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-col">
-                        <div class="post-wrapper">
-                            <div class="post-thumb">
-                                <a href=""><img src="~/Content/images/furniture/blog/4-500x500.jpg" class="attachment-road-post-thumb" alt="4" /></a>
-                            </div>
-                            <div class="post-info">
-                                <div class="post-header">
-                                    <h3 class="post-title"><a href="">Philips ra mắt đèn LED tiên tiến, giá bình dân</a></h3>
-                                </div>
-                                <div class="post-excerpt">
-                                    <p>Công ty TNHH Điện tử Philips Việt Nam vừa công bố triển khai Chiến dịch “LEDs Go Green” nhằm đưa các giải pháp chiếu sáng công nghệ LED tiên tiến với ánh sáng chất lượng cao, tiết kiệm điện năng vào các ứng dụng chiếu sáng nhà ở, thay thế những công nghệ chiếu sáng cũ đã lạc hậu,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-col">
-                        <div class="post-wrapper">
-                            <div class="post-thumb">
-                                <a href=""><img src="~/Content/images/furniture/blog/5-500x500.jpg" class="attachment-road-post-thumb" alt="5" /></a>
-                            </div>
-                            <div class="post-info">
-                                <div class="post-header">
-                                    <h3 class="post-title"><a href="">Philips sẽ khởi động phát triển loại đèn bát mới</a></h3>
-                                </div>
-                                <div class="post-excerpt">
-                                    <p>Đèn led philips mới có 5 hiệu ứng tự nhiên có sẵn, được gọi lần lượt là: Nến ấm áp, Cafe chủ nhật, Thiền, Khu rừng quyến rũ và Đêm phiêu lưu. ản phẩm này mới có hình dạng...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach (var item in Model)
+                    {
+                        @Html.Partial("_BlogItem", item)
+                    }
                 </div>
             </div>
         </div>

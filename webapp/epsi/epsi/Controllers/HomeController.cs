@@ -36,6 +36,23 @@ namespace epsi.Controllers
             return PartialView("_slider", banners);
         }
 
+        public ActionResult FeaturedProduct()
+        {
+            var featuredproduct = db.Products.Where(p => p.IsHome == true && p.IsSpecial == true).ToList();
+            return PartialView("_featuredproduct", featuredproduct);
+        }
+        public ActionResult NewProduct()
+        {
+            var newproduct = db.Products.Where(p => p.IsHome == true && p.IsNew == true).ToList();
+            return PartialView("_newproduct", newproduct);
+        }
+
+        public ActionResult LatestNew()
+        {
+            var latestnew = db.Articles.Where(p => p.Active == true && p.IsHome == true).ToList();
+            return PartialView("_latestnews", latestnew);
+        }
+
         public ActionResult TopMenu()
         {
             var menus = db.Menus.Where(p => p.Tag == "Top").OrderBy(p => p.Order).ToList();

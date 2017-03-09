@@ -67,7 +67,9 @@
                     @Html.LabelFor(model => model.Title, new { @class = "col-sm-3 control-label no-padding-right" })
                     <div class="col-sm-9">
                         @Html.EditorFor(model => model.Title, new { @class = "form-control" })
+                        @Html.EditorFor(model => model.IsHome) Homepage
                         @Html.ValidationMessageFor(model => model.Title)
+
                     </div>
 
                 </div>

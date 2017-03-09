@@ -1,0 +1,35 @@
+﻿@model epsi.Models.Product
+<div class="item-col col-xs-12 col-sm-3">
+    <div class="product-wrapper">
+        <div class="list-col4">
+            <div class="product-image">
+                <a href="" title="@Model.Name">
+                    <img src="/ImageBrowser/CropImage?path=@Model.MainImage.Replace("~/content/images/","")" class="primary_image" alt="@Model.Name " />
+                </a>
+                <span class="shadows"></span>
+                <a href="#" class="detail-link quickview">Chi tiết</a>
+            </div>
+        </div>
+        <div class="list-col8">
+            <div class="gridview">
+                <div class="product-name-field">
+                    <h2 class="product-name">
+                        <a href="#">@Model.Name</a>
+                    </h2>
+                    <div class="product-id">
+                        <a href="#">@Model.Code</a>
+                    </div>
+                </div>
+                <div class="price-box"><ins><span class="amount">@string.Format("{0:0,0}", Model.Price) VNĐ</span></ins></div>
+                <div class="actions clearfix">
+                    <div class="add-cart">
+                        <p class="product bootexpert add_to_cart_inline">
+                            <a href="" class="button add_to_cart_button">Thêm vào giỏ</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

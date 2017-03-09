@@ -1,0 +1,18 @@
+﻿@model epsi.Models.Article
+<div class="item-col">
+    <div class="post-wrapper">
+        <div class="post-thumb">
+            <a href="">
+                <img src="/ImageBrowser/CropImage?path=@Model.MainImage.Replace("~/content/images/","")" class="attachment-road-post-thumb" alt="@Model.Title" />
+            </a>
+        </div>
+        <div class="post-info">
+            <div class="post-header">
+                <h3 class="post-title"><a href="">@Model.Title</a></h3>
+            </div>
+            <div class="post-excerpt">
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>

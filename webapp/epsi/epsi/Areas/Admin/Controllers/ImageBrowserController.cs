@@ -94,7 +94,7 @@ namespace epsi.Areas.Admin.Controllers
                 if (System.IO.File.Exists(physicalPath))
                 {
                     Response.AddFileDependency(physicalPath);
-                    return CropImage(physicalPath, 300, 300);
+                    return CropImage(physicalPath, 500, 500);
                 }
                 else
                 {

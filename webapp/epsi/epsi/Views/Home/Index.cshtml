@@ -7,10 +7,10 @@
         <div class="entry-content">
             @{Html.RenderAction("slider", "Home");}
             @{Html.RenderPartial("_productbycategory");}
-            @{Html.RenderPartial("_featuredproduct");}
+            @{Html.RenderAction("FeaturedProduct", "Home");}
             @{Html.RenderPartial("_branch");}
-            @{Html.RenderPartial("_newproduct");}
-            @{Html.RenderPartial("_latestnews");}
+            @{Html.RenderAction("NewProduct", "Home");}
+            @{Html.RenderAction("LatestNew", "Home");}
         </div>
     </article>
 </div>

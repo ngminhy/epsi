@@ -19,6 +19,7 @@ namespace epsi.Models
         [StringLength(200)]
         public String Keyword { get; set; }
         public bool Active { get; set; }
+        public bool IsHome { get; set; }
         public Int16 Order { get; set; }
         [StringLength(200)]
         public String MainImage { get; set; }
