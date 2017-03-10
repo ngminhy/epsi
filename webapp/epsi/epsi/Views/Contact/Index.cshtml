@@ -1,12 +1,11 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<header class="entry-header">
-    <div class="container">
-        <h1 class="entry-title">Contact</h1>
-    </div>
-</header>
+
 <div class="contact-fom-info">
+    <h1 class="page-title">Liên hệ</h1>
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -19,27 +18,27 @@
                                         <div class="parvez_wrapper">
                                             <div class="parvez_text_column parvez_content_element ">
                                                 <div class="parvez_wrapper">
-                                                    <h2>Leave us a message</h2>
+                                                    <h2>Liên hệ với chúng tôi</h2>
                                                     <div class="wpcf7">
-                                                        <form action="#" method="post" class="wpcf7-form">
+                                                        <form action="" method="post" class="wpcf7-form" id="contact-form">
                                                             <div class="contact-input">
                                                                 <span class="your-name">
-                                                                    <input type="text" name="your-name" value="" size="40" class="wpcf7-text" placeholder="Name (required)" />
+                                                                    <input type="text" name="name" value="" size="40" class="wpcf7-text" placeholder="Họ tên *" required/>
                                                                 </span>
                                                                 <span class="your-email">
-                                                                    <input type="email" name="your-email" value="" size="40" class="wpcf7-text wpcf7-email" placeholder="Email (required)" />
+                                                                    <input type="email" name="email" value="" size="40" class="wpcf7-text wpcf7-email" placeholder="Email *" required/>
                                                                 </span>
                                                                 <span class="your-subject">
-                                                                    <input type="text" name="your-subject" value="" size="40" class="wpcf7-text" placeholder="Subject" />
+                                                                    <input type="text" name="subject" value="" size="40" class="wpcf7-text" placeholder="Tiêu đề *" required/>
                                                                 </span>
                                                             </div>
                                                             <div class="contact-message">
                                                                 <span class="your-message">
-                                                                    <textarea name="your-message" cols="40" rows="10" class="wpcf7-textarea" placeholder="Message"></textarea>
+                                                                    <textarea name="message" cols="40" rows="10" class="wpcf7-textarea" placeholder="Nội dung *" required></textarea>
                                                                 </span>
                                                             </div>
                                                             <div class="contact-submit">
-                                                                <input type="submit" value="Submit Form" class="wpcf7-submit button" />
+                                                                <input type="button" value="Gửi" class="wpcf7-submit button" id="btnSend"/>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -50,25 +49,52 @@
                                     <div class="parvez_column parvez_column_container parvez_col-sm-6">
                                         <div class="parvez_wrapper">
                                             <div class="map-wrapper">
+                                                <h2>Bản đồ</h2>
                                                 <div id="map"></div>
-                                            </div>
-                                            <div class="parvez_text_column parvez_content_element ">
-                                                <div class="parvez_wrapper">
-                                                    <h3><strong>GIVE US A CALL</strong></h3>
-                                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                                                    <p class="phone">0987. 654. 321</p>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- .entry-content -->
                     </article>
-                    <!-- #post -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<!-- Google Map js -->
+<script>
+
+    $("#btnSend").click(function () {
+        $.post("/contact", $("#contact-form").serialize(),
+              function (data) {
+                  alert('Chúng tôi sẽ sớm liên hệ lại với ban. Xin cảm ơn!');
+              });
+    });
+      function initMap() {
+        var uluru = { lat: 10.726052, lng: 106.691866 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+
+        var contentString = '<div>CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ PHÁT TRIỂN EPSI</div><div>44 - 46 Đường Số 12, Tổ 2, KP 1, Biệt Thự Ven Sông, P.Tân Phong, Q.7, TP.HCM</div>'
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+</script>
+<script type='text/javascript' src="http://maps.google.com/maps/api/js?key=AIzaSyDQ0pDRDKSyAO4lm10ttEXa2_uoZmWQzHc&sensor=false&callback=initMap"></script>
+

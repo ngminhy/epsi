@@ -20,7 +20,7 @@ namespace epsi.Models
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<QuickLink> QuickLinks { get; set; }
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Contact> Contact { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<FAQ> FAQs { get; set; }

@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
 namespace epsi.Models
 {
-    public class Comment
+    public class Contact
     {
-        public int CommentId { get; set; }
+        public int ContactId { get; set; }
         [StringLength(200)]
         public string FullName { get; set; }
         [StringLength(200)]
-        public string JobTitle { get; set; }
-        
+        public string Email { get; set; }
+        [StringLength(200)]
+        public string Subject { get; set; }
         [StringLength(1000)]
         public string Description { get; set; }
-        [StringLength(200)]
-        public string Tag { get; set; }
-        public int Order { get; set; }
-
     }
 }
