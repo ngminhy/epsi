@@ -1,0 +1,96 @@
+﻿@model epsi.Models.Article
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="page-title">Tin tức</h1>
+<div class="blog-content-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-xs" id="secondary">
+                <div class="sidebar-border">
+                    <aside class="widget widget_road_widgets" id="related-news">
+                        <h3 class="widget-title"><span>Bài viết liên quan</span></h3>
+                        <div class="recent-posts">
+                            <ul>
+                                @foreach (var item in ViewBag.RelatedArticles)
+                                {
+                                    <li>
+                                        <div class="post-wrapper">
+                                            <div class="post-thumb">
+                                                <a href="">
+                                                    <img alt="@item.Title" class="attachment-50x50" src="/ImageBrowser/SmallImageSize?path=@item.MainImage.Replace("~/content/images/","")">
+                                                </a>
+                                            </div>
+                                            <div class="post-info">
+                                                <h3 class="post-title"><a  href="/a/@ViewBag.cateURL/@Url.Content(item.PageURL)">@item.Title</a></h3>
+                                                <div class="post-date">@Model.CreatedDate.ToString("dd/MM/yyyy")</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                          
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                <div class="page-content blog-page single blog-nosidebar">
+                    <article>
+                        <div class="post-thumbnail">
+                            <img width="1170" height="500" alt="@Model.Title" class="attachment-post-thumbnail wp-post-image" src="/ImageBrowser/CropImageSize?path=@Model.MainImage.Replace("~/content/images/","")&width=1170&height=500">
+                        </div>
+                        <header class="entry-header">
+                            <h2 class="entry-title">@Model.Title</h2>
+                        </header>
+                        <div class="entry-meta">
+                            <i class="fa fa-clock-o"></i><span>@Model.CreatedDate.ToString("dd/MM/yyyy HH:mm")</span>
+                        </div>
+                        <div class="postinfo-wrapper">
+                            <div class="post-info">
+                                <div class="entry-content">
+                                    @Html.Raw(Model.Content)
+                                </div>
+                                <div class="social-sharing">
+                                    <div class="widget widget_socialsharing_widget">
+                                        <h3 class="widget-title">Chia sẻ bài viết: </h3>
+                                        <ul class="social-icons">
+                                            <li>
+                                                <a class="facebook social-icon" href="#" title="Facebook" target="_blank">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="twitter social-icon" href="#" title="Twitter" target="_blank">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="pinterest social-icon" href="#" title="Pinterest" target="_blank">
+                                                    <i class="fa fa-pinterest"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="gplus social-icon" href="#" title="Google +" target="_blank">
+                                                    <i class="fa fa-google-plus"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="linkedin social-icon" href="#" title="LinkedIn" target="_blank">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

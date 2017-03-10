@@ -84,6 +84,33 @@ namespace epsi.Areas.Admin.Controllers
         }
 
         [OutputCache(Duration = 86400, VaryByParam = "path")]
+        public virtual ActionResult SmallImageSize(string path)
+        {
+            try
+            {
+                path = NormalizePath(path);
+
+                var physicalPath = Server.MapPath(path);
+
+                if (System.IO.File.Exists(physicalPath))
+                {
+                    Response.AddFileDependency(physicalPath);
+                    return CreateThumbnail(physicalPath, 150, 150);
+                }
+                else
+                {
+                    throw new HttpException(404, "File Not Found");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new HttpException(404, "File Not Found");
+            }
+
+        }
+
+        [OutputCache(Duration = 86400, VaryByParam = "path")]
         public virtual ActionResult CropImage(string path)
         {
             try{
@@ -108,7 +135,34 @@ namespace epsi.Areas.Admin.Controllers
             }
            
         }
-        
+
+        [OutputCache(Duration = 86400, VaryByParam = "path")]
+        public virtual ActionResult CropImageSize(string path,int width,int height)
+        {
+            try
+            {
+                path = NormalizePath(path);
+
+                var physicalPath = Server.MapPath(path);
+
+                if (System.IO.File.Exists(physicalPath))
+                {
+                    Response.AddFileDependency(physicalPath);
+                    return CropImage(physicalPath, width, height);
+                }
+                else
+                {
+                    throw new HttpException(404, "File Not Found");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new HttpException(404, "File Not Found");
+            }
+
+        }
+
 
         private FileContentResult CreateThumbnail(string physicalPath, int width = 80, int height = 80)
         {

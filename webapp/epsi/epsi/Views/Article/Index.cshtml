@@ -29,7 +29,7 @@
                                 <div class="post-info">
                                     <header class="entry-header">
                                         <h2 class="entry-title">
-                                            <a href="#">@item.Title</a>
+                                            <a href="/a/@ViewBag.cateURL/@Url.Content(item.PageURL)">@item.Title</a>
                                         </h2>
                                     </header>
                                     <footer class="entry-meta-small">
@@ -38,7 +38,7 @@
                                     <div class="entry-summary">
                                         <p>@item.Description</p>
                                     </div>
-                                    <a class="readmore" href="#">Xem thêm<i class="fa fa-arrow-right"></i></a>
+                                    <a class="readmore" href="/a/@ViewBag.cateURL/@Url.Content(item.PageURL)">Xem thêm<i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                        </article>

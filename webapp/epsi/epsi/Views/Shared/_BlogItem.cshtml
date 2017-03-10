@@ -1,4 +1,7 @@
 ﻿@model epsi.Models.Article
+@{ 
+    ViewBag.cateURL = "tin-tuc";
+}
 <div class="item-col">
     <div class="post-wrapper">
         <div class="post-thumb">
@@ -8,7 +11,7 @@
         </div>
         <div class="post-info">
             <div class="post-header">
-                <h3 class="post-title"><a href="">@Model.Title</a></h3>
+                <h3 class="post-title"><a href="/a/@ViewBag.cateURL/@Url.Content(Model.PageURL)">@Model.Title</a></h3>
             </div>
             <div class="post-excerpt">
                 <p>@Model.Description</p>

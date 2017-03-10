@@ -5010,8 +5010,10 @@ legend {
 }
 .main-container .blog-page.blog-page .post-thumbnail {
   float: left;
-  width: 40%;
+  width: 25%;
   position: relative;
+  border: 1px solid #e5e5e5;
+  padding: 5px;
 }
 .main-container .blog-page.blog-page .post-thumbnail:before {
   border-top: 1px solid #fff;
@@ -5092,8 +5094,8 @@ legend {
 }
 .main-container .blog-page.blog-page .postinfo-wrapper {
   float: left;
-  width: 60%;
-  padding-left: 70px;
+  width: 75%;
+  padding-left: 40px;
 }
 .main-container .blog-page.blog-page .postinfo-wrapper.no-thumbnail {
   width: 100%;
@@ -6419,13 +6421,14 @@ legend {
 #secondary .widget.widget_road_widgets ul li .post-wrapper .post-thumb a {
   border: 2px solid transparent;
   display: inline-block;
+  width: 65px;
 }
 #secondary .widget.widget_road_widgets ul li .post-wrapper .post-thumb a:hover {
   border: 2px solid #048de7;
   padding-left: 0;
 }
 #secondary .widget.widget_road_widgets ul li .post-wrapper .post-info {
-  margin-left: 65px;
+  margin-left: 75px;
 }
 #secondary .widget.widget_road_widgets ul li .post-wrapper .post-info .post-title {
   font-size: 14px;

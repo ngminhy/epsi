@@ -1803,6 +1803,7 @@
     <Content Include="Views\Home\_menuMobileCategory.cshtml" />
     <Content Include="Views\Home\_menuMobileCategoryChild.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
