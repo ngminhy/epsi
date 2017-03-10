@@ -16,16 +16,19 @@ namespace epsi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(string name,string email,string subject,string message)
+        public ActionResult Index(string name,string email,string phone,string subject,string message)
         {
             var contact = new Contact();
             contact.FullName = name;
             contact.Email = email;
+            contact.Phone = phone;
             contact.Subject = subject;
             contact.Description = message;
             db.Contact.Add(contact);
             db.SaveChanges();
-            return Json(new { data = true },JsonRequestBehavior.AllowGet);
+            ViewBag.message = "Chúng tôi sẽ sớm liên hệ lại với ban. Xin cảm ơn!";
+            return View();
+            //return Json(new { data = true },JsonRequestBehavior.AllowGet);
             
         }
    }

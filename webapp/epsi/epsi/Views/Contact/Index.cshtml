@@ -19,6 +19,13 @@
                                             <div class="parvez_text_column parvez_content_element ">
                                                 <div class="parvez_wrapper">
                                                     <h2>Liên hệ với chúng tôi</h2>
+                                                    @if (!string.IsNullOrEmpty(ViewBag.message))
+                                                    {
+                                                        <div class="alert alert-success alert-dismissable">
+                                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                            <strong></strong> @ViewBag.message
+                                                        </div>
+                                                    }
                                                     <div class="wpcf7">
                                                         <form action="" method="post" class="wpcf7-form" id="contact-form">
                                                             <div class="contact-input">
@@ -27,6 +34,9 @@
                                                                 </span>
                                                                 <span class="your-email">
                                                                     <input type="email" name="email" value="" size="40" class="wpcf7-text wpcf7-email" placeholder="Email *" required/>
+                                                                </span>
+                                                                <span class="your-phone">
+                                                                    <input type="text" name="phone" value="" size="40" class="wpcf7-text" placeholder="Điện thoại *" required />
                                                                 </span>
                                                                 <span class="your-subject">
                                                                     <input type="text" name="subject" value="" size="40" class="wpcf7-text" placeholder="Tiêu đề *" required/>
@@ -38,7 +48,7 @@
                                                                 </span>
                                                             </div>
                                                             <div class="contact-submit">
-                                                                <input type="button" value="Gửi" class="wpcf7-submit button" id="btnSend"/>
+                                                                <input type="submit" value="Gửi" class="wpcf7-submit button" id="btnSend"/>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -68,11 +78,15 @@
 <!-- Google Map js -->
 <script>
 
-    $("#btnSend").click(function () {
-        $.post("/contact", $("#contact-form").serialize(),
-              function (data) {
-                  alert('Chúng tôi sẽ sớm liên hệ lại với ban. Xin cảm ơn!');
-              });
+    $("#btnSend").submit(function (e) {
+        var form = $("#contact-form");
+        $.ajax({
+            url: '/contact',
+            type: form.method,
+            data: $(form).serialize(),
+            then: function (response) {
+            }
+        });
     });
       function initMap() {
         var uluru = { lat: 10.726052, lng: 106.691866 };

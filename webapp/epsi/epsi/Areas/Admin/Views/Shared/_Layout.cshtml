@@ -226,7 +226,13 @@
                     </a>
                     <b class="arrow"></b>
                 </li>
-     
+               <li class="@(ViewContext.RouteData.Values["Controller"].ToString().ToLower().Contains("comment") ? "active" : "")">
+                    <a href="@Url.Action("Index", "Comment")">
+                        <i class="menu-icon fa fa-list-alt"></i>
+                        <span class="menu-text"> Comment </span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
             </ul><!-- /.nav-list -->
             <!-- #section:basics/sidebar.layout.minimize -->
             <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

@@ -14,6 +14,8 @@ namespace epsi.Models
         [StringLength(200)]
         public string Email { get; set; }
         [StringLength(200)]
+        public string Phone { get; set; }
+        [StringLength(200)]
         public string Subject { get; set; }
         [StringLength(1000)]
         public string Description { get; set; }

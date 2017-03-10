@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using epsi.Models;
+@(Html.Kendo().Grid<Contact>()
+    .Name("aricleGrid")
+    .Sortable()
+    .Sortable()
+    .Filterable()
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(p => p.ContactId))
+        .Read(read => read.Action("Get", "Comment"))
+        .Destroy(destroy => destroy.Action("Delete", "Comment"))
+    )
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ContactId).Title("Id").Width(60);
+        columns.Bound(p => p.FullName).Width(160);
+        columns.Bound(p => p.Email).Width(50);
+        columns.Bound(p => p.Phone).Width(50);
+        columns.Bound(p => p.Description).Width(430);
+        //columns.Bound(u => u.ContactId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "comment") + "/#=ContactId#'><span class='k-icon k-edit'></span>Detail</a>");
+        columns.Command(cmd =>
+        {
+
+            cmd.Destroy();
+        });
+
+
+    })
+
+
+)
+
+
+
+
