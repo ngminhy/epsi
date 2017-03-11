@@ -51,5 +51,82 @@
     @Scripts.Render("~/js/prettyPhoto")
     <script type="text/javascript" src="/Content/lib/ntm/jquery.ntm.js"></script>
     @Scripts.Render("~/js/core")
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.4/numeral.min.js"></script>
+
+    <script>
+
+        $(function () {
+
+            function shoppingcart() {
+                cart_item.html("");
+
+                var totalprice = 0;
+                Object.keys(localStorage).forEach(function (key) {
+                    var itemlocal = JSON.parse(localStorage.getItem(key))
+                    totalprice += itemlocal.price * itemlocal.count;
+                    console.log(itemlocal);
+                    var sprice = numeral(itemlocal.price).format('0,0');
+                    var cartappend = '<li>' +
+                                                    '<a href="" class="product-image">' +
+                                                        '<img alt="7" class="attachment-shop_thumbnail" src="'+itemlocal.img.replace('~','')+'"><span class="quantity">' + itemlocal.count + '</span>' +
+                                                    '</a>' +
+                                                    '<div class="product-details">' +
+        '<a href="" class="product-name">' + itemlocal.name + '</a>' +
+                                                        '<span class="quantity"><span class="amount">' + sprice + ' VNĐ</span></span>' +
+                                                    '</div></li>';
+                    cart_item.append(cartappend);
+                })
+
+                var stotalprice = numeral(totalprice).format('0,0');
+
+                $("#cart-total-header").html("");
+                $("#cart-total-header").html('Giỏ hàng: (<span class="cart-quantity">' + localStorage.length + '</span>)')
+                $("#cart-total-price").html("");
+                $("#cart-total-price").html('<span class="amount">' + stotalprice + ' VNĐ</span>');
+                $("#total-price-footer").html("");
+                $("#total-price-footer").html('Tổng: <span class="amount" >' + stotalprice + ' VNĐ</span>');
+            }
+
+            var listItem = [];
+    var con = $('div'), storageCount = localStorage.length, li_open = '<li>'+
+                                                '<a href="" class="product-image">'+
+                                                    '<img alt="7" class="attachment-shop_thumbnail" src="/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>'+
+                                                '</a>'+
+                                                '<div class="product-details">' +
+    '<a href="" class="product-name">Đèn thả QPG304 (cam)</a>'+
+                                                    '<span class="quantity"><span class="amount">1.472.101 VNĐ</span></span>'+
+                                                '</div></li>', cart_item = $('#cart-item');
+
+	con.find('.add_to_cart_button').on('click', function (e) {
+		e.preventDefault();
+		var dataproduct = $(this).closest('.add_to_cart_button');
+		var item = {
+		    id: dataproduct.attr('data-product-id'),
+		    name: dataproduct.attr('data-product-name'),
+		    price: dataproduct.attr('data-product-price'),
+		    img: dataproduct.attr('data-product-img'),
+		    count: 0
+		}
+		var itemStorage = JSON.parse(localStorage.getItem(item.id));
+		var count = 0;
+		if (itemStorage != null) {
+		    count = JSON.parse(localStorage.getItem(item.id)).count;
+		}
+		count = (count == null || count == 'null') ? 0 : parseInt(count);
+		count++;
+		item.count = count;
+		localStorage.setItem(item.id, JSON.stringify(item));
+
+		shoppingcart();
+	});
+
+
+	if (storageCount) {
+	    shoppingcart();
+	}
+
+});
+    </script>
 </body>
 </html>
