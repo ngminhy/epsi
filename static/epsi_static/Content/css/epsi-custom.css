@@ -310,3 +310,9 @@ ul.product-categories li a.title {
 .bootexpert form .form-row .required {
 	color: red;
 }
+.register .form-action {
+	text-align: center;
+}
+.register .form-action .btn-register {
+	float: none !important;
+}

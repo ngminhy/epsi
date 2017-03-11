@@ -8,7 +8,7 @@
                         <ul id="menu-top-menu" class="nav_menu">
                             <li><a href="#">Tel: 08.3836 2260</a></li>
                             <li><a href="#">Hotline: 0902 820 235</a></li>
-                            <li><a href="#"><b>Đăng nhập</b></a></li>
+                            <li><a href="/account/login"><b>Đăng nhập</b></a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,18 +30,18 @@
                                 <div class="cart-toggler">
                                     <a href="#">
                                         <span class="mini-cart-link">
-                                            <span class="cart-title">
-                                                Giỏ hàng: (<span class="cart-quantity">2</span>)
+                                            <span class="cart-title" id="cart-total-header">
+                                                Giỏ hàng: (<span class="cart-quantity">0</span>)
                                             </span>
                                         </span>
-                                        <span class="cart-total"><span class="amount">2.405.101 VNĐ</span></span>
+                                        <span class="cart-total" id="cart-total-price"><span class="amount">0 VNĐ</span></span>
                                     </a>
                                 </div>
                                 <div class="mini_cart_content">
                                     <div class="mini_cart_inner">
                                         <div class="mini_cart_arrow"></div>
-                                        <ul class="cart_list">
-                                            <li>
+                                        <ul class="cart_list" id="cart-item">
+                                            @*<li>
                                                 <a href="" class="product-image">
                                                     <img alt="7" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>
                                                 </a>
@@ -60,9 +60,9 @@
                                                     <a href="" class="product-name">Đèn Trẻ Em</a>
                                                     <span class="quantity"><span class="amount">933.000 VNĐ</span></span>
                                                 </div>
-                                            </li>
+                                            </li>*@
                                         </ul><!-- end product list -->
-                                        <p class="total">Tổng: <span class="amount">2.405.101 VNĐ</span></p>
+                                        <p class="total" id="total-price-footer">Tổng: <span class="amount" >0 VNĐ</span></p>
                                         <p class="buttons">
                                             <a class="button checkout wc-forward" href="#">Thanh toán</a>
                                         </p>

@@ -153,11 +153,12 @@ namespace epsi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                model.Name = "user";
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PhoneNumber = model.PhoneNumber };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //Assign Role to user Here 
+                    //Assign Role to user Here                    
                     await this.UserManager.AddToRoleAsync(user.Id, model.Name);
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
