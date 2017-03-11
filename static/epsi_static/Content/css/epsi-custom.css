@@ -229,3 +229,47 @@ ul.product-categories li a.title {
 #related-news {
 	padding-top: 0px !important;
 }
+.about-page {
+	padding-top: 40px;
+}
+.about-page .intro {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.about-page h2 {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+.about-page .intro p {
+	font-size: 14px;
+}
+.about-page blockquote {
+	margin-top: 0px;
+	margin-left: 0px;
+	padding: 20px 35px;
+}
+.about-page .entry-content h2 {
+	font-size: 16px !important;
+	text-transform: uppercase;
+}
+.about-page .entry-content {
+	margin: 0px !important;
+}
+.about-page .about-content {
+	background: #f9f9f9;
+	padding: 20px;
+	margin-bottom: 50px !important;
+}
+.about-page .about-content article {
+	margin: 0px !important;
+}
+.about-page .about-content .post-thumbnail {
+	margin: 0px !important;
+}
+.main-container .certificate-posts .posts-carousel .slick-list .item-col {
+	padding: 0 15px;
+}
+.main-container .certificate-posts .post-wrapper {
+    padding: 7px;
+    border: 1px solid #e5e5e5;
+}
