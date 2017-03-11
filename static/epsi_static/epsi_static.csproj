@@ -522,6 +522,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Forgottenpassword.cshtml" />
     <Content Include="Views\Account\Resetpassword.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
