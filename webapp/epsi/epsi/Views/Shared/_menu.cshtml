@@ -24,18 +24,18 @@
                                         }
                                         else
                                         {
-                                            <li  class="@(Request.Url.AbsolutePath.IndexOf(item.Link) !=-1 ?  "active-menu-item" : "") multicolumn_dropdown drop_to_right children-menu">
-                                                    <a href="@Url.Content(item.Link)" class="item_link">
-                                                        <span class="link_content">
-                                                            <span class="link_text">@item.Text</span>
-                                                        </span>
-                                                    </a>
-                                                @{ Html.RenderAction("MenuCategory", "Home");}     
-                                                </li>
-                                        }
+                                            <li class="@(Request.Url.AbsolutePath.IndexOf(item.Link) !=-1 ?  "active-menu-item" : "") multicolumn_dropdown drop_to_right children-menu">
+                                                <a href="@Url.Content(item.Link)" class="item_link">
+                                                    <span class="link_content">
+                                                        <span class="link_text">@item.Text</span>
+                                                    </span>
+                                                </a>
+                                                @{ Html.RenderAction("MenuCategory", "Home");}
+                                            </li>
+                                                        }
 
-                                    }
-         
+                                                    }
+
                                 </ul>
                             </nav>
                         </div>
@@ -50,7 +50,7 @@
                                 @foreach (var item in Model)
                                 {
                                     if (item.MenuId != 7)
-                                    { 
+                                    {
                                         <li class="first">
                                             <a href="@Url.Content(item.Link)">@item.Text</a>
                                         </li>
@@ -69,12 +69,13 @@
                                         <li class="children-menu">
                                             <a href="@Url.Content(item.Link)">@item.Text</a>
                                             @{ Html.RenderAction("MenuMobileCategory", "Home");}
-                                   
+
                                         </li>
                                                     }
 
                                                 }
-                               
+                                <li class="login"><a href="@Url.Action("Login","Account")"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+
                             </ul>
                         </nav>
                     </div>
