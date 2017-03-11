@@ -316,3 +316,8 @@ ul.product-categories li a.title {
 .register .form-action .btn-register {
 	float: none !important;
 }
+@media screen and (max-width: 992px) {
+	.main-container .shop-products .item-col .product-wrapper .list-col8 .gridview {
+		text-align: center !important;
+	}
+}

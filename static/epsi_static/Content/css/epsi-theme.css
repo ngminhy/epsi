@@ -7806,12 +7806,14 @@ body.error404 .form404-wrapper a:hover {
     position: relative;
     width: 100%;
   }
+  .nav-container .mobile-menu-container ul.nav-menu > li.login a, .nav-container .mobile-menu-container ul.nav-menu > li.login i {
+    color: #048de7;
+  }
   .nav-container .mobile-menu-container ul.nav-menu > li > a {
     border-top: 1px solid #ddd;
     color: #666;
     display: block;
     float: left;
-  
     font-size: 14px;
     height: 40px;
     line-height: 40px;
