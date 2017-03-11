@@ -229,47 +229,90 @@ ul.product-categories li a.title {
 #related-news {
 	padding-top: 0px !important;
 }
-.about-page {
+.main-container .about-page {
 	padding-top: 40px;
 }
-.about-page .intro {
+.main-container .about-page .intro {
 	margin-bottom: 50px;
 	text-align: center;
 }
-.about-page h2 {
-	font-size: 30px;
+.main-container .about-page h2 {
+	font-size: 20px;
 	text-transform: uppercase;
 }
-.about-page .intro p {
+.main-container .about-page .intro p {
 	font-size: 14px;
 }
-.about-page blockquote {
+.main-container .about-page blockquote {
 	margin-top: 0px;
 	margin-left: 0px;
 	padding: 20px 35px;
 }
-.about-page .entry-content h2 {
+.main-container .about-page .entry-content h2 {
 	font-size: 16px !important;
 	text-transform: uppercase;
 }
-.about-page .entry-content {
+.main-container .about-page .entry-content {
 	margin: 0px !important;
 }
-.about-page .about-content {
+.main-container .about-page .about-content {
 	background: #f9f9f9;
 	padding: 20px;
 	margin-bottom: 50px !important;
 }
-.about-page .about-content article {
+.main-container .about-page .about-content article {
 	margin: 0px !important;
 }
-.about-page .about-content .post-thumbnail {
+.main-container .about-page .about-content .post-thumbnail {
 	margin: 0px !important;
 }
 .main-container .certificate-posts .posts-carousel .slick-list .item-col {
-	padding: 0 15px;
+	margin: 0 15px;
+	height: 490px !important;
+	border: 1px solid #e5e5e5;
 }
 .main-container .certificate-posts .post-wrapper {
     padding: 7px;
-    border: 1px solid #e5e5e5;
+}
+.main-container .certificate-posts .parvez_wrapper h3 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.main-container .certificate-posts .parvez_content_element {
+	margin-bottom: 0px !important;
+}
+.main-container .contact-page .contact-submit input:hover {
+	text-decoration: none;
+	background: #3b4251;
+}
+.main-container .login-page {
+	padding-top: 40px;
+}
+.main-container .page-content .entry-content .customer_login form.login .form-action {
+	padding: 15px 25px;
+}
+.main-container .page-content .entry-content .customer_login .second_box {
+	text-align: center;
+	color: #222222;
+	font-size: 14px;
+	clear: both;
+}
+.main-container .page-content .entry-content .customer_login .second_box a {
+	color: #048DE8;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.main-container .page-content .button:hover {
+	background: #3b4251;
+	text-decoration: none;
+}
+.bootexpert form .form-row .required {
+	color: red;
+}
+.register .form-action {
+	text-align: center;
+}
+.register .form-action .btn-register {
+	float: none !important;
 }

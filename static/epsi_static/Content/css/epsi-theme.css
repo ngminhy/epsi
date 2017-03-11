@@ -236,7 +236,6 @@ legend {
   border: 1px solid #bfbfbf;
   font-size: 0;
   margin-top: -30px;
-  border-radius: 100%;
   z-index: 2;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -264,7 +263,7 @@ legend {
   left: 7px;
 }
 .wrapper .slick-slider button.slick-prev:before {
-  content: "\f104";
+  content: "\f105";
 }
 .wrapper .slick-dots {
   position: static;
@@ -3987,7 +3986,7 @@ legend {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   height: 32px;
-  max-width: 100%;
+  width: 100%;
   padding: 0 0 0 10px;
 }
 .main-container .page-content textarea {
@@ -4078,8 +4077,9 @@ legend {
   text-transform: uppercase;
 }
 .main-container .page-content .entry-content .bootexpert form label {
-
+  display: block;
   margin: 0 0 5px;
+  line-height: 2;
 }
 .main-container .page-content .entry-content .bootexpert form fieldset {
   float: left;
