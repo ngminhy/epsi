@@ -21,21 +21,19 @@
                                                         <section id="loginForm">
                                                             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login", role = "form" }))
                                                             {
-
-
                                                                 <div class="form-fields">
                                                                     <h2><i class="fa fa-lock"></i> Đăng nhập</h2>
                                                                     @Html.AntiForgeryToken()
-                                                                    @Html.ValidationSummary(true, "Địa chỉ email hoặc mật khẩu không đúng", new { @class = "text-danger" })
+                                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                                                     <p class="form-row form-row-wide">
                                                                         @Html.LabelFor(m => m.Email)
                                                                         @Html.TextBoxFor(m => m.Email, new { @class = "input-text" })
-                                                                        @Html.ValidationMessageFor(m => m.Email, "Vui lòng nhập địa chỉ email", new { @class = "text-danger" })
+                                                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                                                     </p>
                                                                     <p class="form-row form-row-wide">
                                                                         @Html.LabelFor(m => m.Password)
                                                                         @Html.PasswordFor(m => m.Password, new { @class = "input-text" })
-                                                                        @Html.ValidationMessageFor(m => m.Password, "Vui lòng nhập mật khẩu", new { @class = "text-danger" })
+                                                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                                                     </p>
                                                                     <div class="form-action">
                                                                         <p class="lost_password">
@@ -44,12 +42,10 @@
                                                                         <input type="submit" class="button" name="login" value="Đăng nhập" />
                                                                     </div>
                                                                 </div>
-
-                                                               
                                                             }
                                                         </section>                                                       
                                                         <div class="second_box">
-                                                            <p>Bạn chưa có tài khoản? <a href="/account/register">Đăng ký</a></p>
+                                                            <p>Bạn chưa có tài khoản? @Html.ActionLink("Đăng ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</p>
                                                         </div>
                                                     </div>
                                                 </div>

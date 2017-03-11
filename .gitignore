@@ -155,8 +155,8 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
-.vs/config/applicationhost.config
-Biz4CMS/Biz4CMS.csproj
-Biz4CMS/Web.config
-Biz4CMS/packages.config
-packages/
+
+webapp/epsi/.vs/*
+webapp/epsi/epsi/Web.config
+webapp/epsi/epsi/packages.config
+webapp/epsi/packages/
