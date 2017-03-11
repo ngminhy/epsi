@@ -8,7 +8,25 @@
                         <ul id="menu-top-menu" class="nav_menu">
                             <li><a href="#">Tel: 08.3836 2260</a></li>
                             <li><a href="#">Hotline: 0902 820 235</a></li>
-                            <li><a href="/account/login"><b>Đăng nhập</b></a></li>
+                            @using Microsoft.AspNet.Identity
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li>
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", style = "font-weight:bold;" })
+                                </li>
+                                <li>
+                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                    {
+                                        @Html.AntiForgeryToken()<a href="javascript:document.getElementById('logoutForm').submit()"><b>Đăng xuất</b></a> }
+                                </li>
+                            }
+                            else
+                            {
+
+                                <li>@Html.ActionLink("Đăng ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", style = "font-weight:bold;" })</li>
+                                <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", style = "font-weight:bold;" })</li>
+
+                            }
                         </ul>
                     </div>
                 </div>
@@ -42,27 +60,27 @@
                                         <div class="mini_cart_arrow"></div>
                                         <ul class="cart_list" id="cart-item">
                                             @*<li>
-                                                <a href="" class="product-image">
-                                                    <img alt="7" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>
-                                                </a>
-                                                <div class="product-details">
-                                                    <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
-                                                    <a href="" class="product-name">Đèn thả QPG304 (cam)</a>
-                                                    <span class="quantity"><span class="amount">1.472.101 VNĐ</span></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="" class="product-image">
-                                                    <img alt="1" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/1-185x185.jpg"><span class="quantity">1</span>
-                                                </a>
-                                                <div class="product-details">
-                                                    <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
-                                                    <a href="" class="product-name">Đèn Trẻ Em</a>
-                                                    <span class="quantity"><span class="amount">933.000 VNĐ</span></span>
-                                                </div>
-                                            </li>*@
+                                                    <a href="" class="product-image">
+                                                        <img alt="7" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
+                                                        <a href="" class="product-name">Đèn thả QPG304 (cam)</a>
+                                                        <span class="quantity"><span class="amount">1.472.101 VNĐ</span></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" class="product-image">
+                                                        <img alt="1" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/1-185x185.jpg"><span class="quantity">1</span>
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
+                                                        <a href="" class="product-name">Đèn Trẻ Em</a>
+                                                        <span class="quantity"><span class="amount">933.000 VNĐ</span></span>
+                                                    </div>
+                                                </li>*@
                                         </ul><!-- end product list -->
-                                        <p class="total" id="total-price-footer">Tổng: <span class="amount" >0 VNĐ</span></p>
+                                        <p class="total" id="total-price-footer">Tổng: <span class="amount">0 VNĐ</span></p>
                                         <p class="buttons">
                                             <a class="button checkout wc-forward" href="#">Thanh toán</a>
                                         </p>
