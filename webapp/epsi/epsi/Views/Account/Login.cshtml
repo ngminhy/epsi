@@ -3,56 +3,67 @@
 @{
     ViewBag.Title = "Log in";
 }
-<header class="entry-header">
-    <div class="container">
-        <h1 class="entry-title">My Account</h1>
-    </div>
-</header>
-<div class="page-content">
+
+<div class="page-content login-page">
     <div class="container">
         <article class="page type-page status-publish hentry">
             <div class="entry-content">
-                <div class="customer_login" id="customer_login">
-                    <div class="row">                       
-                        <section id="loginForm">
-                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                    <div class="col-md-10">
-                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                                    <div class="col-md-10">
-                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <div class="checkbox">
-                                            @Html.CheckBoxFor(m => m.RememberMe)
-                                            @Html.LabelFor(m => m.RememberMe)
+                <div class="phm_row hasteck_row phm_row-fluid">
+                    <div class="row-container">
+                        <div class="parvez_column parvez_column_container parvez_col-sm-12">
+                            <div class="parvez_wrapper">
+                                <div class="parvez_text_column parvez_content_element ">
+                                    <div class="parvez_wrapper">
+                                        <div class="bootexpert">
+                                            <div class="customer_login" id="customer_login">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                                                        <section id="loginForm">
+                                                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login", role = "form" }))
+                                                            {
+
+
+                                                                <div class="form-fields">
+                                                                    <h2><i class="fa fa-lock"></i> Đăng nhập</h2>
+                                                                    @Html.AntiForgeryToken()
+                                                                    @Html.ValidationSummary(true, "Địa chỉ email hoặc mật khẩu không đúng", new { @class = "text-danger" })
+                                                                    <p class="form-row form-row-wide">
+                                                                        @Html.LabelFor(m => m.Email)
+                                                                        @Html.TextBoxFor(m => m.Email, new { @class = "input-text" })
+                                                                        @Html.ValidationMessageFor(m => m.Email, "Vui lòng nhập địa chỉ email", new { @class = "text-danger" })
+                                                                    </p>
+                                                                    <p class="form-row form-row-wide">
+                                                                        @Html.LabelFor(m => m.Password)
+                                                                        @Html.PasswordFor(m => m.Password, new { @class = "input-text" })
+                                                                        @Html.ValidationMessageFor(m => m.Password, "Vui lòng nhập mật khẩu", new { @class = "text-danger" })
+                                                                    </p>
+                                                                    <div class="form-action">
+                                                                        <p class="lost_password">
+                                                                            <a href="#">Quên mật khẩu?</a>
+                                                                        </p>
+                                                                        <input type="submit" class="button" name="login" value="Đăng nhập" />
+                                                                    </div>
+                                                                </div>
+
+                                                               
+                                                            }
+                                                        </section>                                                       
+                                                        <div class="second_box">
+                                                            <p>Bạn chưa có tài khoản? <a href="/account/register">Đăng ký</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Log in" class="btn btn-default" />
-                                    </div>
-                                </div>                               
-                               
-                            }
-                        </section>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </article>
     </div>
 </div>
+
 
