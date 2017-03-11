@@ -1,0 +1,88 @@
+﻿@model epsi.Models.Article
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="about-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="intro">
+                    <h2>@Model.Title</h2>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row blog-page single about-content">
+            <article>
+                <div class="col-xs-12 col-md-5">
+                    <div class="post-thumbnail">
+                        <img alt="@Model.Title" class="attachment-post-thumbnail wp-post-image" src="/ImageBrowser/CropImageSize?path=@Model.MainImage.Replace("~/content/images/","")&width=500&height=500">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="postinfo-wrapper">
+                        <div class="post-info">
+                            <div class="entry-content">
+                              @Html.Raw(Model.Content)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="phm_row hasteck_row phm_row-fluid">
+                    <div class="row-container">
+                        <div class="parvez_column parvez_column_container parvez_col-sm-12 certificate-posts">
+                            <div class="parvez_wrapper">
+                                <div class="parvez_text_column parvez_content_element">
+                                    <div class="parvez_wrapper">
+                                        <h3>Chứng nhận nhà phân phối</h3>
+                                    </div>
+                                </div>
+                                <div id="posts-carousel-4" class="posts-carousel">
+                                    <div class="item-col">
+                                        <div class="post-wrapper">
+                                            <div class="post-thumb">
+                                                <a href="">
+                                                    <img src="~/Content/images/chungnhan/2015.jpg" class="attachment-road-post-thumb" alt="1" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-col">
+                                        <div class="post-wrapper">
+                                            <div class="post-thumb">
+                                                <a href=""><img src="~/Content/images/chungnhan/CN_-_2014.jpg" class="attachment-road-post-thumb" alt="2" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-col">
+                                        <div class="post-wrapper">
+                                            <div class="post-thumb">
+                                                <a href=""><img src="~/Content/images/chungnhan/2014-2.jpg" class="attachment-road-post-thumb" alt="3" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-col">
+                                        <div class="post-wrapper">
+                                            <div class="post-thumb">
+                                                <a href=""><img src="~/Content/images/chungnhan/2013.jpg" class="attachment-road-post-thumb" alt="4" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -379,6 +379,42 @@ Version: 1.0
             }]
         });
 
+        // Chung Nhan About
+        $('#posts-carousel-4').slick({
+            infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            speed: 500,
+            easing: 'linear',
+            swipeToSlide: true,
+            autoplaySpeed: 1000,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+
         //Products carousel
         $('.home-tabs-glass .shop-products, #shop-products-accessories, #shop-products-kids, #featured_products_digital, #new_products_digital_slide3, .digital3 .shop-products, #posts-carousel-3, .latest_products .shop-products').slick({
             arrows: true,
