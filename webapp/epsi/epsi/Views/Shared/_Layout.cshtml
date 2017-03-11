@@ -65,7 +65,6 @@
                 Object.keys(localStorage).forEach(function (key) {
                     var itemlocal = JSON.parse(localStorage.getItem(key))
                     totalprice += itemlocal.price * itemlocal.count;
-                    console.log(itemlocal);
                     var sprice = numeral(itemlocal.price).format('0,0');
                     var cartappend = '<li>' +
                                                     '<a href="" class="product-image">' +
@@ -114,7 +113,13 @@
 		    count = JSON.parse(localStorage.getItem(item.id)).count;
 		}
 		count = (count == null || count == 'null') ? 0 : parseInt(count);
-		count++;
+		var inputQty = $("#inputQty").val();
+		if (inputQty != undefined) {
+		    count += parseInt(inputQty);
+		} else {
+		    count++;
+
+		}
 		item.count = count;
 		localStorage.setItem(item.id, JSON.stringify(item));
 
