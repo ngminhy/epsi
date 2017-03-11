@@ -142,14 +142,13 @@ body {
 .wrapper .slick-slider button {
   opacity: 1;
   visibility: visible;
-  border-radius: 100%;
   background: #b3b3b3;
   top: 0;
   right: 15px;
 }
 .wrapper .slick-slider button:before {
   color: #fff;
-  content: "\f061";
+  content: "\f105";
   font-size: 11px;
 }
 .wrapper .slick-slider button.slick-prev {
@@ -157,7 +156,7 @@ body {
   right: 50px;
 }
 .wrapper .slick-slider button.slick-prev:before {
-  content: "\f060";
+  content: "\f104";
 }
 .main-container .home-slider {
   margin-right: 0;
@@ -944,7 +943,6 @@ body {
   background: linear-gradient(to bottom,#048de7 0,#048de7 100%);
   padding: 0 10px;
   border-radius: 0;
-  border-bottom: 4px solid #ececec;
 }
 .main-container .product-view .summary.single-product-info .cart button.button:before {
   content: "\f07a";
@@ -1146,7 +1144,7 @@ body {
   clear: none;
 }
 .front-page .parvez_content_element .parvez_wrapper h3 {
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid #e5e5e5;
   padding: 0 0 5px;
 }
@@ -1228,6 +1226,7 @@ body {
 .main-container .brands .parvez_content_element .parvez_wrapper h3 {
   border: 0;
   padding: 0;
+  text-align: center;
 }
 .main-container .latest-posts .posts-carousel .slick-list {
   padding: 0 0 10px;

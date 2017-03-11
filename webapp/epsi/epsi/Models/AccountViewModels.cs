@@ -47,13 +47,13 @@ namespace epsi.Models
     }
 
     public class LoginViewModel
-    {
-        [Required]
+    {        
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ email")]
         [Display(Name = "Địa chỉ email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
@@ -67,12 +67,12 @@ namespace epsi.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ email")]
         [EmailAddress]
         [Display(Name = "Địa chỉ email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]
@@ -83,15 +83,15 @@ namespace epsi.Models
         [Compare("Password", ErrorMessage = "Nhập lại mật khẩu không chính xác.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập họ tên")]
         [Display(Name = "Họ tên")]
         public string FullName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
         [Display(Name = "Địa chỉ")]
         public string Address { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
         [Display(Name = "Số điện thoại")]
         public string PhoneNumber { get; set; }
 
