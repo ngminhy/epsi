@@ -409,3 +409,11 @@ ul.product-categories li a.title {
 	padding: 5px;
 	border: 1px solid #e5e5e5;
 }
+.main-container .empty-content {
+	text-align: center;
+	padding-bottom: 30px;
+}
+.main-container .empty-content h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+}

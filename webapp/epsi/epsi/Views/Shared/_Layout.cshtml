@@ -57,24 +57,25 @@
     <script>
 
         $(function () {
+            var con          = $('div'), storageCount = localStorage.length;
+            var $cartContent = $('.widget_shopping_cart_content .mini_cart_content');
 
             function shoppingcart() {
-                cart_item.html("");
-
+                var $cartItem  = $('#cart-item');
                 var totalprice = 0;
+                $cartItem.html("");
                 Object.keys(localStorage).forEach(function (key) {
                     var itemlocal = JSON.parse(localStorage.getItem(key))
                     totalprice += itemlocal.price * itemlocal.count;
                     var sprice = numeral(itemlocal.price).format('0,0');
                     var cartappend = '<li>' +
-                                                    '<a href="" class="product-image">' +
-                                                        '<img alt="7" class="attachment-shop_thumbnail" src="'+itemlocal.img.replace('~','')+'"><span class="quantity">' + itemlocal.count + '</span>' +
-                                                    '</a>' +
-                                                    '<div class="product-details">' +
-        '<a href="" class="product-name">' + itemlocal.name + '</a>' +
-                                                        '<span class="quantity"><span class="amount">' + sprice + ' VNĐ</span></span>' +
-                                                    '</div></li>';
-                    cart_item.append(cartappend);
+                        '<a href="" class="product-image">' +
+                        '<img alt="7" class="attachment-shop_thumbnail" src="'+itemlocal.img.replace('~','')+'"><span class="quantity">' + itemlocal.count + '</span></a>' +
+                        '<div class="product-details">' +
+                        '<a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>'+
+                        '<a href="" class="product-name">' + itemlocal.name + '</a>' +
+                        '<span class="quantity"><span class="amount">' + sprice + ' VNĐ</span></span>' +'</div></li>';
+                    $cartItem.append(cartappend);
                 })
 
                 var stotalprice = numeral(totalprice).format('0,0');
@@ -85,53 +86,52 @@
                 $("#cart-total-price").html('<span class="amount">' + stotalprice + ' VNĐ</span>');
                 $("#total-price-footer").html("");
                 $("#total-price-footer").html('Tổng: <span class="amount" >' + stotalprice + ' VNĐ</span>');
+
+                console.log($cartItem.find('li').length);
+
+                if($cartItem.find('li').length == 0) {
+                    $cartContent.addClass('hidden');
+                } else {
+                    $cartContent.removeClass('hidden');
+                }
             }
 
-            var listItem = [];
-    var con = $('div'), storageCount = localStorage.length, li_open = '<li>'+
-                                                '<a href="" class="product-image">'+
-                                                    '<img alt="7" class="attachment-shop_thumbnail" src="/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>'+
-                                                '</a>'+
-                                                '<div class="product-details">' +
-    '<a href="" class="product-name">Đèn thả QPG304 (cam)</a>'+
-                                                    '<span class="quantity"><span class="amount">1.472.101 VNĐ</span></span>'+
-                                                '</div></li>', cart_item = $('#cart-item');
+        	con.find('.add_to_cart_button').on('click', function (e) {
+        		e.preventDefault();
+        		var dataproduct = $(this).closest('.add_to_cart_button');
+        		var item = {
+        		    id: dataproduct.attr('data-product-id'),
+        		    name: dataproduct.attr('data-product-name'),
+        		    price: dataproduct.attr('data-product-price'),
+        		    img: dataproduct.attr('data-product-img'),
+        		    count: 0
+        		}
+        		var itemStorage = JSON.parse(localStorage.getItem(item.id));
+        		var count = 0;
+        		if (itemStorage != null) {
+        		    count = JSON.parse(localStorage.getItem(item.id)).count;
+        		}
+        		count = (count == null || count == 'null') ? 0 : parseInt(count);
+        		var inputQty = $("#inputQty").val();
+        		if (inputQty != undefined) {
+        		    count += parseInt(inputQty);
+        		} else {
+        		    count++;
 
-	con.find('.add_to_cart_button').on('click', function (e) {
-		e.preventDefault();
-		var dataproduct = $(this).closest('.add_to_cart_button');
-		var item = {
-		    id: dataproduct.attr('data-product-id'),
-		    name: dataproduct.attr('data-product-name'),
-		    price: dataproduct.attr('data-product-price'),
-		    img: dataproduct.attr('data-product-img'),
-		    count: 0
-		}
-		var itemStorage = JSON.parse(localStorage.getItem(item.id));
-		var count = 0;
-		if (itemStorage != null) {
-		    count = JSON.parse(localStorage.getItem(item.id)).count;
-		}
-		count = (count == null || count == 'null') ? 0 : parseInt(count);
-		var inputQty = $("#inputQty").val();
-		if (inputQty != undefined) {
-		    count += parseInt(inputQty);
-		} else {
-		    count++;
+        		}
+        		item.count = count;
+        		localStorage.setItem(item.id, JSON.stringify(item));
 
-		}
-		item.count = count;
-		localStorage.setItem(item.id, JSON.stringify(item));
+        		shoppingcart();
+        	});
 
-		shoppingcart();
-	});
-
-
-	if (storageCount) {
-	    shoppingcart();
-	}
-
-});
+        	if (storageCount) {
+        	    shoppingcart();
+                $cartContent.removeClass('hidden');
+        	} else {
+                $cartContent.addClass('hidden');
+            }
+        });
     </script>
 </body>
 </html>
