@@ -4222,12 +4222,12 @@ legend {
   transition: all 0.3s ease;
 }
 .main-container .page-content .entry-content .buttons-cart .continue:hover {
-  background: #cc8200;
+  background: #048de7;
   color: #fff;
   text-shadow: none;
 }
 .main-container .page-content .entry-content .buttons-cart .continue:hover {
-  background: #cc8200;
+  background: #048de7;
   color: #fff;
   text-shadow: none;
 }
@@ -4567,7 +4567,7 @@ legend {
   width: 100%;
 }
 .main-container .page-content .entry-content #order_review #payment .place-order #place_order:hover {
-  background: #cc8200;
+  background: #3b4251;
 }
 .main-container .page-content .entry-content .checkout_coupon {
   border: none;

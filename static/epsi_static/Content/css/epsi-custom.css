@@ -405,3 +405,7 @@ ul.product-categories li a.title {
 	margin: -2px 8px 0 0;
 	vertical-align: middle;
 }
+.main-container .product-view .single-product-image.no-slide {
+	padding: 5px;
+	border: 1px solid #e5e5e5;
+}
