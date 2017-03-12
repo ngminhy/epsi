@@ -160,3 +160,9 @@ webapp/epsi/.vs/*
 webapp/epsi/epsi/Web.config
 webapp/epsi/epsi/packages.config
 webapp/epsi/packages/
+
+static/epsi/.vs/*
+static/packages/
+static/epsi_static/Web.config
+static/epsi_static/packages.config
+
