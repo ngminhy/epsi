@@ -321,3 +321,29 @@ ul.product-categories li a.title {
 		text-align: center !important;
 	}
 }
+.main-container .entry-header {
+	margin-bottom: 20px;
+}s
+.main-container .page-content .entry-content .cart_totals h2 {
+	font-size: 22px;
+}
+.main-container .page-content .entry-content .shop_table td.product-name {
+	text-align: left;
+}
+.main-container .page-content .entry-content .shop_table .cart-total {
+	background: #fbfbfb;
+}
+.main-container .page-content .entry-content .shop_table .cart-total h2 {
+	font-size: 16px;
+	color: #666666;
+	font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.main-container .page-content .entry-content .shop_table .cart-total span.amount {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #048de7;
+}

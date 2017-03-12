@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShopingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -524,6 +525,7 @@
     <Content Include="Views\Account\Forgottenpassword.cshtml" />
     <Content Include="Views\Account\Resetpassword.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\ShopingCart\Cart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
