@@ -526,6 +526,7 @@
     <Content Include="Views\Account\Resetpassword.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\ShopingCart\Cart.cshtml" />
+    <Content Include="Views\ShopingCart\Checkout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

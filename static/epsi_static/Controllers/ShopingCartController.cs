@@ -13,5 +13,9 @@ namespace epsi_static.Controllers
         {
             return View();
         }
+        public ActionResult Checkout()
+        {
+            return View();
+        }
     }
 }

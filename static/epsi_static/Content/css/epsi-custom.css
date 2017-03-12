@@ -347,3 +347,61 @@ ul.product-categories li a.title {
     white-space: nowrap;
     color: #048de7;
 }
+.main-container .page-content .entry-content #checkoutlogin.checkout-login {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.main-container .page-content .entry-content #checkoutlogin {
+    height: auto;
+}
+.main-container .entry-header .entry-title {
+	font-size: 26px;
+}
+.main-container .page-content .entry-content .bootexpert-checkout .bootexpert-billing-fields h3, .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-shipping-fields h3 {
+	font-size: 20px;
+}
+.main-container .page-content .entry-content #order_review_heading {
+	font-size: 20px;
+}
+.main-container .page-content .entry-content #order_review .shop_table .order-total th .amount, .main-container .page-content .entry-content #order_review .shop_table .order-total td .amount {
+	font-size: 20px;
+}
+.main-container .page-content .entry-content .bootexpert-checkout-review-order-table td.product-name {
+	width: 60%;
+}
+.main-container .page-content .entry-content .bootexpert-checkout .bootexpert-billing-fields .input-text, .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-shipping-fields .input-text {
+	height: 32px;
+}
+.main-container .page-content .entry-content .bootexpert-checkout .bootexpert-billing-fields .form-row, .main-container .page-content .entry-content .bootexpert-checkout .bootexpert-shipping-fields .form-row {
+	margin: 0 0 8px;
+}
+.main-container .page-content .entry-content #order_review_heading {
+	margin-bottom: 0px !important;
+}
+.main-container .page-content .entry-content .bootexpert-checkout .create-account {
+	padding: 20px;
+	border: 1px solid #e5e5e5;
+}
+.bootexpert .bootexpert-info {
+	border-top-color: #1e85be;
+}
+.bootexpert .bootexpert-error, .bootexpert .bootexpert-info, .bootexpert .bootexpert-message {
+	padding: 1em 2em 1em 1em!important;
+    margin: 0 0 2em!important;
+    position: relative;
+    background-color: #f7f6f7;
+    color: #515151;
+    border-top: 3px solid #1e85be;
+    list-style: none!important;
+    width: auto;
+    word-wrap: break-word;
+}
+.bootexpert form .form-row label.checkbox {
+	display: inline !important;
+}
+.bootexpert form .form-row .input-checkbox {
+	display: inline;
+	margin: -2px 8px 0 0;
+	vertical-align: middle;
+}

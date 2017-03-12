@@ -739,5 +739,13 @@ Version: 1.0
     $('.product-list-3 .item-col:nth-child(3n)').addClass('last');
     $('.product-list-3 .item-col:nth-child(3n) + .item-col').addClass('first');
 
+    $('.create-account').fadeOut('slow');
+    $('#createaccount').change(function(){
+        if(this.checked)
+            $('.create-account').fadeIn('slow');
+        else
+            $('.create-account').fadeOut('slow');
+
+    });
 
 })(jQuery);
