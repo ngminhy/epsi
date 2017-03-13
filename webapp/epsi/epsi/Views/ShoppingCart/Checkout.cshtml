@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="entry-header">
+    <div class="container">
+        <h1 class="entry-title">Thanh toán</h1>
+    </div>
+</header>
+<div class="page-content">
+    <div class="container">
+        <article class="page type-page status-publish hentry">
+            <div class="entry-content">
+                <div class="phm_row hasteck_row phm_row-fluid">
+                    <div class="row-container">
+                        <div class="parvez_column parvez_column_container parvez_col-sm-12">
+                            <div class="parvez_wrapper">
+                                <div class="parvez_text_column parvez_content_element ">
+                                    <div class="parvez_wrapper">
+                                        <div class="bootexpert">
+                                            <div class="bootexpert-info">
+                                                Bạn đã có tài khoản ?
+                                                <a href="#">Click vào đây để đăng nhập</a>
+                                            </div>
+                                            <form name="checkout" method="post" class="checkout bootexpert-checkout" action="#">
+                                                <div class="col2-set" id="customer_details">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-md-6">
+                                                            <div class="bootexpert-billing-fields">
+                                                                <h3>Thông tin thanh toán</h3>
+                                                                <p class="form-row form-row-wide">
+                                                                    <label for="fullname">Họ và tên <span class="required">*</span></label>
+                                                                    <input type="text" class="input-text" name="fullname" id="fullname" value="" />
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    <label for="email">Email <span class="required">*</span></label>
+                                                                    <input type="text" class="input-text" name="email" id="email" value="" />
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    <label for="address">Điạ chỉ <span class="required">*</span></label>
+                                                                    <input type="text" class="input-text" name="address" id="address" value="" />
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    <label for="phone">Điện thoại <span class="required">*</span></label>
+                                                                    <input type="text" class="input-text" name="phone" id="phone" value="" />
+                                                                </p>
+                                                                <p id="order_comments_field" class="form-row form-row notes">
+                                                                    <label class="" for="order_comments">Ghi chú</label>
+                                                                    <textarea cols="5" rows="2" id="order_comments" class="input-text " name="order_comments"></textarea>
+                                                                </p>
+                                                                <div class="clear"></div>
+                                                                <p class="form-row form-row-wide">
+                                                                    <input class="input-checkbox" id="createaccount" type="checkbox" name="createaccount" value="1" />
+                                                                    <label class="checkbox">Tạo tài khoản?</label>
+                                                                </p>
+                                                                <div class="clear"></div>
+                                                                <div class="create-account">
+                                                                    <h3>Thông tin tài khoản</h3>
+                                                                    <p class="form-row form-row-wide">
+                                                                        <label for="username">Tên đăng nhập <span class="required">*</span></label>
+                                                                        <input type="text" class="input-text" name="username" id="username" value="" />
+                                                                    </p>
+                                                                    <p class="form-row form-row-wide">
+                                                                        <label for="password">Mật khẩu <span class="required">*</span></label>
+                                                                        <input class="input-text" type="password" name="password" id="password" />
+                                                                    </p>
+                                                                    <p class="form-row form-row-wide">
+                                                                        <label for="confirm-password">Xác nhận mật khẩu <span class="required">*</span></label>
+                                                                        <input class="input-text" type="confirm-password" name="confirm-password" id="confirm-password" />
+                                                                    </p>
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-md-6">
+                                                            <div class="order-box">
+                                                                <h3 id="order_review_heading">Đơn hàng của bạn</h3>
+                                                                <div id="order_review" class="bootexpert-checkout-review-order">
+                                                                    <table class="shop_table bootexpert-checkout-review-order-table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="product-name">Sản phẩm</th>
+                                                                                <th class="product-total">Thành tiền</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody id="checkout-cart-item">
+                                                                          
+                                                                        </tbody>
+                                                                        <tfoot>
+                                                                            <tr class="order-total">
+                                                                                <th>Tổng cộng</th>
+                                                                                <td><strong><span class="amount" id="spantotal">0 VNĐ</span></strong></td>
+                                                                            </tr>
+                                                                        </tfoot>
+                                                                    </table>
+                                                                    <div id="payment" class="bootexpert-checkout-payment">
+                                                                        <div class="form-row place-order">
+                                                                            <input type="submit" class="button alt" name="bootexpert_checkout_place_order" id="place_order" value="Thanh toán" />
+                                                                        </div>
+                                                                        <div class="clear"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+
+    function shoppingcartcheckout() {
+        var $cartItem = $('#checkout-cart-item');
+        var totalprice = 0;
+        $cartItem.html("");
+        Object.keys(localStorage).forEach(function (key) {
+            var itemlocal = JSON.parse(localStorage.getItem(key))
+            var total = 0;
+            total = itemlocal.price * itemlocal.count;
+            totalprice += total
+            var sprice = numeral(itemlocal.price).format('0,0');
+            var stotal = numeral(total).format('0,0');
+            var cartappend = '<tr class="cart_item">' +
+                                '<td class="product-name">'+itemlocal.name+' <strong class="product-quantity">&times; '+itemlocal.count+'</strong></td>' +
+                                '<td class="product-total"> <span class="amount">' + stotal + ' VNĐ</span></td>' +
+                            '</tr>';
+            $cartItem.append(cartappend);
+        })
+        var stotalprice = numeral(totalprice).format('0,0');
+        $('#spantotal').text(stotalprice + 'VND');
+    
+    }
+
+        $(function () {
+            var con = $('div'), storageCount = localStorage.length;
+            if (storageCount) {
+                shoppingcartcheckout();
+        	}
+        });
+</script>
+

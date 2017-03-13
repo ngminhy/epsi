@@ -61,30 +61,11 @@
                                     <div class="mini_cart_inner">
                                         <div class="mini_cart_arrow"></div>
                                         <ul class="cart_list" id="cart-item">
-                                            @*<li>
-                                                    <a href="" class="product-image">
-                                                        <img alt="7" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/7-185x185.jpg"><span class="quantity">1</span>
-                                                    </a>
-                                                    <div class="product-details">
-                                                        <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
-                                                        <a href="" class="product-name">Đèn thả QPG304 (cam)</a>
-                                                        <span class="quantity"><span class="amount">1.472.101 VNĐ</span></span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="product-image">
-                                                        <img alt="1" class="attachment-shop_thumbnail" src="~/Content/images/furniture/product/1-185x185.jpg"><span class="quantity">1</span>
-                                                    </a>
-                                                    <div class="product-details">
-                                                        <a title="Remove this item" class="remove" href=""><i class="fa fa-times-circle"></i></a>
-                                                        <a href="" class="product-name">Đèn Trẻ Em</a>
-                                                        <span class="quantity"><span class="amount">933.000 VNĐ</span></span>
-                                                    </div>
-                                                </li>*@
+     
                                         </ul><!-- end product list -->
                                         <p class="total" id="total-price-footer">Tổng: <span class="amount">0 VNĐ</span></p>
                                         <p class="buttons">
-                                            <a class="button checkout wc-forward" href="#">Thanh toán</a>
+                                            <a class="button checkout wc-forward" href="@Url.Action("Index","ShoppingCart")">Giỏ hàng</a>
                                         </p>
                                     </div>
                                 </div>
