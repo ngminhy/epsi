@@ -248,22 +248,12 @@
     <Compile Include="Models\OrderStatus.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\QuickLink.cs" />
-    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\BoxLinkDto.cs" />
-    <Compile Include="ViewModels\BriefArticleDto.cs" />
-    <Compile Include="ViewModels\BriefProductDto.cs" />
-    <Compile Include="ViewModels\FileInfo.cs" />
-    <Compile Include="ViewModels\LinkDto.cs" />
+    <Compile Include="ViewModels\CartItem.cs" />
+    <Compile Include="ViewModels\InfoOrder.cs" />
     <Compile Include="ViewModels\OrderDetailDto.cs" />
-    <Compile Include="ViewModels\PictureDto.cs" />
-    <Compile Include="ViewModels\ProductCat.cs" />
     <Compile Include="ViewModels\ProductDto.cs" />
-    <Compile Include="ViewModels\QuickLinkDto.cs" />
-    <Compile Include="ViewModels\ShoppingCartRemove.cs" />
-    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
-    <Compile Include="ViewModels\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Content\AdminSite.css" />

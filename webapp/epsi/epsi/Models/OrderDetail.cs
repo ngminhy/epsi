@@ -13,9 +13,6 @@ namespace epsi.Models
         public int ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
-        [StringLength(200)]
-        public string ListCakeFiller { get; set; }
-        public string ListCakeName { get; set; }
         public virtual Product Product { get; set; }
         public virtual Order Order { get; set; }
     }

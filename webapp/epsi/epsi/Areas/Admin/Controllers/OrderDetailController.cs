@@ -21,7 +21,7 @@ namespace epsi.Areas.Admin.Controllers
            
             ViewBag.OrderId = OrderId;
             var order = db.Orders.Where(p => p.OrderId == OrderId).FirstOrDefault();
-           order.State = UtilHelper.GetOrderStatus(order.OrderStatusId);
+           order.OrderStatus = UtilHelper.GetOrderStatus(order.OrderStatusId);
             ViewBag.order = order;
             return View();
             
@@ -32,7 +32,6 @@ namespace epsi.Areas.Admin.Controllers
                 OrderDetailId  = p.OrderDetailId,
                 ProductId = p.ProductId,
                 ProductName = p.Product.Name,
-                ListCakeName = p.ListCakeName,
                 UnitPrice = p.UnitPrice,
                 Quantity = p.Quantity   ,
                 Total = p.Quantity * p.UnitPrice

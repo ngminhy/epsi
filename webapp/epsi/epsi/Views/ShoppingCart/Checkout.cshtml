@@ -24,7 +24,7 @@
                                                 Bạn đã có tài khoản ?
                                                 <a href="#">Click vào đây để đăng nhập</a>
                                             </div>
-                                            <form name="checkout" method="post" class="checkout bootexpert-checkout" action="#">
+                                            <form name="checkout" method="post" class="checkout bootexpert-checkout" action="/shoppingcart" id="order-payment">
                                                 <div class="col2-set" id="customer_details">
                                                     <div class="row">
                                                         <div class="col-xs-12 col-md-6">
@@ -57,11 +57,6 @@
                                                                 </p>
                                                                 <div class="clear"></div>
                                                                 <div class="create-account">
-                                                                    <h3>Thông tin tài khoản</h3>
-                                                                    <p class="form-row form-row-wide">
-                                                                        <label for="username">Tên đăng nhập <span class="required">*</span></label>
-                                                                        <input type="text" class="input-text" name="username" id="username" value="" />
-                                                                    </p>
                                                                     <p class="form-row form-row-wide">
                                                                         <label for="password">Mật khẩu <span class="required">*</span></label>
                                                                         <input class="input-text" type="password" name="password" id="password" />
@@ -97,6 +92,16 @@
                                                                     </table>
                                                                     <div id="payment" class="bootexpert-checkout-payment">
                                                                         <div class="form-row place-order">
+                                                                            <ul class="payment_methods methods">
+                                                                                <li class="payment_method_cash">
+                                                                                    <input id="payment_method_cash" type="radio" class="input-radio" name="payment_method" value="1"  checked='checked' />
+                                                                                    <label>Thanh toán tiền mặt</label>
+                                                                                </li>
+                                                                                <li class="payment_method_card">
+                                                                                    <input id="payment_method_card" type="radio" class="input-radio" name="payment_method" value="2" />
+                                                                                    <label>Thanh toán qua thẻ</label>
+                                                                                </li>
+                                                                            </ul>
                                                                             <input type="submit" class="button alt" name="bootexpert_checkout_place_order" id="place_order" value="Thanh toán" />
                                                                         </div>
                                                                         <div class="clear"></div>
@@ -121,13 +126,16 @@
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-
+    var listcart = [];
     function shoppingcartcheckout() {
         var $cartItem = $('#checkout-cart-item');
         var totalprice = 0;
         $cartItem.html("");
+        listcart = [];
         Object.keys(localStorage).forEach(function (key) {
             var itemlocal = JSON.parse(localStorage.getItem(key))
+            listcart.push(itemlocal);
+            console.log(itemlocal)
             var total = 0;
             total = itemlocal.price * itemlocal.count;
             totalprice += total
@@ -144,11 +152,45 @@
     
     }
 
+    function inputValidate() {
+        return true;
+    }
+
+
+
         $(function () {
             var con = $('div'), storageCount = localStorage.length;
             if (storageCount) {
                 shoppingcartcheckout();
-        	}
+            }
+
+            $('#place_order').click(function () {
+                var ok = inputValidate();
+                if (ok) {
+                    var form = $("#order-payment");
+                    //alert(ok)
+                    //var form = $("#order-payment");
+                    //console.log(form)
+                    //$.ajax({
+                    //    url: '/shoppingcart',
+                    //    type: 'post',
+                    //    data: { info: $(form).serialize(), cart: JSON.parse(localStorage) },
+                    //    then: function (response) {
+                    //        console.log(response);
+                    //        //location.href = "/product";
+                    //    }
+                    //});
+                    var infoOrder = {
+                        FullName: 'a',
+                        Email: 'l'
+                    }
+
+                    $.post('/shoppingcart', { "info": infoOrder, "cart": listcart }, function (data) {
+                        console.log(data)
+                    })
+                }
+                return false;
+            })
         });
 </script>
 
