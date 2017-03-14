@@ -153,44 +153,46 @@
     }
 
     function inputValidate() {
+        if ($('#fullname').val() == '' || $('#email').val() == '' || $('#address').val() == '' || $('#phone').val() == '') {
+            return false;
+        }
         return true;
     }
 
 
 
-        $(function () {
-            var con = $('div'), storageCount = localStorage.length;
-            if (storageCount) {
-                shoppingcartcheckout();
+$(function () {
+    var con = $('div'), storageCount = localStorage.length;
+    if (storageCount) {
+        shoppingcartcheckout();
+    }
+
+    $('#place_order').click(function () {
+        var ok = inputValidate();
+        if (ok) {
+            var form = $("#order-payment");
+            var infoOrder = {
+                FullName: $('#fullname').val(),
+                Email: $('#email').val(),
+                Address: $('#address').val(),
+                Phone: $('#phone').val(),
+                Note: $('#order_comments').val(),
+                PaymentType: $("input[name='payment_method']").val()
             }
 
-            $('#place_order').click(function () {
-                var ok = inputValidate();
-                if (ok) {
-                    var form = $("#order-payment");
-                    //alert(ok)
-                    //var form = $("#order-payment");
-                    //console.log(form)
-                    //$.ajax({
-                    //    url: '/shoppingcart',
-                    //    type: 'post',
-                    //    data: { info: $(form).serialize(), cart: JSON.parse(localStorage) },
-                    //    then: function (response) {
-                    //        console.log(response);
-                    //        //location.href = "/product";
-                    //    }
-                    //});
-                    var infoOrder = {
-                        FullName: 'a',
-                        Email: 'l'
-                    }
-
-                    $.post('/shoppingcart', { "info": infoOrder, "cart": listcart }, function (data) {
-                        console.log(data)
-                    })
+            $.post('/shoppingcart', { "info": infoOrder, "cart": listcart }, function (data) {
+                console.log(data)
+                if (data.id != "") {
+                    localStorage.clear();
+                    alert('Đặt hàng thành công. Xin cảm ơn!');
+                    location.href = '/';
                 }
-                return false;
             })
-        });
+        } else {
+            alert('Vui lòng nhập đầy đủ thông tin.');
+        }
+        return false;
+    })
+});
 </script>
 
