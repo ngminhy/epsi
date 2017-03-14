@@ -53,6 +53,32 @@ namespace epsi.Helper
             }
             return result.ToString();
         }
+        public static bool SendEmail(string toEmail, string subject, string strBody)
+        {
+
+
+            System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+            //message.To.Add("sale@sqshops.com"); //recipient
+            message.To.Add("duthu.vn@gmail.com");
+            message.To.Add(toEmail);
+            message.Subject = subject;
+            message.From = new System.Net.Mail.MailAddress("duthu.vn@gmail.com"); //from email
+            message.Body = strBody;
+            message.IsBodyHtml = true;
+            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");// you need an smtp server address to send emails
+            smtp.UseDefaultCredentials = false;
+            smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            smtp.Credentials = new System.Net.NetworkCredential("duthu.vn@gmail.com", "0984358352");
+
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.Send(message);
+
+            return true;
+
+
+        }
+
     }
 
 }

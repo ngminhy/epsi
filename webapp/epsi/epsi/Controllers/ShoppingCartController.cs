@@ -50,8 +50,8 @@ namespace epsi.Controllers
                 db.Orders.Add(order);
                 db.SaveChanges();
 
-
                 decimal orderTotal = 0;
+
                 // adding the order details for each
                 foreach (var item in cart)
                 {
@@ -70,18 +70,31 @@ namespace epsi.Controllers
                     };
                     // Set the order total of the shopping cart
                     orderTotal += (item.count * productprice);
-
                     db.OrderDetails.Add(orderDetail);
-
                 }
                 order.Total = orderTotal;
                 db.SaveChanges();
 
                 //send mail to customer
-                //strBody = strBody + "<h2>Thông tin người mua:</h2>Họ và Tên:  " + order.FullName + " <br />Số điện thoại: " + order.Phone + " <br />Email: " + order.Email + " <br />Địa chỉ: " + order.Address + " <br />Thanh toán: " + order.PaymentType + " (Chuyển khoản | Tiền mặt) <br />Ghi chú: " + order.Note + " <br /> <br />";
-                //strBody = strBody + "<h3>Đơn hàng số: " + order.OrderId.ToString() + "</h3>";
-                //SendEmail(order.Email, strBody);
-              
+                var strBody = "";
+                var spayment = "Tiền mặt";
+                if (order.PaymentType == 2)
+                {
+                    spayment = "Chuyển khoản";
+                }
+                strBody = strBody + "<h2>Cảm ơn quý khách đã đặt hàng. Chúng tôi sẽ sớm xử lý đơn hàng của quý khách.</h2> <br />";
+                strBody = strBody + "<h3>Mã số đơn hàng của quý khách : " + order.OrderCode + "</h3>";
+                var subject = "Thông tin đơn hàng từ epsi.vn";
+                try
+                {
+                    UtilHelper.SendEmail(order.Email, subject, strBody);
+
+                }
+                catch
+                {
+
+                }
+
                 return Json(new { id = order.OrderCode });
 
             }
