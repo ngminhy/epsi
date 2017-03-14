@@ -240,7 +240,7 @@ namespace epsi.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            return code == null ? View("Error") : View();
+            return View();
         }
 
         //
@@ -258,12 +258,16 @@ namespace epsi.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Account", new { status = "1" });
+            }
+            else if (Request.IsAuthenticated)
+            {
+                model.Code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Account", new { status = "0" });
             }
             AddErrors(result);
             return View();
@@ -272,8 +276,9 @@ namespace epsi.Controllers
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ResetPasswordConfirmation()
+        public ActionResult ResetPasswordConfirmation(string status)
         {
+            ViewBag.Status = status;
             return View();
         }
 
