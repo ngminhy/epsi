@@ -121,9 +121,9 @@ namespace epsi.Models
 
     public class ForgotPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ email")]
+        [EmailAddress(ErrorMessage = "Địa chỉ email không đúng định dạng")]
+        [Display(Name = "Địa chỉ email")]
         public string Email { get; set; }
     }
 }

@@ -208,13 +208,13 @@ namespace epsi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                var user = await UserManager.FindByEmailAsync(model.Email);
+                if (user == null)//|| !(await UserManager.IsEmailConfirmedAsync(user.Id))
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    // Don't reveal that the user does not exist or is not confirmed                   
+                    return RedirectToAction("ForgotPasswordConfirmation", "Account", new { status = "1" });
                 }
-
+                return RedirectToAction("ForgotPasswordConfirmation", "Account", new { status = "0" });
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
@@ -230,8 +230,9 @@ namespace epsi.Controllers
         //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ForgotPasswordConfirmation()
+        public ActionResult ForgotPasswordConfirmation(string status)
         {
+            ViewBag.Status = status;
             return View();
         }
 
@@ -254,7 +255,7 @@ namespace epsi.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist

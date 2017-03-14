@@ -38,7 +38,7 @@
                                                                 </div>
                                                                 <div class="form-action">
                                                                     <p class="lost_password">
-                                                                        <a href="#">Quên mật khẩu?</a>
+                                                                        @Html.ActionLink("Quên mật khẩu?", "ForgotPassword", "Account", routeValues: null, htmlAttributes: new { id = "forgotpass" })
                                                                     </p>
                                                                     <input type="submit" class="button" name="login" value="Đăng nhập" />
                                                                 </div>
