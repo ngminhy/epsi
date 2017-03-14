@@ -135,7 +135,6 @@
         Object.keys(localStorage).forEach(function (key) {
             var itemlocal = JSON.parse(localStorage.getItem(key))
             listcart.push(itemlocal);
-            console.log(itemlocal)
             var total = 0;
             total = itemlocal.price * itemlocal.count;
             totalprice += total
@@ -165,6 +164,8 @@ $(function () {
     var con = $('div'), storageCount = localStorage.length;
     if (storageCount) {
         shoppingcartcheckout();
+    } else {
+        location.href = '/san-pham';
     }
 
     $('#place_order').click(function () {
@@ -181,7 +182,6 @@ $(function () {
             }
 
             $.post('/shoppingcart', { "info": infoOrder, "cart": listcart }, function (data) {
-                console.log(data)
                 if (data.id != "") {
                     localStorage.clear();
                     alert('Đặt hàng thành công. Xin cảm ơn!');

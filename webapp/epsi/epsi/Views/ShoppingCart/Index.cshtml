@@ -34,48 +34,13 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="tbody-cart-item">
-                                                            @*<tr class="cart_item">
-                                                                <td class="product-thumbnail">
-                                                                    <a href="">
-                                                                        <img src="~/Content/images/furniture/product/5_6-185x185.jpg" class="attachment-shop_thumbnail" alt="s9" />
-                                                                    </a>
-                                                                </td>
-                                                                <td class="product-name"><a href="">Đèn thả QPG304 (cam)</a></td>
-                                                                <td class="product-price"><span class="amount">1.472.101 VNĐ</span></td>
-                                                                <td class="product-quantity">
-                                                                    <div class="quantity">
-                                                                        <input type="number" name="qty" value="1" title="Qty" class="input-text qty text" size="4" />
-                                                                    </div>
-                                                                </td>
-                                                                <td class="product-subtotal"><span class="amount">1.472.101 VNĐ</span></td>
-                                                                <td class="product-remove">
-                                                                    <a href="" class="remove" title="Xoá sản phẩm"><i class="fa fa-times"></i></a>
-                                                                </td>
-                                                            </tr>*@
-                                                            @*<tr class="cart_item">
-                                                                <td class="product-thumbnail">
-                                                                    <a href="">
-                                                                        <img src="~/Content/images/furniture/product/5_6-185x185.jpg" class="attachment-shop_thumbnail" alt="s3" />
-                                                                    </a>
-                                                                </td>
-                                                                <td class="product-name"><a href="">Đèn Trẻ Em</a></td>
-                                                                <td class="product-price"><span class="amount">933.000 VNĐ</span></td>
-                                                                <td class="product-quantity">
-                                                                    <div class="quantity">
-                                                                        <input type="number" name="qty" value="1" title="Qty" class="input-text qty text" size="4" />
-                                                                    </div>
-                                                                </td>
-                                                                <td class="product-subtotal"><span class="amount">933.000 VNĐ</span></td>
-                                                                <td class="product-remove">
-                                                                    <a href="" class="remove" title="Xoá sản phẩm"><i class="fa fa-times"></i></a>
-                                                                </td>
-                                                            </tr>*@
+                                
                                                             <tr class="cart-total">
                                                                 <td colspan="4">
                                                                     <h2>Tổng cộng</h2>
                                                                 </td>
                                                                 <td class="order-total" colspan="2">
-                                                                    <span class="amount">2.405.101 VNĐ</span>
+                                                                    <span class="amount">0 VNĐ</span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -170,7 +135,9 @@
             var con = $('div'), storageCount = localStorage.length;
             if (storageCount) {
         	    shoppingcart();
-        	} 
+            } else {
+                location.href = '/san-pham';
+            }
         });
 </script>
 
