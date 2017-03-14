@@ -417,3 +417,13 @@ ul.product-categories li a.title {
 	font-size: 20px;
 	text-transform: uppercase;
 }
+.main-container ul.payment_methods {
+	list-style: none;
+}
+.main-container ul.payment_methods label {
+	display: inline-block !important;
+	margin-left: 5px !important;
+}
+.main-container .page-content .entry-content #order_review .shop_table {
+	margin-bottom: 10px;
+}
