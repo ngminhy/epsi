@@ -11,26 +11,45 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using epsi.Models;
+using System.Net.Mail;
 
 namespace epsi
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+      
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await configSMTPasync(message);
+        }
+
+        // send email via smtp service
+        private async Task configSMTPasync(IdentityMessage msg)
+        {
+     
+
+            System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+            //message.To.Add("sale@sqshops.com"); //recipient
+            message.To.Add("duthu.vn@gmail.com");
+            message.To.Add(msg.Destination);
+            message.Subject = msg.Subject;
+            message.From = new System.Net.Mail.MailAddress("duthu.vn@gmail.com"); //from email
+            message.Body = msg.Body;
+            message.IsBodyHtml = true;
+            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");// you need an smtp server address to send emails
+            smtp.UseDefaultCredentials = false;
+            smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            smtp.Credentials = new System.Net.NetworkCredential("duthu.vn@gmail.com", "0984358352");
+
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+           
+
+            await smtp.SendMailAsync(message);
         }
     }
 
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
-    }
+    
 
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
@@ -77,7 +96,7 @@ namespace epsi
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
+           // manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {

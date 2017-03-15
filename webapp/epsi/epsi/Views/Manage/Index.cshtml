@@ -1,87 +1,68 @@
-﻿@model epsi.Models.IndexViewModel
+﻿@model epsi.Models.ApplicationUser
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Thông tin tài khoản";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="page-content login-page">
+    <div class="container">
+        <article class="page type-page status-publish hentry">
+            <div class="entry-content">
+                <div class="phm_row hasteck_row phm_row-fluid">
+                    <div class="row-container">
+                        <div class="parvez_column parvez_column_container parvez_col-sm-12">
+                            <div class="parvez_wrapper">
+                                <div class="parvez_text_column parvez_content_element ">
+                                    <div class="parvez_wrapper">
+                                        <div class="bootexpert">
+                                            <div class="customer_login" id="customer_login">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                                                        @using (Html.BeginForm("Update", "Manage", FormMethod.Post, new { @class = "register", role = "form" }))
+                                                        {
+                                                            <div class="form-fields">
+                                                                <h2><i class="fa fa-lock"></i> Thông tin tài khoản</h2>
+                                                                @Html.AntiForgeryToken()
+                                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                                <p class="form-row form-row-wide">
+                                                                    @Html.LabelFor(m => m.Email)
+                                                                    @Html.TextBoxFor(m => m.Email, new { @class = "input-text", @readonly = "true" })
+                                                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    @Html.LabelFor(m => m.FullName)
+                                                                    @Html.TextBoxFor(m => m.FullName, new { @class = "input-text" })
+                                                                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    @Html.LabelFor(m => m.PhoneNumber)
+                                                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "input-text" })
+                                                                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                                                </p>
+                                                                <p class="form-row form-row-wide">
+                                                                    @Html.LabelFor(m => m.Address)
+                                                                    @Html.TextBoxFor(m => m.Address, new { @class = "input-text" })
+                                                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                                                </p>
 
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Password:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Change your password", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Create", "SetPassword")
-            }
-            ]
-        </dd>
-        <dt>External Logins:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
-        </dd>
-        @*
-            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-             
-             See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-             
-             Uncomment the following block after you have set up two-factor authentication
-        *@
-        @*  
-            <dt>Phone Number:</dt>
-            <dd>
-                @(Model.PhoneNumber ?? "None")
-                @if (Model.PhoneNumber != null)
-                {
-                    <br />
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
-                    }
-                }
-                else
-                {
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                }
-            </dd>
-        *@
-        <dt>Two-Factor Authentication:</dt>
-        <dd>
-            <p>
-                There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication.
-            </p>
-            @*@if (Model.TwoFactor)
-                {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Enabled
-                        <input type="submit" value="Disable" class="btn btn-link" />
-                        </text>
-                    }
-                }
-                else
-                {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Disabled
-                        <input type="submit" value="Enable" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
-        </dd>
-    </dl>
+                                                            </div>
+                                                            <div class="form-action">
+                                                                <p class="lost_password">
+                                                                    @Html.ActionLink("Thay đổi mật khẩu", "ChangePassword", "Manage", routeValues: null, htmlAttributes: new { id = "changepass" })
+                                                                </p>
+                                                                <input type="submit" class="button btn-register" name="register" value="Chỉnh  sửa" />
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>

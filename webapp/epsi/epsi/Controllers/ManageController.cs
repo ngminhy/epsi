@@ -72,7 +72,13 @@ namespace epsi.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-            return View(model);
+            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            if (user == null)
+            {
+                user = new ApplicationUser();
+            }
+            return View(user);
+            //return View(model);
         }
 
         //
@@ -157,6 +163,30 @@ namespace epsi.Controllers
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
+            return RedirectToAction("Index", "Manage");
+        }
+
+        //
+        // POST: /Manage/Update
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Update(ApplicationUser model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    user.Address = model.Address;
+                    user.FullName = model.FullName;
+                    user.PhoneNumber = model.PhoneNumber;
+                    var result = await UserManager.UpdateAsync(user);
+                }
+              
+               
+            }
+
+            // If we got this far, something failed, redisplay form
             return RedirectToAction("Index", "Manage");
         }
 

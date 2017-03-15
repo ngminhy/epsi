@@ -214,13 +214,15 @@ namespace epsi.Controllers
                     // Don't reveal that the user does not exist or is not confirmed                   
                     return RedirectToAction("ForgotPasswordConfirmation", "Account", new { status = "1" });
                 }
-                return RedirectToAction("ForgotPasswordConfirmation", "Account", new { status = "0" });
+
+
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                 await UserManager.SendEmailAsync(user.Id, "Thay đổi mật khẩu", "Vui lòng click vào link sau để thay đổi mật khẩu <a href=\"" + callbackUrl + "\">Thay đổi mật khẩu</a>");
                 // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account", new { status = "0" });
             }
 
             // If we got this far, something failed, redisplay form
