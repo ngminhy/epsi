@@ -73,10 +73,10 @@
         </div>
     </div>
 </div>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <!-- Google Map js -->
-<script>
+@section scripts {
+    <script>
 
     $("#btnSend").submit(function (e) {
         var form = $("#contact-form");
@@ -87,7 +87,7 @@
             then: function (response) {
             }
         });
-    }); 
+    });
       function initMap() {
         var uluru = { lat: 10.758614, lng: 106.681956 };
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -110,5 +110,7 @@
         });
   }
 </script>
+    }
+
 <script type='text/javascript' src="http://maps.google.com/maps/api/js?key=AIzaSyDQ0pDRDKSyAO4lm10ttEXa2_uoZmWQzHc&sensor=false&callback=initMap"></script>
 

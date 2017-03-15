@@ -15,6 +15,7 @@ namespace epsi.Controllers
         Biz4Db db = new Biz4Db();
         public ActionResult Index(string pageURL, int? page)
         {
+            var s = Request.QueryString["s"];
             int pageSize = 0;
             int.TryParse(ConfigurationManager.AppSettings["PageSize"].ToString(), out pageSize);
             if (pageSize == 0) { pageSize = 8; }
@@ -28,10 +29,23 @@ namespace epsi.Controllers
                 CategoryID = cateId.CategoryId;
                 ViewBag.cateName = cateId.Name;
             }
-            var products = db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId ==CategoryID) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
+            if (s == null)
+            {
+                ViewBag.search = "";
+                var products = db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId == CategoryID) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
+                ViewBag.TotalPage = (int)Math.Ceiling(((double)db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId == CategoryID) && p.Active).Count()) / pageSize);
+                return View(products);
 
-            ViewBag.TotalPage = (int)Math.Ceiling(((double)db.Products.Where(p => (CategoryID == 0 || p.CategoryId == CategoryID || p.ParentId == CategoryID) && p.Active).Count()) / pageSize);
-            return View(products);
+            }
+            else
+            {
+                ViewBag.search = "&s=" + s;
+                var products = db.Products.Where(p => (p.Name.Contains(s) || p.Code.Contains(s) || p.Description.Contains(s) || p.Content.Contains(s)) && p.Active).OrderByDescending(p => p.ProductId).Skip((index - 1) * pageSize).Take(pageSize).ToList();
+                ViewBag.TotalPage = (int)Math.Ceiling(((double)db.Products.Where(p => (p.Name.Contains(s) || p.Code.Contains(s) || p.Description.Contains(s) || p.Content.Contains(s)) && p.Active).Count()) / pageSize);
+                ViewBag.cateName = "Kết quả tìm kiếm";
+                return View(products);
+
+            }
         }
 
         public ActionResult SidebarCategory()
