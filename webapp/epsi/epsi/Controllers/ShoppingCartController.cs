@@ -1,6 +1,8 @@
 ﻿using epsi.Helper;
 using epsi.Models;
 using epsi.ViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,12 @@ namespace epsi.Controllers
         }
         public ActionResult Checkout()
         {
-            return View();
+            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            if(user == null)
+            {
+                user = new ApplicationUser();
+            }
+            return View(user);
         }
 
         // POST: /ShoppingCart/

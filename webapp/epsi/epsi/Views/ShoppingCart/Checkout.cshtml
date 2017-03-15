@@ -1,4 +1,4 @@
-﻿
+﻿@model epsi.Models.ApplicationUser
 @{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,7 +22,7 @@
                                         <div class="bootexpert">
                                             <div class="bootexpert-info">
                                                 Bạn đã có tài khoản ?
-                                                <a href="#">Click vào đây để đăng nhập</a>
+                                                <a href="@Url.Action("Login","Account")?returnUrl=/shoppingcart/checkout">Click vào đây để đăng nhập</a>
                                             </div>
                                             <form name="checkout" method="post" class="checkout bootexpert-checkout" action="/shoppingcart" id="order-payment">
                                                 <div class="col2-set" id="customer_details">
@@ -32,26 +32,26 @@
                                                                 <h3>Thông tin thanh toán</h3>
                                                                 <p class="form-row form-row-wide">
                                                                     <label for="fullname">Họ và tên <span class="required">*</span></label>
-                                                                    <input type="text" class="input-text" name="fullname" id="fullname" value="" />
+                                                                    <input type="text" class="input-text" name="fullname" id="fullname" value="@Model.FullName" />
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
                                                                     <label for="email">Email <span class="required">*</span></label>
-                                                                    <input type="text" class="input-text" name="email" id="email" value="" />
+                                                                    <input type="text" class="input-text" name="email" id="email" value="@Model.Email" />
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
                                                                     <label for="address">Điạ chỉ <span class="required">*</span></label>
-                                                                    <input type="text" class="input-text" name="address" id="address" value="" />
+                                                                    <input type="text" class="input-text" name="address" id="address" value="@Model.Address" />
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
                                                                     <label for="phone">Điện thoại <span class="required">*</span></label>
-                                                                    <input type="text" class="input-text" name="phone" id="phone" value="" />
+                                                                    <input type="text" class="input-text" name="phone" id="phone" value="@Model.PhoneNumber" />
                                                                 </p>
                                                                 <p id="order_comments_field" class="form-row form-row notes">
                                                                     <label class="" for="order_comments">Ghi chú</label>
                                                                     <textarea cols="5" rows="2" id="order_comments" class="input-text " name="order_comments"></textarea>
                                                                 </p>
                                                                 <div class="clear"></div>
-                                                                <p class="form-row form-row-wide">
+                                                                @*<p class="form-row form-row-wide">
                                                                     <input class="input-checkbox" id="createaccount" type="checkbox" name="createaccount" value="1" />
                                                                     <label class="checkbox">Tạo tài khoản?</label>
                                                                 </p>
@@ -66,7 +66,7 @@
                                                                         <input class="input-text" type="confirm-password" name="confirm-password" id="confirm-password" />
                                                                     </p>
                                                                     <div class="clear"></div>
-                                                                </div>
+                                                                </div>*@
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-md-6">
