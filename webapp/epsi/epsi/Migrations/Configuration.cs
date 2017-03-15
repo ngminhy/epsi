@@ -9,7 +9,7 @@ namespace epsi.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = true ;
         }
 
         protected override void Seed(epsi.Models.Biz4Db context)
