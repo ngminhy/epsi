@@ -136,10 +136,11 @@
 
 
                             <li>
-                                <a href="@Url.Action("LogOff", "Account",new { Area = "" })">
-                                    <i class="menu-icon fa fa-sign-out"></i>
-                                    Logout
-                                </a>
+                               
+
+                                @using (Html.BeginForm("LogOff", "Account", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()<a href="javascript:document.getElementById('logoutForm').submit()"><i class="menu-icon fa fa-sign-out"></i>Logout</a> }
                             </li>
                         </ul>
                     </li>
