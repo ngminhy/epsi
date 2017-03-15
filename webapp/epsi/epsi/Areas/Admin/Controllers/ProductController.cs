@@ -65,12 +65,6 @@ namespace epsi.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var Product = new ProductDto();
-            //product.CreatedDate = DateTime.Now;
-            ViewBag.Categorys = db.Categorys.Where(p => p.Tag == "product").ToList();
-            ViewBag.Brands = db.Categorys.Where(p => p.Tag == "brand").ToList();
-            ViewBag.Countries = db.Categorys.Where(p => p.Tag == "country").ToList();
-            ViewBag.Materials = db.Categorys.Where(p => p.Tag == "material").ToList();
-
             return View(Product);
         }
 
@@ -112,11 +106,6 @@ namespace epsi.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var ProductDto = new ProductDto(  db.Products.FirstOrDefault(p => p.ProductId == id));
-            ViewBag.Categorys = db.Categorys.Where(p => p.Tag == "product").ToList();
-            ViewBag.Brands = db.Categorys.Where(p => p.Tag == "brand").ToList();
-            ViewBag.Countries = db.Categorys.Where(p => p.Tag == "country").ToList();
-            ViewBag.Materials = db.Categorys.Where(p => p.Tag == "material").ToList();
-
             return View("Create", ProductDto);
         }
 

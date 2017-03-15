@@ -23,6 +23,11 @@ namespace epsi.ViewModels
         public string CategoryName { get; set; }
         public int BasePrice { get; set; }
         public int Price { get; set; }
+        public string Colors { get; set; }
+        public string Material { get; set; }
+        public string Power { get; set; }
+        public string Size { get; set; }
+        public string OtherFeatures { get; set; }
         public bool IsSpecial { get; set; }
         public bool IsNew { get; set; }
         public bool IsHome { get; set; }
@@ -45,6 +50,11 @@ namespace epsi.ViewModels
             IsHome = model.IsHome;
             BasePrice = model.BasePrice;
             Price = model.Price;
+            Colors = model.Colors;
+            Material = model.Material;
+            Power = model.Power;
+            Size = model.Size;
+            OtherFeatures = model.OtherFeatures;
             PageURL = model.PageURL;
 
         }

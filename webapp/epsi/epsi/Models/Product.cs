@@ -33,6 +33,11 @@ namespace epsi.Models
         public int BasePrice { get; set; }
         public int Discount { get; set; }
         public int Price { get; set; }
+        public string Colors { get; set; }
+        public string Material { get; set; }
+        public string Power { get; set; }
+        public string Size { get; set; }
+        public string OtherFeatures { get; set; }
         [StringLength(200)]
         public string MainImage { get; set; }
 
@@ -57,6 +62,11 @@ namespace epsi.Models
             IsNew = model.IsNew;
             IsHome = model.IsHome;
             Price = model.Price;
+            Colors = model.Colors;
+            Material = model.Material;
+            Power = model.Power;
+            Size = model.Size;
+            OtherFeatures = model.OtherFeatures;
             BasePrice = model.BasePrice;
             CreatedDate = DateTime.Now;
             PageURL = model.PageURL;
