@@ -124,7 +124,7 @@
     </div>
 </div>
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+@section scripts {
 <script type="text/javascript">
     var listcart = [];
     function shoppingcartcheckout() {
@@ -148,7 +148,7 @@
         })
         var stotalprice = numeral(totalprice).format('0,0');
         $('#spantotal').text(stotalprice + 'VND');
-    
+
     }
 
     function inputValidate() {
@@ -195,4 +195,6 @@ $(function () {
     })
 });
 </script>
+
+    }
 
