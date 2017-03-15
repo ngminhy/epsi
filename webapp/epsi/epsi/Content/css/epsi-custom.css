@@ -427,3 +427,110 @@ ul.product-categories li a.title {
 .main-container .page-content .entry-content #order_review .shop_table {
 	margin-bottom: 10px;
 }
+.layout3.footer {
+  font-size: 14px;
+}
+.layout3.footer .widget .widget-title {
+  font-size: 16px;
+  font-weight: 400;
+}
+.layout3.footer .widget ul.nav_menu li a {
+  font-size: 14px;
+}
+.footer {
+	padding: 30px 0 10px;
+	background: #484848;
+	color: #fff;
+}
+.footer .widget {
+	margin-bottom: 20px;
+}
+.footer .widget .widget-title {
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #6b6b6b;
+	margin: 0 0 15px;
+	padding-bottom: 5px;
+}
+.footer .widget ul.nav_menu {
+	margin: 0;
+	list-style: none;
+	padding-left: 0px;
+}
+.footer .widget ul.nav_menu li a {
+	color: #fff;
+	font-size: 13px;
+	line-height: 24px;
+}
+.footer .widget ul.nav_menu li a:hover {
+	color: #048de7;
+}
+.footer .widget.widget_contact_us ul {
+	list-style: none;
+	padding-left: 0px;
+}
+.footer .widget.widget_contact_us ul li {
+	position: relative;
+	margin-bottom: 10px;
+}
+.footer .widget.widget_contact_us ul li i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	margin-right: 5px;
+}
+.footer .widget.widget_contact_us ul li i.fa-mobile {
+	font-size: 23px;
+}
+.footer .widget.widget_contact_us ul li strong {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 20px;
+	font-size: 14px;
+	font-weight: normal;
+
+}
+.footer .widget.widget_social .social-icons li {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+}
+.footer .widget.widget_social .social-icons li a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  line-height: 32px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid #aaa;
+  color: #aaa;
+}
+.footer .widget.widget_social .social-icons li a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.footer .copyright-info {
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+  color: #fff;
+}
+.footer .copyright-info span {
+  display: block;
+  color: #aaa;
+}
+.footer .copyright-info a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer .copyright-info a:hover {
+  color: #048de7;
+}
+.footer .widget.widget_contact_us ul li i.fa-envelope-o {
+	padding-top: 4px;
+}

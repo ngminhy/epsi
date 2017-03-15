@@ -516,8 +516,8 @@ ul.product-categories li a.title {
   border-color: #fff;
 }
 .footer .copyright-info {
-  margin: 30px 0;
-  padding: 0 30px 0 150px;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
   color: #fff;
 }
 .footer .copyright-info span {
@@ -530,4 +530,7 @@ ul.product-categories li a.title {
 }
 .footer .copyright-info a:hover {
   color: #048de7;
+}
+.footer .widget.widget_contact_us ul li i.fa-envelope-o {
+	padding-top: 4px;
 }

@@ -2310,8 +2310,8 @@ legend {
   width: 100%;
 }
 .footer .footer-bottom .footer-bottom-inner {
-  padding: 30px 0;
-  border-top: 2px solid #393939;
+  padding: 0px;
+  border-top: 1px solid #6b6b6b;
 }
 .footer .footer-bottom .copyright-info {
   color: #ccc;

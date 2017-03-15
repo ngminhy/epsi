@@ -360,10 +360,10 @@
     <Content Include="Areas\Admin\Content\assets\images\spritemap%402x.png" />
     <Content Include="Areas\Admin\Content\assets\images\spritemap.png" />
     <Content Include="Areas\Admin\Content\assets\img\clear.png" />
+    <Content Include="Areas\Admin\Content\assets\img\epsi.png" />
     <Content Include="Areas\Admin\Content\assets\img\glyphicons-halflings-white.png" />
     <Content Include="Areas\Admin\Content\assets\img\glyphicons-halflings.png" />
     <Content Include="Areas\Admin\Content\assets\img\loading.gif" />
-    <Content Include="Areas\Admin\Content\assets\img\logo_xmas.png" />
     <Content Include="Areas\Admin\Content\assets\js\ace-elements.min.js" />
     <Content Include="Areas\Admin\Content\assets\js\ace-extra.min.js" />
     <Content Include="Areas\Admin\Content\assets\js\ace.min.js" />
@@ -1738,13 +1738,6 @@
     <Content Include="Content\lib\slick\fonts\slick.svg" />
     <Content Include="Content\lib\slick\fonts\slick.ttf" />
     <Content Include="Content\lib\slick\fonts\slick.woff" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -1799,6 +1792,13 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Checkout.cshtml" />
     <Content Include="Views\Shared\_HomeSearch.cshtml" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
