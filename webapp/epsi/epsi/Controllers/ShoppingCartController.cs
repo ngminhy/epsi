@@ -95,7 +95,6 @@ namespace epsi.Controllers
                 try
                 {
                     UtilHelper.SendEmail(order.Email, subject, strBody);
-
                 }
                 catch
                 {
