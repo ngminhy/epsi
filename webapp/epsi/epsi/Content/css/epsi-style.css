@@ -144,7 +144,7 @@ body {
   visibility: visible;
   background: #b3b3b3;
   top: 0;
-  right: 0;
+  right: 15px;
 }
 .wrapper .slick-slider button:before {
   color: #fff;

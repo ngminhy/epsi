@@ -7439,7 +7439,7 @@ body.error404 .form404-wrapper a:hover {
 .main-container .latest-posts .posts-carousel button {
   opacity: 1;
   visibility: visible;
-  right: 15px;
+  right: 0;
   top: 0;
   margin-top: -45px;
 }
@@ -7917,7 +7917,21 @@ body.error404 .form404-wrapper a:hover {
     padding-left: 0;
   }
   .wrapper .slick-slider button {
-    display: none !important;
+    
+  }
+  
+  .main-container .shop-products button.slick-arrow, .main-container .brands-carousel button.slick-arrow {
+    opacity: 0 !important;
+    top: 50% !important;
+  }
+  .main-container .shop-products button.slick-prev, .main-container .brands-carousel button.slick-prev {
+    left: 0 !important;
+  }
+  .main-container .shop-products button.slick-next, .main-container .brands-carousel button.slick-next{
+    right: 0 !important;
+  }
+  .main-container .shop-products:hover button.slick-arrow, .main-container .brands-carousel:hover button.slick-arrow  {
+    opacity: 1 !important;
   }
   .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
     right: auto;
@@ -8000,7 +8014,6 @@ body.error404 .form404-wrapper a:hover {
     width: 100%;
   }
   .wrapper .slick-slider button {
-    display: none !important;
   }
   .main-container .shop-products.list-view .item-col .product-wrapper .product-name {
     margin: 20px 0;

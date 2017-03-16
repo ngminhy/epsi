@@ -161,7 +161,7 @@ ul.product-categories li a.title {
 }
 .main-container .banner-home-content2 .banner-box h2 {
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	margin: 0 0 5px;
 }
@@ -533,4 +533,15 @@ ul.product-categories li a.title {
 }
 .footer .widget.widget_contact_us ul li i.fa-envelope-o {
 	padding-top: 4px;
+}
+@media screen and (max-width: 992px) {
+  .main-container .home-banner p {
+    margin-bottom: 20px !important;
+  }
+  .main-container .latest-posts .posts-carousel .slick-list .item-col .post-wrapper .post-thumb {
+  	width: 100%;
+  }
+  .main-container .latest-posts .posts-carousel .slick-list .item-col .post-wrapper .post-info {
+  	width: 100%;
+  }
 }
