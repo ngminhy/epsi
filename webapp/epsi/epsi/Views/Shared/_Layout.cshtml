@@ -128,7 +128,8 @@
         		count = (count == null || count == 'null') ? 0 : parseInt(count);
         		var inputQty = $("#inputQty").val();
         		if (inputQty != undefined) {
-        		    count += parseInt(inputQty);
+        		    var cdefault = isNaN(parseInt(inputQty)) == true ? 1 : parseInt(inputQty);
+        		    count += cdefault;
         		} else {
         		    count++;
 

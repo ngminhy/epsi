@@ -94,7 +94,7 @@
                                                     '<td class="product-price"><span class="amount">' + sprice + ' VNĐ</span></td>' +
                                                     '<td class="product-quantity">' +
                                                     '<div class="quantity">' +
-                                                    '<input type="number" name="qty" id="inputQty' + key + '" value="' + itemlocal.count + '" title="Qty" class="input-text qty text inputkey' + key + '" size="4" />' +
+                                                    '<input type="number" name="qty" id="inputQty' + key + '" value="' + itemlocal.count + '" title="Qty" class="input-text qty text inputkey' + key + '" size="4" min="1"/>' +
                                                     '</div>' +
                                                     '</td>' +
                                                     '<td class="product-subtotal"><span class="amount">' + stotal + ' VNĐ</span></td>' +
@@ -108,8 +108,9 @@
 
             $('.product-quantity').find('.inputkey' + key).focusout(function () {
                 var qty = $('#inputQty' + key).val();
+                var cdefault = isNaN(parseInt(qty)) == true ? 1 : parseInt(qty);
                 var itemlocal = JSON.parse(localStorage.getItem(key))
-                itemlocal.count = qty;
+                itemlocal.count = cdefault;
                 localStorage.setItem(key, JSON.stringify(itemlocal));
                 shoppingcart();
                 shoppingcartmenu();
