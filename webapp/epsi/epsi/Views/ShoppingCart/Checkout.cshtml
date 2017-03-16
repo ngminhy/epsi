@@ -133,18 +133,20 @@
         $cartItem.html("");
         listcart = [];
         Object.keys(localStorage).forEach(function (key) {
-            var itemlocal = JSON.parse(localStorage.getItem(key))
-            listcart.push(itemlocal);
-            var total = 0;
-            total = itemlocal.price * itemlocal.count;
-            totalprice += total
-            var sprice = numeral(itemlocal.price).format('0,0');
-            var stotal = numeral(total).format('0,0');
-            var cartappend = '<tr class="cart_item">' +
-                                '<td class="product-name">'+itemlocal.name+' <strong class="product-quantity">&times; '+itemlocal.count+'</strong></td>' +
-                                '<td class="product-total"> <span class="amount">' + stotal + ' VNĐ</span></td>' +
-                            '</tr>';
-            $cartItem.append(cartappend);
+            if (isInt(key)) {
+                var itemlocal = JSON.parse(localStorage.getItem(key))
+                listcart.push(itemlocal);
+                var total = 0;
+                total = itemlocal.price * itemlocal.count;
+                totalprice += total
+                var sprice = numeral(itemlocal.price).format('0,0');
+                var stotal = numeral(total).format('0,0');
+                var cartappend = '<tr class="cart_item">' +
+                                    '<td class="product-name">' + itemlocal.name + ' <strong class="product-quantity">&times; ' + itemlocal.count + '</strong></td>' +
+                                    '<td class="product-total"> <span class="amount">' + stotal + ' VNĐ</span></td>' +
+                                '</tr>';
+                $cartItem.append(cartappend);
+            }
         })
         var stotalprice = numeral(totalprice).format('0,0');
         $('#spantotal').text(stotalprice + 'VND');
@@ -161,7 +163,7 @@
 
 
 $(function () {
-    var con = $('div'), storageCount = localStorage.length;
+    var con = $('div'), storageCount = countItem();
     if (storageCount) {
         shoppingcartcheckout();
     } else {

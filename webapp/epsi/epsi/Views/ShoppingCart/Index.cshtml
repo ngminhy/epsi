@@ -77,31 +77,34 @@
         var totalprice = 0;
         $cartItem.html("");
         Object.keys(localStorage).forEach(function (key) {
-            var itemlocal = JSON.parse(localStorage.getItem(key))
-            var total = 0;
-            total = itemlocal.price * itemlocal.count;
-            totalprice += total
-            var sprice = numeral(itemlocal.price).format('0,0');
-            var stotal = numeral(total).format('0,0');
-            var cartappend = '<tr class="cart_item">' +
-                                            '<td class="product-thumbnail">' +
-                                                '<a href="">' +
-                                                '<img src="' + itemlocal.img.replace('~', '') + '" class="attachment-shop_thumbnail" alt="' + itemlocal.name + '" />' +
-                                                '</a>' +
+            if (isInt(key)) {
+                var itemlocal = JSON.parse(localStorage.getItem(key))
+                var total = 0;
+                total = itemlocal.price * itemlocal.count;
+                totalprice += total
+                var sprice = numeral(itemlocal.price).format('0,0');
+                var stotal = numeral(total).format('0,0');
+                var cartappend = '<tr class="cart_item">' +
+                                                '<td class="product-thumbnail">' +
+                                                    '<a href="">' +
+                                                    '<img src="' + itemlocal.img.replace('~', '') + '" class="attachment-shop_thumbnail" alt="' + itemlocal.name + '" />' +
+                                                    '</a>' +
+                                                    '</td>' +
+                                                    '<td class="product-name"><a href="">' + itemlocal.name + '</a></td>' +
+                                                    '<td class="product-price"><span class="amount">' + sprice + ' VNĐ</span></td>' +
+                                                    '<td class="product-quantity">' +
+                                                    '<div class="quantity">' +
+                                                    '<input type="number" name="qty" id="inputQty' + key + '" value="' + itemlocal.count + '" title="Qty" class="input-text qty text inputkey' + key + '" size="4" />' +
+                                                    '</div>' +
+                                                    '</td>' +
+                                                    '<td class="product-subtotal"><span class="amount">' + stotal + ' VNĐ</span></td>' +
+                                                    '<td class="product-remove">' +
+                                                    '<a onclick="deleteshoppingcart(' + key + ');" class="remove" title="Xoá sản phẩm"><i class="fa fa-times"></i></a>' +
                                                 '</td>' +
-                                                '<td class="product-name"><a href="">' + itemlocal.name + '</a></td>' +
-                                                '<td class="product-price"><span class="amount">' + sprice + ' VNĐ</span></td>' +
-                                                '<td class="product-quantity">' +
-                                                '<div class="quantity">' +
-                                                '<input type="number" name="qty" id="inputQty' + key + '" value="' + itemlocal.count + '" title="Qty" class="input-text qty text inputkey' + key + '" size="4" />' +
-                                                '</div>' +
-                                                '</td>' +
-                                                '<td class="product-subtotal"><span class="amount">' + stotal + ' VNĐ</span></td>' +
-                                                '<td class="product-remove">' +
-                                                '<a onclick="deleteshoppingcart(' + key + ');" class="remove" title="Xoá sản phẩm"><i class="fa fa-times"></i></a>' +
-                                            '</td>' +
-                                        '</tr>';
-            $cartItem.append(cartappend);
+                                            '</tr>';
+                $cartItem.append(cartappend);
+            }
+
 
             $('.product-quantity').find('.inputkey' + key).focusout(function () {
                 var qty = $('#inputQty' + key).val();
@@ -132,7 +135,7 @@
             }
         }
         $(function () {
-            var con = $('div'), storageCount = localStorage.length;
+            var con = $('div'), storageCount = countItem();
             if (storageCount) {
         	    shoppingcart();
             } else {
