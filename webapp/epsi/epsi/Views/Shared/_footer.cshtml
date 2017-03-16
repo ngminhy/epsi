@@ -8,11 +8,8 @@
                             <h3 class="widget-title">Hỗ trợ</h3>
                             <div class="menu-infomation-container">
                                 <ul id="menu-infomation" class="nav_menu">
-                                    <li><a href="#">Tiêu chí bán hàng</a></li>
-                                    <li><a href="#">Điều khoản &amp; điều kiện</a></li>
-                                    <li><a href="#">Phương thức mua hàng &amp; thanh toán</a></li>
-                                    <li><a href="#">Chính sách vận chuyển &amp; giao hàng</a></li>
-                                    <li><a href="#">Bảo trì - Bảo hành - Đổi trả</a></li>
+                                    
+                                    @{Html.RenderAction("FooterMenu","Article",new { id = 30 });}
                                 </ul>
                             </div>
                         </div>
@@ -22,8 +19,8 @@
                             <h3 class="widget-title">Thông Tin Thêm</h3>
                             <div class="menu-our-services-container">
                                 <ul id="menu-our-services" class="nav_menu">
-                                    <li><a href="#">Cẩm Nang Chiếu Sáng</a></li>
-                                    <li><a href="#">Lời khuyên hữu ích</a></li>
+                                 
+                                    @{Html.RenderAction("FooterMenu", "Article", new { id = 31 });}
                                 </ul>
                             </div>
                         </div>

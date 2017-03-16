@@ -44,5 +44,14 @@ namespace epsi.Controllers
             ViewBag.RelatedArticles = db.Articles.Where(p => p.CategoryId == article.CategoryId && p.ArticleId != article.ArticleId && p.Active).OrderByDescending(p => p.ArticleId).Take(30).AsEnumerable().ToList();
             return View(article);
         }
+
+        public ActionResult FooterMenu(int id)
+        {
+            var cate = db.Categorys.Where(p => p.CategoryId == id && p.IsDeleted).FirstOrDefault();
+
+            var footermenu = db.Articles.Where(p => p.CategoryId == id && p.Active).ToList();
+            ViewBag.cateURL = cate.PageURL;
+            return PartialView("_FooterMenu", footermenu);
+        }
     }
 }

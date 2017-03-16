@@ -1,0 +1,5 @@
+﻿@model IEnumerable<epsi.Models.Article>
+@foreach (var item in Model)
+{
+    <li><a href="/a/@ViewBag.cateURL/@Url.Content(item.PageURL)">@item.Title</a></li>
+}

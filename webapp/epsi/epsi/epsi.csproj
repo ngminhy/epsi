@@ -1793,6 +1793,7 @@
     <Content Include="Views\ShoppingCart\Checkout.cshtml" />
     <Content Include="Views\Shared\_HomeSearch.cshtml" />
     <Content Include="web.config" />
+    <Content Include="Views\Shared\_FooterMenu.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
