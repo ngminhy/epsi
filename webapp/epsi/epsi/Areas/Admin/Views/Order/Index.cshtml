@@ -19,11 +19,10 @@
         columns.Bound(p => p.Total).Format("{0:0,0}").Width(150);
 
         columns.Bound(u => u.OrderId).Title("Details").ClientTemplate("<a class='k-button' href='" + Url.Action("index", "OrderDetail") + "/?OrderId=#=OrderId#'>Details</a>");
-        columns.Command(command => { command.Destroy(); }).Width(90);
+        //columns.Command(command => { command.Destroy(); }).Width(90);
     })
     .ToolBar(toolbar =>
     {
-        toolbar.Create();
         toolbar.Save();
     })
     .Editable(editable => editable.Mode(GridEditMode.InCell))
@@ -35,11 +34,11 @@
         .Batch(true)
         .PageSize(20)
         .Events(events => events.Error("error_handler"))
-        .Model(model => { model.Id(p => p.OrderId); model.Field(p => p.OrderId).Editable(false); model.Field(p => p.OrderStatusId).DefaultValue(1); })
-        .Create(create => create.Action("Create", "Order"))
+        .Model(model => { model.Id(p => p.OrderId); model.Field(p => p.OrderId).Editable(false); model.Field(p => p.FullName).Editable(false); model.Field(p => p.Phone).Editable(false); model.Field(p => p.Address).Editable(false); model.Field(p => p.OrderCode).Editable(false); model.Field(p => p.OrderDate).Editable(false); model.Field(p => p.Total).Editable(false); model.Field(p => p.OrderStatusId).DefaultValue(1); })
+        //.Create(create => create.Action("Create", "Order"))
         .Read(read => read.Action("Get", "Order"))
         .Update(update => update.Action("Edit", "Order"))
-        .Destroy(destroy => destroy.Action("Delete", "Order"))
+    //.Destroy(destroy => destroy.Action("Delete", "Order"))
     )
 )
 <script type="text/javascript">

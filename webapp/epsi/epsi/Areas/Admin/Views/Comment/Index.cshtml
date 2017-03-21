@@ -23,6 +23,7 @@
         columns.Bound(p => p.FullName).Width(160);
         columns.Bound(p => p.Email).Width(50);
         columns.Bound(p => p.Phone).Width(50);
+        columns.Bound(p => p.Subject).Width(50);
         columns.Bound(p => p.Description).Width(430);
         //columns.Bound(u => u.ContactId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "comment") + "/#=ContactId#'><span class='k-icon k-edit'></span>Detail</a>");
         columns.Command(cmd =>
