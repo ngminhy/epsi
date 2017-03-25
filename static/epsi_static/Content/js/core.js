@@ -730,9 +730,17 @@ Version: 1.0
     }
 
     // Product 4 column
-    $('.product-list-4 .item-col:first-child()').addClass('first');
-    $('.product-list-4 .item-col:nth-child(4n)').addClass('last');
-    $('.product-list-4 .item-col:nth-child(4n) + .item-col').addClass('first');
+    if ($(window).width() > 1024) {
+        $('.product-list-4 .item-col:first-child()').addClass('first');
+        $('.product-list-4 .item-col:nth-child(4n)').addClass('last');
+        $('.product-list-4 .item-col:nth-child(4n) + .item-col').addClass('first');
+    }
+
+    if ($(window).width() < 1025) {
+        $('.product-list-4 .item-col:first-child()').addClass('first');
+        $('.product-list-4 .item-col:nth-child(3n)').addClass('last');
+        $('.product-list-4 .item-col:nth-child(3n) + .item-col').addClass('first');
+    }
 
     // Product 3 column
     $('.product-list-3 .item-col:first-child()').addClass('first');

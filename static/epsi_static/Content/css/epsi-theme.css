@@ -7924,11 +7924,14 @@ body.error404 .form404-wrapper a:hover {
     
   }
   .main-container .latest-posts .posts-carousel button.slick-arrow {
-    opacity: 1;
+    opacity: 0.4;
   }
   .main-container .shop-products button.slick-arrow, .main-container .brands-carousel button.slick-arrow {
-    opacity: 1 !important;
+    opacity: 0.4 !important;
     top: 50% !important;
+  }
+  .main-container .shop-products:hover button.slick-arrow, .main-container .brands-carousel:hover button.slick-arrow  {
+    opacity: 1 !important;
   }
   .main-container .shop-products button.slick-prev, .main-container .brands-carousel button.slick-prev {
     left: 0 !important;
@@ -7936,9 +7939,6 @@ body.error404 .form404-wrapper a:hover {
   .main-container .shop-products button.slick-next, .main-container .brands-carousel button.slick-next{
     right: 0 !important;
   }
-/*  .main-container .shop-products:hover button.slick-arrow, .main-container .brands-carousel:hover button.slick-arrow  {
-    opacity: 1 !important;
-  }*/
   .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
     right: auto;
     left: 0;
