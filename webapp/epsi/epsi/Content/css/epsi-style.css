@@ -652,7 +652,7 @@ body {
   background: linear-gradient(to bottom,#048de7 0,#048de7 100%);
   padding: 0 10px;
   border-radius: 0;
-  border-bottom: 4px solid #ececec;
+  /*border-bottom: 4px solid #ececec;*/
 }
 .main-container .shop-products .item-col .product-wrapper .list-col8 .add-cart a:before,
 .main-container .shop-products .item-col .product-wrapper .list-col8 .add-cart .add_to_cart_button:before {

@@ -94,7 +94,7 @@
             var stotalprice = numeral(totalprice).format('0,0');
 
             $("#cart-total-header").html("");
-            $("#cart-total-header").html('Giỏ hàng: (<span class="cart-quantity">' + countItem() + '</span>)')
+            $("#cart-total-header").html(countItem());
             $("#cart-total-price").html("");
             $("#cart-total-price").html('<span class="amount">' + stotalprice + ' VNĐ</span>');
             $("#total-price-footer").html("");

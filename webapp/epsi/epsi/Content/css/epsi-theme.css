@@ -292,6 +292,9 @@ legend {
 .wrapper .slick-dots li button:hover {
   background: #e5e5e5;
 }
+.slick-slide:focus {
+  outline: none;
+}
 .wrapper .slick-dots li.slick-active button {
   background: #e5e5e5;
 }
@@ -1248,12 +1251,13 @@ legend {
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content .mini_cart_inner {
   border: 1px solid #e5e5e5;
-  float: left;
+  float: right;
   padding: 15px 5px;
+  margin-top: 2px;
   width: 100%;
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list {
-  float: left;
+  float: right;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -7919,9 +7923,11 @@ body.error404 .form404-wrapper a:hover {
   .wrapper .slick-slider button {
     
   }
-  
+  .main-container .latest-posts .posts-carousel button.slick-arrow {
+    opacity: 1;
+  }
   .main-container .shop-products button.slick-arrow, .main-container .brands-carousel button.slick-arrow {
-    opacity: 0 !important;
+    opacity: 1 !important;
     top: 50% !important;
   }
   .main-container .shop-products button.slick-prev, .main-container .brands-carousel button.slick-prev {
@@ -7930,9 +7936,9 @@ body.error404 .form404-wrapper a:hover {
   .main-container .shop-products button.slick-next, .main-container .brands-carousel button.slick-next{
     right: 0 !important;
   }
-  .main-container .shop-products:hover button.slick-arrow, .main-container .brands-carousel:hover button.slick-arrow  {
+/*  .main-container .shop-products:hover button.slick-arrow, .main-container .brands-carousel:hover button.slick-arrow  {
     opacity: 1 !important;
-  }
+  }*/
   .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
     right: auto;
     left: 0;

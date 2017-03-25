@@ -32,10 +32,8 @@
                                                 </a>
                                                 @{ Html.RenderAction("MenuCategory", "Home");}
                                             </li>
-                                                        }
-
-                                                    }
-
+                                        }
+                                    }
                                 </ul>
                             </nav>
                         </div>
@@ -57,17 +55,13 @@
                                     }
                                     else
                                     {
-
                                         <li class="children-menu">
                                             <a href="@Url.Content(item.Link)">@item.Text</a>
                                             @{ Html.RenderAction("MenuMobileCategory", "Home");}
 
                                         </li>
-                                                    }
-
-                                                }
-                                <li class="login"><a href="@Url.Action("Login","Account")"><i class="fa fa-lock"></i> Đăng nhập</a></li>
-
+                                    }
+                                }
                             </ul>
                         </nav>
                     </div>
