@@ -741,6 +741,25 @@ Version: 1.0
         $('.product-list-4 .item-col:nth-child(3n)').addClass('last');
         $('.product-list-4 .item-col:nth-child(3n) + .item-col').addClass('first');
     }
+    
+    if ($(window).width() > 1024) { 
+        $('.sidebar-category h3.widget-title span i.show-category').hide();
+        $('.sidebar-category h3.widget-title span i.hide-category').hide();
+    }
+    if ($(window).width() < 1025) {
+        $('ul.product-categories').hide();
+        $('.sidebar-category h3.widget-title span i.show-category').hide();
+        $('i.hide-category').on('click', function(){
+            $('ul.product-categories').show();
+            $('.sidebar-category h3.widget-title span i.show-category').show();
+            $('.sidebar-category h3.widget-title span i.hide-category').hide();
+        });
+        $('i.show-category').on('click', function(){
+            $('ul.product-categories').hide();
+            $('.sidebar-category h3.widget-title span i.show-category').hide();
+            $('.sidebar-category h3.widget-title span i.hide-category').show();
+        });
+    }
 
     // Product 3 column
     $('.product-list-3 .item-col:first-child()').addClass('first');

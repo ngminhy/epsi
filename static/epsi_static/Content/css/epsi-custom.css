@@ -79,6 +79,9 @@
 #secondary .widget .widget-title span {
 	font-size: 20px !important;
 }
+#secondary .widget .widget-title span i {
+	float: right;
+}
 #secondary ul, #secondary ol {
 	list-style: none;
 }
@@ -592,6 +595,13 @@ ul.product-categories li a.title {
 .user-area a {
 	color: #048de7;
 }
+.sidebar-category h3.widget-title span i:hover {
+	cursor: pointer;
+}
+.sidebar-category h3.widget-title span i.hide-category {
+	line-height: 40px;
+}
+
 @media screen and (max-width: 992px) {
 	.main-container .shop-products .item-col .product-wrapper .list-col8 .gridview {
 		text-align: center !important;
