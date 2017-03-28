@@ -629,4 +629,18 @@ ul.product-categories li a.title {
 	.header-inner .button {
 	    padding: 12px 15px;
 	}
+	.header-container .widget_shopping_cart .widget_shopping_cart_content {
+		position: inherit;
+	}
+	.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
+		right: 15px;
+		width: 280px;
+	}
+	.main-container .product-view .product .bootexpert-tabs ul.tabs li a {
+		padding: 5px 5px;
+		font-size: 12px !important;
+	}
+	.main-container .product-view .product .bootexpert-tabs ul.tabs li {
+		margin: 0 2px 0 0;
+	}
 }

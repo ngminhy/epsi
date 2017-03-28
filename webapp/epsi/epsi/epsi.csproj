@@ -1187,6 +1187,10 @@
     <Content Include="Content\css\lib\bootexpert-compose.css" />
     <Content Include="Content\css\lib\bootstrap.min.css" />
     <Content Include="Content\css\lib\font-awesome.min.css" />
+    <Content Include="Content\Images\chungnhan\2013.jpg" />
+    <Content Include="Content\Images\chungnhan\2014-2.jpg" />
+    <Content Include="Content\Images\chungnhan\2015.jpg" />
+    <Content Include="Content\Images\chungnhan\CN_-_2014.jpg" />
     <Content Include="Content\Images\furniture\about\about.jpg" />
     <Content Include="Content\Images\furniture\about\about_us.jpg" />
     <Content Include="Content\Images\furniture\about\ge.jpg" />
