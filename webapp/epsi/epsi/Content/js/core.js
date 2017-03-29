@@ -216,9 +216,9 @@ Version: 1.0
         $('.compare-button a').each(function() {
             parveztip($(this), 'html');
         });
-        $('.add_to_cart_inline a').each(function() {
-            parveztip($(this), 'html');
-        });
+        // $('.add_to_cart_inline a').each(function() {
+        //     parveztip($(this), 'html');
+        // });
         $('.quickviewbtn a').each(function() {
             parveztip($(this), 'html');
         });
@@ -659,13 +659,11 @@ Version: 1.0
     // Scroll
     var currentP = 0;
     $(window).on('scroll', function() {
-        var headerH = $('.header-container').height();
+        var headerH = $('.header-container .header .container').height() - 5;
         var navH = $('.nav-container').height();
-        headerH += navH;
         var scrollP = $(window).scrollTop();
         if ($(window).width() > 1024) {
             if (scrollP != currentP) {
-                //Back to top
                 if (scrollP >= headerH) {
                     $('#back-top').addClass('show');
                     $('.nav-container').addClass('ontop');
@@ -705,16 +703,18 @@ Version: 1.0
     });
 
     if ($('#related-news').length) {
+        var navH = $('.nav-container').height();
         var relatedNews = $('#related-news');
-        var relatedTop = $('#related-news').offset().top;
+        var relatedTop = $('#related-news').offset().top - navH;
         var relatedHeight = $('#related-news').height();
 
         $(window).scroll(function(){
-            var limit = $('.footer').offset().top - relatedHeight - 20;
+            var limit = $('.footer').offset().top - relatedHeight - 20 - navH;
             var windowTop = $(window).scrollTop();
-
+            
+            
             if (relatedTop < windowTop){
-                relatedNews.css({ position: 'fixed', top: 0 });
+                relatedNews.css({ position: 'fixed', top: navH });
                 relatedNews.addClass('fixed-box');
             }
             else {
@@ -772,7 +772,5 @@ Version: 1.0
             $('.create-account').fadeIn('slow');
         else
             $('.create-account').fadeOut('slow');
-
     });
-
 })(jQuery);

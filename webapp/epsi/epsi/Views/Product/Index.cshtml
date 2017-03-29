@@ -14,54 +14,56 @@
                 </div>
                 <div id="archive-product" class="col-xs-12 col-md-9">
                     <div class="archive-border shop-sidebar left-sidebar">
-                        <div class="toolbar">
-                            @if (Model.Count() != 0)
-                            {
-                                <div class="view-mode">
-                                    <a href="#" class="grid  active" title="Grid">
-                                        <i class="fa fa-th-large"></i><span>Grid</span>
-                                    </a>
-                                    <a href="#" class="list " title="List">
-                                        <i class="fa fa-th-list"></i><span>List</span>
-                                    </a>
-                                </div>
-                            }
-                  
+                        @if (Model.Count() > 0) {
+                            <div class="toolbar">
+                                @if (Model.Count() != 0)
+                                {
+                                    <div class="view-mode">
+                                        <a href="#" class="grid  active" title="Grid">
+                                            <i class="fa fa-th-large"></i><span>Grid</span>
+                                        </a>
+                                        <a href="#" class="list " title="List">
+                                            <i class="fa fa-th-list"></i><span>List</span>
+                                        </a>
+                                    </div>
+                                }
                       
-                            @if (ViewBag.TotalPage > 1)
-                            {
-                                <nav class="bootexpert-pagination">
-                                    <ul class='page-numbers'>
-                                        @if (ViewBag.PageIndex > 1)
-                                        {
-                                            <li>
-                                                <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex - 1)@ViewBag.search'>
-                                                    &laquo;
-                                                </a>
-                                            </li>
-                                        }
-                                        @for (var i = 1; i <= ViewBag.TotalPage; i++)
-                                        {
-                                            <li>
-                                                
-                                                <span  class='@(ViewBag.PageIndex == i ? "page-numbers current" : "page-numbers")'><a href='@(Request.Url.AbsolutePath)?page=@i@ViewBag.search'>@i</a></span>
-                                            </li>
-                                        }
-                                        @if (ViewBag.PageIndex < ViewBag.TotalPage)
-                                        {
-                                            <li>
-                                                <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex + 1)@ViewBag.search'>
-                                                    &raquo;
-                                                </a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </nav>
-                 
-                            }
-                      
-                            <div class="clearfix"></div>
-                        </div>
+                          
+                                @if (ViewBag.TotalPage > 1)
+                                {
+                                    <nav class="bootexpert-pagination">
+                                        <ul class='page-numbers'>
+                                            @if (ViewBag.PageIndex > 1)
+                                            {
+                                                <li>
+                                                    <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex - 1)@ViewBag.search'>
+                                                        &laquo;
+                                                    </a>
+                                                </li>
+                                            }
+                                            @for (var i = 1; i <= ViewBag.TotalPage; i++)
+                                            {
+                                                <li>
+                                                    
+                                                    <span  class='@(ViewBag.PageIndex == i ? "page-numbers current" : "page-numbers")'><a href='@(Request.Url.AbsolutePath)?page=@i@ViewBag.search'>@i</a></span>
+                                                </li>
+                                            }
+                                            @if (ViewBag.PageIndex < ViewBag.TotalPage)
+                                            {
+                                                <li>
+                                                    <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex + 1)@ViewBag.search'>
+                                                        &raquo;
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </nav>
+                     
+                                }
+                          
+                                <div class="clearfix"></div>
+                            </div>
+                        }
                         <div class="shop-products row grid-view product-list-3">
                             @foreach (var item in Model)
                             {
@@ -136,57 +138,60 @@
                         </div>
                         @if (Model.Count() == 0)
                         {
-                            <div>
+                            <div class="empty-content">
+                                <br>
                                 <h2>Hiện tại danh mục này không có sản phẩm nào.</h2>
                                 <h2>Chúng tôi sẽ sớm cập nhập sản phẩm mới. Xin vui lòng quay trở lại sau.</h2>
                             </div>
                         }
-                        <div class="toolbar tb-bottom">
-                            @if (Model.Count() != 0)
-                            {
-                                <div class="view-mode">
-                                    <a href="#" class="grid  active" title="Grid">
-                                        <i class="fa fa-th-large"></i><span>Grid</span>
-                                    </a>
-                                    <a href="#" class="list " title="List">
-                                        <i class="fa fa-th-list"></i><span>List</span>
-                                    </a>
-                                </div>
-                            }
-                    
-                            @if (ViewBag.TotalPage > 1)
-                            {
-                                <nav class="bootexpert-pagination">
-                                    <ul class='page-numbers'>
-                                        @if (ViewBag.PageIndex > 1)
-                                        {
-                                            <li>
-                                                <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex - 1)@ViewBag.search'>
-                                                    &laquo;
-                                                </a>
-                                            </li>
-                                        }
-                                        @for (var i = 1; i <= ViewBag.TotalPage; i++)
-                                        {
-                                            <li>
+                        @if (Model.Count() > 0) {
+                            <div class="toolbar tb-bottom">
+                                @if (Model.Count() != 0)
+                                {
+                                    <div class="view-mode">
+                                        <a href="#" class="grid  active" title="Grid">
+                                            <i class="fa fa-th-large"></i><span>Grid</span>
+                                        </a>
+                                        <a href="#" class="list " title="List">
+                                            <i class="fa fa-th-list"></i><span>List</span>
+                                        </a>
+                                    </div>
+                                }
+                        
+                                @if (ViewBag.TotalPage > 1)
+                                {
+                                    <nav class="bootexpert-pagination">
+                                        <ul class='page-numbers'>
+                                            @if (ViewBag.PageIndex > 1)
+                                            {
+                                                <li>
+                                                    <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex - 1)@ViewBag.search'>
+                                                        &laquo;
+                                                    </a>
+                                                </li>
+                                            }
+                                            @for (var i = 1; i <= ViewBag.TotalPage; i++)
+                                            {
+                                                <li>
 
-                                                <span class='@(ViewBag.PageIndex == i ? "page-numbers current" : "page-numbers")'><a href='@(Request.Url.AbsolutePath)?page=@i@ViewBag.search'>@i</a></span>
-                                            </li>
-                                        }
-                                        @if (ViewBag.PageIndex < ViewBag.TotalPage)
-                                        {
-                                            <li>
-                                                <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex + 1)@ViewBag.search'>
-                                                    &raquo;
-                                                </a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </nav>
+                                                    <span class='@(ViewBag.PageIndex == i ? "page-numbers current" : "page-numbers")'><a href='@(Request.Url.AbsolutePath)?page=@i@ViewBag.search'>@i</a></span>
+                                                </li>
+                                            }
+                                            @if (ViewBag.PageIndex < ViewBag.TotalPage)
+                                            {
+                                                <li>
+                                                    <a class='page-numbers' href='@(Request.Url.AbsolutePath)?page=@(ViewBag.PageIndex + 1)@ViewBag.search'>
+                                                        &raquo;
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </nav>
 
-                            }
-                            <div class="clearfix"></div>
-                        </div>
+                                }
+                                <div class="clearfix"></div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -365,6 +365,7 @@ body {
 }
 .header-container.skin2 .header .nav-container {
   background: #484848;
+  z-index: 999;
 }
 .header-container.skin2 .header .nav-container .nav-inner {
   padding: 0;
