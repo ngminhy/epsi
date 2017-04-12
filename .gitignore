@@ -166,3 +166,7 @@ static/packages/
 static/epsi_static/Web.config
 static/epsi_static/packages.config
 
+admin_static/epsi/.vs/*
+admin_static/packages/
+admin_static/epsi_static/Web.config
+admin_static/epsi_static/packages.config
