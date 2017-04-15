@@ -532,16 +532,6 @@ ul.product-categories li a.title {
 .footer .widget.widget_contact_us ul li i.fa-envelope-o {
 	padding-top: 4px;
 }
-/*.header-container .top-menu ul li {
-	padding: 0px 10px 0px 0px;
-}
-.header-container .top-menu ul li a {
-	color: #666666;
-	text-transform: uppercase;
-}
-.header-container .top-menu {
-	float: left;
-}*/
 .header-container.skin2 .top-bar {
 	border-bottom: 1px solid #ececec;
 }
@@ -660,6 +650,9 @@ ul.product-categories li a.title {
 }
 .header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list li .product-details {
 	text-align: left;
+}
+.main-container .home-banner a img.alignnone {
+	width: 100%;
 }
 @media screen and (max-width: 767px) {
 	.main-container .shop-products .item-col .product-wrapper .list-col8 .gridview {

@@ -532,32 +532,65 @@ ul.product-categories li a.title {
 .footer .widget.widget_contact_us ul li i.fa-envelope-o {
 	padding-top: 4px;
 }
-.header-inner .signup-and-search-area {
-	margin: 20px 0px 0px;
+.header-container.skin2 .top-bar {
+	border-bottom: 1px solid #ececec;
+}
+.header-container.skin2 .top-bar ul {
+	list-style: none;
+	margin-bottom: 0px;
+	padding: 10px 0px 10px 0px;
+}
+.header-container.skin2 .top-bar ul li {
+	padding: 0px 10px 0px 10px;
+	display: inline-block;
+	border-right: solid 1px #ececec;
+}
+.header-container.skin2 .top-bar ul li:first-child {
+	padding-left: 0px;
+}
+.header-container.skin2 .top-bar ul li:last-child {
+	border-right: 0px;
+}
+.header-container.skin2 .top-bar ul li a {
+    display: block;
+    font-size: 14px;
+}
+.header-container .top-menu-left {
+	float: left;
+	width: 50%;
+}
+.header-container .top-menu-right {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+.header-inner .search-and-cart-area {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
+	margin-top: 20px;
+	position: relative;
 }
-.header-inner .signup-and-search-area .search-area {
-	float: right;
-	margin-left: 20px;
+.header-inner .search-and-cart-area .search-area {
+	width: 35%;
+	position: absolute;
+	right: 158px;
 }
-.header-inner .signup-and-search-area .signup-area {
-	float: right;
-	margin-right: 4px;
+.header-inner .search-and-cart-area .widget_shopping_cart {
+	position: absolute;
+	right: 0px;
 }
-.header-inner .signup-and-search-area .widget_shopping_cart {
-	float: right;
+.header-inner .button.cart-toggler {
+	width: 150px;
+	padding: 9px 12px
 }
-.header-inner .signup-and-search-area .user-area {
-	float: right;
-	margin-right: 20px;
-	text-align: right;
+.header-inner .search-and-cart-area .search-area .search-form {
+	position: relative;
 }
-.header-inner .signup-and-search-area .search-area input.search {
+.header-inner .search-and-cart-area .search-area input.search {
 	border: 1px solid #ddd;
     background: #fff;
-    height: 43.7px;
+    height: 38.7px;
     font-size: 14px;
     color: #727272;
     width: 100%;
@@ -566,10 +599,10 @@ ul.product-categories li a.title {
     padding-right: 50px;
     border-radius: 0;
 }
-.header-inner .signup-and-search-area .search-area .btn-search {
+.header-inner .search-and-cart-area .search-area .btn-search {
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 0;
 }
 .header-inner .button {
     border: none;
@@ -580,20 +613,10 @@ ul.product-categories li a.title {
     text-align: center;
     vertical-align: middle;
     display: inline-block;
-    padding: 12px 21px;
+    padding: 9px 18px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-}
-.user-area span {
-	font-size: 16px;
-}
-.user-area a.username, .user-area a.username:hover {
-	color: #666666;
-	font-size: 14px;
-}
-.user-area a {
-	color: #048de7;
 }
 .sidebar-category h3.widget-title span i:hover {
 	cursor: pointer;
@@ -609,9 +632,29 @@ ul.product-categories li a.title {
 .widget_contact_us a, .widget_contact_us a:hover {
 	color: #fff
 }
-
-
-@media screen and (max-width: 992px) {
+.header-container.furniture2 .epsi-logo a {
+	background: url(../images/logo/epsi.svg) no-repeat center;
+	width: 100%;
+	height: 80px;
+	display: inline-block;
+}
+.header-container.furniture2 .philips-logo a {
+	background: url(../images/logo/philips.png) no-repeat center;
+	background-size: 170px 80px;
+	display: inline-block;
+	width: 100%;
+	height: 80px;
+}
+.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list {
+	list-style: none;
+}
+.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list li .product-details {
+	text-align: left;
+}
+.main-container .home-banner a img.alignnone {
+	width: 100%;
+}
+@media screen and (max-width: 767px) {
 	.main-container .shop-products .item-col .product-wrapper .list-col8 .gridview {
 		text-align: center !important;
 	}
@@ -624,25 +667,30 @@ ul.product-categories li a.title {
 	.main-container .latest-posts .posts-carousel .slick-list .item-col .post-wrapper .post-info {
 		width: 100%;
 	}
-	.header-inner .signup-and-search-area {
-		margin: auto;
+	.header-inner .search-and-cart-area .widget_shopping_cart {
+		position: static;
+		float: left;
+		clear: both;
+		margin-left: 0px;
+		margin-bottom: 6px;
+		width: 100%;
 	}
-	.header-inner .signup-and-search-area .search-area {
-		float: none;
+	.header-inner .search-and-cart-area .search-area {
+		position: static;
+		float: left;
 		margin: 0px 0px 10px 0px;
+		width: 100%;
 	}
-	.header-inner .signup-and-search-area .search-area .btn-search {
-		right: 15px;
-		top: 0px;
-	}
-	.header-inner .button {
-	    padding: 12px 15px;
+	.header-inner .search-and-cart-area .widget_shopping_cart .cart-toggler{
+		margin: 0px;
+		float: none;
+		width: 100%;
 	}
 	.header-container .widget_shopping_cart .widget_shopping_cart_content {
 		position: inherit;
 	}
 	.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
-		right: 15px;
+		right: 0px;
 		width: 280px;
 	}
 	.main-container .product-view .product .bootexpert-tabs ul.tabs li a {
@@ -651,5 +699,18 @@ ul.product-categories li a.title {
 	}
 	.main-container .product-view .product .bootexpert-tabs ul.tabs li {
 		margin: 0 2px 0 0;
+	}
+	.header-container .top-menu-right {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.header-inner .search-and-cart-area .search-area {
+		width: 50%;
+	}
+	.header-container.furniture2 .philips-logo a {
+		background-size: 100% 50px;
 	}
 }

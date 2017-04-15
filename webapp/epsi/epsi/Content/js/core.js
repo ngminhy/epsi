@@ -105,6 +105,8 @@ Version: 1.0
             $('.widget_shopping_cart').on('mouseover', function() {
                 var mCartHeight = $('.mini_cart_inner').outerHeight();
                 var cCartHeight = $('.mini_cart_content').outerHeight();
+                console.log(mCartHeight);
+                console.log(cCartHeight);
                 if (cCartHeight < mCartHeight) {
                     $('.mini_cart_content').stop(true, false).animate({
                         'height': mCartHeight

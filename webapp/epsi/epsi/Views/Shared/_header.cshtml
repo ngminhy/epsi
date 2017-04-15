@@ -1,103 +1,90 @@
 ﻿<!-- Header -->
 <div class="header-container furniture2 skin2">
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-inner clearfix">
+                <div class="top-menu-left visible-lg visible-sm">
+                    <ul>
+                        <li><a href="tel:+84907790971">Dự án: 0907790971</a></li>
+                        <li><a href="tel:+84902820235">Phân phối: 0902820235</a></li>
+                    </ul>
+                </div>
+                <div class="top-menu-right">
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated)
+                    {
+                        <ul>
+                            <li>
+                                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="username" })
+                            </li>
+                            <li>
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()<a href="javascript:document.getElementById('logoutForm').submit()" class="logout">Đăng xuất</a>
+                                }
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li><a href="@Url.Action("Register","Account")">Đăng ký</a></li>
+                            <li><a href="@Url.Action("Login","Account")">Đăng nhập</a></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="header">
         <div class="container">
             <div class="header-inner">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-3">
-                        <div class="logo">
-                            <a href="/" title="EPSI" rel="home"><img src="~/Content/images/logo/epsi.png" alt="" /></a>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="epsi-logo">
+                            <a href="/" title="EPSI" rel="epsi"></a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-9">
-                        <div class="signup-and-search-area">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="philips-logo">
+                            <a href="/" title="PHILIPS" rel="philips"/></a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-8 col-md-8">
+                        <div class="search-and-cart-area">
                             <div class="search-area">
-                                 @{Html.RenderPartial("_HomeSearch");}
+                                <form action="#" id="searchform" class="search-form">
+                                    <input type="text" class="search" value="" name="s" id="ws" placeholder="Tìm kiếm sản phẩm ..."">
+                                    <button class="button btn-search" type="submit" id="wsearchsubmit"><i class="fa fa-search"></i></button>
+                                </form>
                             </div>
                             <div class="widget_shopping_cart">
                                 <a class="button cart-toggler" href="#">
                                     <span class="mini-cart-link">
-                                        <span class="cart-quantity" id="cart-total-header"></span>
                                         <span class="fa fa-shopping-cart"></span>
+                                        Giỏ hàng: <span class="cart-quantity" id="cart-total-header">(0)</span>
                                     </span>
                                 </a>
-                                <div class="widget_shopping_cart_content">
-                                    <div class="mini_cart_content">
-                                        <div class="mini_cart_inner">
-                                            <div class="mini_cart_arrow"></div>
-                                            <ul class="cart_list" id="cart-item">
-         
-                                            </ul>
-                                            <p class="total" id="total-price-footer">Tổng: <span class="amount">0 VNĐ</span></p>
-                                            <p class="buttons">
-                                                <a class="button checkout wc-forward" href="@Url.Action("Index","ShoppingCart")">Giỏ hàng</a>
-                                            </p>
+                                <div class="widget_shopping_cart">
+                                    <div class="widget_shopping_cart_content">
+                                        <div class="mini_cart_content">
+                                            <div class="mini_cart_inner">
+                                                <div class="mini_cart_arrow"></div>
+                                                <ul class="cart_list" id="cart-item">
+             
+                                                </ul>
+                                                <p class="total" id="total-price-footer">Tổng: <span class="amount">0 VNĐ</span></p>
+                                                <p class="buttons">
+                                                    <a class="button checkout wc-forward" href="@Url.Action("Index","ShoppingCart")">Giỏ hàng</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @using Microsoft.AspNet.Identity
-                            @if (Request.IsAuthenticated)
-                            {
-                                <div class="user-area">
-                                    <span>
-                                        @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="username" })
-                                    </span>
-                                    <br>
-                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                                    {
-                                        @Html.AntiForgeryToken()<a href="javascript:document.getElementById('logoutForm').submit()"><b>Đăng xuất</b></a>
-                                    }
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="signup-area">
-                                    <a class="button" href="@Url.Action("Register","Account")">Đăng ký</a>
-                                    <a class="button" href="@Url.Action("Login","Account")">Đăng nhập</a>
-                                </div>
-                            }
-                         </div>
-                    </div>
-
-<!--                     <div class="col-xs-12 col-md-3" id="logo">
-                        <div class="logo">
-                            <a href="/" title="EPSI" rel="home"><img src="~/Content/images/logo/epsi.png" alt="" /></a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-9" id="search-box">
-                        <div class="widget bootexpert widget_shopping_cart">
-                            <div class="widget_shopping_cart_content">
-                                <div class="cart-toggler">
-                                    <a href="#">
-                                        <span class="mini-cart-link">
-                                            <span class="cart-title" id="cart-total-header">
-                                                Giỏ hàng: (<span class="cart-quantity">0</span>)
-                                            </span>
-                                        </span>
-                                        <span class="cart-total" id="cart-total-price"><span class="amount">0 VNĐ</span></span>
-                                    </a>
-                                </div>
-                                <div class="mini_cart_content">
-                                    <div class="mini_cart_inner">
-                                        <div class="mini_cart_arrow"></div>
-                                        <ul class="cart_list" id="cart-item">
-     
-                                        </ul>
-                                        <p class="total" id="total-price-footer">Tổng: <span class="amount">0 VNĐ</span></p>
-                                        <p class="buttons">
-                                            <a class="button checkout wc-forward" href="@Url.Action("Index","ShoppingCart")">Giỏ hàng</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header-search">
-                            <div class="widget bootexpert widget_product_search">
-                                @{Html.RenderPartial("_HomeSearch");}
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
