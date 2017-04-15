@@ -6,9 +6,8 @@
     <article>
         <div class="entry-content">
             @{Html.RenderAction("slider", "Home");}
-            @{Html.RenderPartial("_productbycategory");}
+            @{Html.RenderAction("ProductByCategory");}
             @{Html.RenderAction("FeaturedProduct", "Home");}
-            @{Html.RenderPartial("_branch");}
             @{Html.RenderAction("NewProduct", "Home");}
             @{Html.RenderAction("LatestNew", "Home");}
         </div>

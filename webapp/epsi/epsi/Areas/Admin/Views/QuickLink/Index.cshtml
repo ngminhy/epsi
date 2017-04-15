@@ -1,55 +1,41 @@
 ﻿@using epsi.Models;
 @{
     ViewBag.Title = "Index";
-    
+
 }
-@model IEnumerable<QuickLink>
+<p>
+    <a href="/bo/QuickLink/create" class="btn btn-info"><i class="ace-icon fa fa-plus bigger-110"></i>Add new item</a>
+</p>
 @(Html.Kendo().Grid<QuickLink>()
-    .Name("grid")
-        .Editable(editable => editable.Mode(GridEditMode.InCell))
-        .Pageable()
-        .DataSource(dataSource => dataSource
-            .Ajax()
-            .Batch(true)
-            .PageSize(20)
-            .Events(events => events.Error("error_handler"))
-                .Model(model => {model.Id(p => p.QuickLinkId);model.Field(p => p.QuickLinkId).Editable(false);})
-            .Create(create => create.Action("Create", "QuickLink"))
-            .Read(read => read.Action("Get", "QuickLink"))
-            .Update(update => update.Action("Edit", "QuickLink"))
-            .Destroy(destroy => destroy.Action("Delete", "QuickLink"))
-        )
+    .Name("quicklinkGrid")
+    .Sortable()
+    .Sortable()
+    .Filterable()
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(p => p.QuickLinkId))
+        .Read(read => read.Action("Get", "QuickLink"))
+        .Destroy(destroy => destroy.Action("Delete", "QuickLink"))
+    )
     .Columns(columns =>
     {
         columns.Bound(p => p.QuickLinkId).Title("Id").Width(60);
-        columns.Bound(p => p.FullPath).Width(100).ClientTemplate("<i class='#: Filename #'> </i>");
-        columns.Bound(p => p.Filename).Width(100);
-        columns.Bound(p => p.Title).Width(150);
-        columns.Bound(p => p.Description).Width(300);
-        columns.Bound(p => p.Tag).Width(150);
-        columns.Bound(p => p.Link).Width(150);
-        columns.Bound(p => p.Order).Width(80);
-        columns.Command(command => { command.Destroy(); });
-    })
-    .ToolBar(toolbar =>
-    {
-        toolbar.Create();
-        toolbar.Save();
+        columns.Bound(p => p.Title).Width(160);
+        columns.Bound(p => p.Description).Width(430);
+        columns.Bound(p => p.Tag);
+        columns.Bound(p => p.Order);
+        columns.Bound(p => p.Link);
+        columns.Bound(p => p.IsDeleted).Title("Active").Width(50);
+        columns.Bound(u => u.QuickLinkId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "QuickLink") + "/#=QuickLinkId#'><span class='k-icon k-edit'></span>Edit</a>");
+        columns.Command(cmd =>
+        {
+
+            cmd.Destroy();
+        });
+
+
     })
 
+
 )
-<script type="text/javascript">
-    function error_handler(e) {
-        if (e.errors) {
-            var message = "Errors:\n";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        message += this + "\n";
-                    });
-                }
-            });
-            alert(message);
-        }
-    }
-</script>

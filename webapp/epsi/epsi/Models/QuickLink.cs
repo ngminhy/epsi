@@ -23,6 +23,5 @@ namespace epsi.Models
         [StringLength(1000)]
         public string Description { get; set; }        
         public bool IsDeleted { get; set; }
-        public string FullPath { get {return "/Content/Images/QuickLinks/" + Filename; }  }
     }
 }

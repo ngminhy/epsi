@@ -27,6 +27,11 @@ namespace epsi.Controllers
             var featuredproduct = db.Products.Where(p => p.IsHome == true && p.IsSpecial == true).ToList();
             return PartialView("_featuredproduct", featuredproduct);
         }
+        public ActionResult ProductByCategory()
+        {
+            var productbycategory = db.QuickLinks.Where(p => p.IsDeleted).OrderBy(p => p.Order).Take(3).ToList();
+            return PartialView("_productbycategory", productbycategory);
+        }
         public ActionResult NewProduct()
         {
             var newproduct = db.Products.Where(p => p.IsHome == true && p.IsNew == true).ToList();

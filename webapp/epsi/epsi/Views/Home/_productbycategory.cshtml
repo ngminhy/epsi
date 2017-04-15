@@ -1,6 +1,7 @@
-﻿<div class="phm_row hasteck_row phm_row-fluid home-banner">
+﻿@model IEnumerable<epsi.Models.QuickLink>
+<div class="phm_row hasteck_row phm_row-fluid home-banner">
     <div class="row-container">
-        <div class="parvez_column parvez_col-sm-4 col-sm-4 col-xs-12 col-md-4">
+        @*<div class="parvez_column parvez_col-sm-4 col-sm-4 col-xs-12 col-md-4">
             <div class="parvez_wrapper">
                 <div class="parvez_text_column parvez_content_element ">
                     <div class="parvez_wrapper">
@@ -21,17 +22,20 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="parvez_column parvez_col-sm-4 col-sm-4 col-xs-12 col-md-4">
-            <div class="parvez_wrapper">
-                <div class="parvez_text_column parvez_content_element ">
+        </div>*@
+            @foreach (var item in Model)
+            {
+                <div class="parvez_column parvez_col-sm-4 col-sm-4 col-xs-12 col-md-4">
                     <div class="parvez_wrapper">
-                        <p>
-                            <a href="/san-pham?s=warm"><img class="alignnone" src="~/Content/images/furniture/banner/banner-home2.jpg" alt="banner-home2" /></a>
-                        </p>
+                        <div class="parvez_text_column parvez_content_element ">
+                            <div class="parvez_wrapper">
+                                <p>
+                                    <a target="_blank" href="@item.Link"><img class="alignnone" src="/ImageBrowser/CropImageSize?path=@item.Filename.Replace("~/content/images/","")&width=370&height=245" alt="@item.Title" /></a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            }
     </div>
 </div>

@@ -3,33 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Kendo.Mvc.UI;
 using epsi.Models;
+using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
+using System.Text.RegularExpressions;
 
 namespace epsi.Areas.Admin.Controllers
 {
     [Authorize]
     public class QuickLinkController : Controller
     {
-
-
         //
-        // GET: /Admin/QuickLink/
+        // GET: /bo/QuickLink/
         Biz4Db db = new Biz4Db();
         public ActionResult Index()
         {
-            var QuickLinks = db.QuickLinks.OrderByDescending(p => p.QuickLinkId).ToList();
-            return View(QuickLinks);
-        }
-
-
-        // GET: /Admin/QuickLink/Create
-
-        public ActionResult Create()
-        {
-            //var QuickLink = new QuickLink();
-            //ViewBag.QuickLinks = db.QuickLinks.Where(p => p.Tag == "QuickLink").ToList();
             return View();
         }
         public JsonResult Get([DataSourceRequest]DataSourceRequest request)
@@ -38,71 +26,68 @@ namespace epsi.Areas.Admin.Controllers
             return this.Json(QuickLinks.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
 
         }
-        [HttpPost]
-        public ActionResult Create([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<QuickLink> QuickLinks)
+
+        // GET: /bo/QuickLink/Create
+
+        public ActionResult Create()
         {
-            var results = new List<QuickLink>();
-
-            if (QuickLinks != null && ModelState.IsValid)
-            {
-                foreach (var QuickLink in QuickLinks)
-                {
-
-                    db.QuickLinks.Add(QuickLink);
-                    results.Add(QuickLink);
-                }
-                db.SaveChanges();
-            }
-
-            return Json(results.ToDataSourceResult(request, ModelState));
+            var QuickLink = new QuickLink();
+            QuickLink.Order = 0;
+            QuickLink.IsDeleted = true;
+            return View(QuickLink);
         }
 
-        [HttpPost]
-        public ActionResult Edit([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<QuickLink> QuickLinks)
-        {
-            if (QuickLinks != null && ModelState.IsValid)
-            {
-                foreach (var QuickLink in QuickLinks)
-                {
-                    var target = db.QuickLinks.FirstOrDefault(p => p.QuickLinkId == QuickLink.QuickLinkId);
-                    if (target != null)
-                    {
-                        target.Filename = QuickLink.Filename;
-                        target.Title = QuickLink.Title;
-                        target.Description  = QuickLink.Description ;
-                        target.Order = QuickLink.Order;
-                        target.Tag = QuickLink.Tag;
-                        target.Link = QuickLink.Link;
-                    }
-
-                }
-                db.SaveChanges();
-            }
-
-            return Json(QuickLinks.ToDataSourceResult(request, ModelState));
-        }
+        //
+        // POST: /bo/QuickLink/Create
 
         [HttpPost]
-        public ActionResult Delete([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<QuickLink> QuickLinks)
+        public ActionResult Create(QuickLink model)
         {
-            if (QuickLinks.Any())
+            if (ModelState.IsValid)
             {
-                foreach (var QuickLink in QuickLinks)
-                {
-                    var QuickLinkToDelete = db.QuickLinks.First(p => p.QuickLinkId == QuickLink.QuickLinkId);
-                    if (QuickLinkToDelete != null)
-                    {
-                        db.QuickLinks.Remove(QuickLinkToDelete);
-                    }
-                }
+                db.QuickLinks.Add(model);
                 db.SaveChanges();
             }
+            return RedirectToAction("Index");
 
-            return Json(QuickLinks.ToDataSourceResult(request, ModelState));
+        }
+        [HttpPost]
+        public ActionResult Edit(QuickLink model)
+        {
+            if (ModelState.IsValid)
+            {
+                var updateQuickLink = db.QuickLinks.FirstOrDefault(p => p.QuickLinkId == model.QuickLinkId);
+                if (updateQuickLink != null)
+                {
+
+                    TryUpdateModel(updateQuickLink);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+
+        }
+        //
+        // GET: /bo/QuickLink/Edit/5
+
+        public ActionResult Edit(int id)
+        {
+            var QuickLink = db.QuickLinks.FirstOrDefault(p => p.QuickLinkId == id);
+            return View("Create", QuickLink);
         }
 
+        //
 
 
-
+        public ActionResult Delete([DataSourceRequest] DataSourceRequest request, QuickLink model)
+        {
+            var QuickLinkToDelete = db.QuickLinks.First(p => p.QuickLinkId == model.QuickLinkId);
+            if (QuickLinkToDelete != null)
+            {
+                db.QuickLinks.Remove(QuickLinkToDelete);
+                db.SaveChanges();
+            }
+            return Json(new[] { QuickLinkToDelete }.ToDataSourceResult(request));
+        }
     }
 }
