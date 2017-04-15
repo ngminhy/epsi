@@ -29,17 +29,17 @@
                                                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
-                                                                    @Html.LabelFor(m => m.FullName)
+                                                                    @Html.LabelFor(m => m.FullName,"Họ tên")
                                                                     @Html.TextBoxFor(m => m.FullName, new { @class = "input-text" })
                                                                     @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
-                                                                    @Html.LabelFor(m => m.PhoneNumber)
+                                                                    @Html.LabelFor(m => m.PhoneNumber,"Số điện thoại")
                                                                     @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "input-text" })
                                                                     @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                                                                 </p>
                                                                 <p class="form-row form-row-wide">
-                                                                    @Html.LabelFor(m => m.Address)
+                                                                    @Html.LabelFor(m => m.Address,"Địa chỉ")
                                                                     @Html.TextBoxFor(m => m.Address, new { @class = "input-text" })
                                                                     @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
                                                                 </p>
