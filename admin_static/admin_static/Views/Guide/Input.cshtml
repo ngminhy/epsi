@@ -19,17 +19,24 @@
     <div class="col-lg-2"></div>
 </div>
 <div class="row white-bg full-bg">
-	<div class="col-sm-3">
-		<h3>Input text:</h3>
+	<div class="col-sm-6">
+		<h2>Input text:</h2>
         <div class="form-group">
         	<input type="email" placeholder="Enter email" class="form-control">
         </div>
-		<h3>Input text with label:</h3>
+        <pre><code>&lt;div class=&quot;form-group&quot;&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;Enter email&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;</code></pre>  
+		<h2>Input text with label:</h2>
         <div class="form-group">
         	<label>Email</label>
         	<input type="email" placeholder="Enter email" class="form-control">
         </div>
-		<h3>Input text with label inline:</h3>
+        <pre><code>&lt;div class=&quot;form-group&quot;&gt;
+&lt;label&gt;Email&lt;/label&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;Enter email&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;</code></pre> 
+		<h2>Input text with label inline:</h2>
 		<form class="form-horizontal">
 			<div class="form-group">
 				<label class="col-lg-2 control-label">Email</label>
@@ -38,12 +45,59 @@
 				</div>
 			</div>
 		</form>
+        <pre><code>&lt;form class=&quot;form-horizontal&quot;&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+&lt;label class=&quot;col-lg-2 control-label&quot;&gt;Email&lt;/label&gt;
+&lt;div class=&quot;col-lg-10&quot;&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;Email&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/form&gt;</code></pre> 
+        <h2>Textarea:</h2>
+        <div class="form-group">
+            <textarea class="form-control" placeholder="Description"></textarea>
+        </div>
+        <pre><code>&lt;div class=&quot;form-group&quot;&gt;
+&lt;textarea class=&quot;form-control&quot; placeholder=&quot;Description&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre> 
 	</div>
-	<div class="col-sm-3">
-	</div>
-	<div class="col-sm-3">
-	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-6">
+        <h2>Checkboxes:</h2>
+        <div class="checkbox i-checks"><label> <input type="checkbox" value=""><i></i> Option one</label></div>
+        <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked><i></i> Option two checked </label></div>
+        <pre><code>&lt;div class=&quot;checkbox i-checks&quot;&gt;&lt;label&gt; &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt; &lt;i&gt;&lt;/i&gt; Option one &lt;/label&gt;&lt;/div&gt;</code></pre>
+        <h2>Radios:</h2>
+        <div class="radio i-checks"><label><input type="radio" value="option1" name="a"><i></i > Option one</label></div>
+        <div class="radio i-checks"><label><input type="radio" checked="" value="option2" name="a"><i></i> Option two checked</label></div>
+        <pre><code>&lt;div class=&quot;radio i-checks&quot;&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; value=&quot;option1&quot; name=&quot;a&quot;&gt;&lt;i&gt;&lt;/i &gt; Option one&lt;/label&gt;&lt;/div&gt;</code></pre>
+        <h2>Select:</h2>
+        <div class="form-group">
+            <select class="form-control">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <option>option 4</option>
+            </select>
+        </div>
+        <pre><code>&lt;div class=&quot;form-group&quot;&gt;
+&lt;select class=&quot;form-control&quot;&gt;
+&lt;option&gt;option 1&lt;/option&gt;
+&lt;option&gt;option 2&lt;/option&gt;
+&lt;option&gt;option 3&lt;/option&gt;
+&lt;option&gt;option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</code></pre>
+        <h2>Button:</h2>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><strong>Save change</strong></button>
+        </div>
+        <pre><code>&lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;&lt;strong&gt;Save change&lt;/strong&gt;&lt;/button&gt;</code></pre>
+        <div class="form-group">
+            <button class="btn btn-white" type="submit">Cancel</button>
+        </div>
+        <pre><code>&lt;button class=&quot;btn btn-white&quot; type=&quot;submit&quot;&gt;Cancel&lt;/button&gt;</code></pre>
 	</div>
 </div>
-
+<br>
+<br>
+<br>

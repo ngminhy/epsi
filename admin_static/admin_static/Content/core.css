@@ -314,7 +314,7 @@ body.mini-navbar .nav-header {
 }
 body.mini-navbar #page-wrapper,
 body.mini-navbar .footer {
-  margin: 0 0 0 70px;
+  margin: 0 0 0 0px;
 }
 body.mini-navbar #page-wrapper {
   margin: 0 0 0 70px;
