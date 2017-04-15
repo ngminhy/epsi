@@ -1,11 +1,13 @@
 ﻿@using epsi.Models;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categories";
     
 }
-<p>
-    <a href="/bo/category/create" class="btn btn-info"><i class="ace-icon fa fa-plus bigger-110"></i>Add new item</a>
-</p> 
+<div class="form-group">
+    <a href="/bo/category/create">
+        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add new item</button>
+    </a>
+</div>
 @(Html.Kendo().Grid<Category>()
     .Name("aricleGrid")
     .Sortable()

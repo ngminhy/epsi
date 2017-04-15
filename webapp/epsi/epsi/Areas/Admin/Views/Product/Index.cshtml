@@ -1,12 +1,14 @@
 ﻿@using epsi.ViewModels;
 @{
-    ViewBag.Title = "Product List";
+    ViewBag.Title = "Product";
     
 }
+<div class="form-group">
+    <a href="/bo/Product/create">
+        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add new item</button>
+    </a>
+</div>
 
-<p>
-    <a href="/bo/Product/create" class="btn btn-info"><i class="ace-icon fa fa-plus bigger-110"></i>Add new item</a>
-</p> 
 @(Html.Kendo().Grid<ProductDto>()
     .Name("aricleGrid")
     .Sortable()
