@@ -579,10 +579,20 @@ ul.product-categories li a.title {
 	height: 100%;
 	display: inline-block;
 	margin-top: 20px;
+	position: relative;
 }
 .header-inner .search-and-cart-area .search-area {
-	float: right;
 	width: 35%;
+	position: absolute;
+	right: 158px;
+}
+.header-inner .search-and-cart-area .widget_shopping_cart {
+	position: absolute;
+	right: 0px;
+}
+.header-inner .button.cart-toggler {
+	width: 150px;
+	padding: 9px 12px
 }
 .header-inner .search-and-cart-area .search-area .search-form {
 	position: relative;
@@ -603,10 +613,6 @@ ul.product-categories li a.title {
     position: absolute;
     right: 0;
     top: 0;
-}
-.header-inner .search-and-cart-area .widget_shopping_cart {
-	float: right;
-	margin-left: 4px;
 }
 .header-inner .button {
     border: none;
@@ -636,9 +642,26 @@ ul.product-categories li a.title {
 .widget_contact_us a, .widget_contact_us a:hover {
 	color: #fff
 }
-
-
-@media screen and (max-width: 992px) {
+.header-container.furniture2 .epsi-logo a {
+	background: url(../images/logo/epsi.svg) no-repeat center;
+	width: 100%;
+	height: 80px;
+	display: inline-block;
+}
+.header-container.furniture2 .philips-logo a {
+	background: url(../images/logo/philips.png) no-repeat center;
+	background-size: 170px 80px;
+	display: inline-block;
+	width: 100%;
+	height: 80px;
+}
+.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list {
+	list-style: none;
+}
+.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content ul.cart_list li .product-details {
+	text-align: left;
+}
+@media screen and (max-width: 767px) {
 	.main-container .shop-products .item-col .product-wrapper .list-col8 .gridview {
 		text-align: center !important;
 	}
@@ -651,18 +674,17 @@ ul.product-categories li a.title {
 	.main-container .latest-posts .posts-carousel .slick-list .item-col .post-wrapper .post-info {
 		width: 100%;
 	}
-
-
 	.header-inner .search-and-cart-area .widget_shopping_cart {
-		float: none;
+		position: static;
+		float: left;
 		clear: both;
 		margin-left: 0px;
 		margin-bottom: 6px;
+		width: 100%;
 	}
-
-
 	.header-inner .search-and-cart-area .search-area {
-		float: none;
+		position: static;
+		float: left;
 		margin: 0px 0px 10px 0px;
 		width: 100%;
 	}
@@ -671,24 +693,31 @@ ul.product-categories li a.title {
 		float: none;
 		width: 100%;
 	}
-	.header-inner .search-and-cart-area .widget_shopping_cart {
-		width: 100%;
-	}
 	.header-container .widget_shopping_cart .widget_shopping_cart_content {
 		position: inherit;
 	}
 	.header-container .widget_shopping_cart .widget_shopping_cart_content .mini_cart_content {
-		right: 15px;
+		right: 0px;
 		width: 280px;
 	}
-
-
-
 	.main-container .product-view .product .bootexpert-tabs ul.tabs li a {
 		padding: 5px 5px;
 		font-size: 12px !important;
 	}
 	.main-container .product-view .product .bootexpert-tabs ul.tabs li {
 		margin: 0 2px 0 0;
+	}
+	.header-container .top-menu-right {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.header-inner .search-and-cart-area .search-area {
+		width: 50%;
+	}
+	.header-container.furniture2 .philips-logo a {
+		background-size: 100% 50px;
 	}
 }
