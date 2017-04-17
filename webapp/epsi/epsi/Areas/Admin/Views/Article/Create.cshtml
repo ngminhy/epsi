@@ -4,29 +4,22 @@
 }
 <script type="text/javascript">
     $(document).ready(function () {
-
-        wndNewContact = $("#imgBrowser").kendoWindow({
+        kendoWindow = $("#imgBrowser").kendoWindow({
             actions: ["Close", "Refresh"],
             Title: "Choose your file:",
             visible: false,
             dragable: true,
             modal: true,
-            width: 800,
-            height: 415
-            //minHeight:300,
+            width: 615
+        }).data("kendoWindow").center();
 
-            //height:300
-
-        }).data("kendoWindow")
 
         $("#upload,#upload1").click(function () {
             $("#firebutton").val($(this).attr('id'));
-            wndNewContact.open();
-            wndNewContact.center()
+            kendoWindow.open();
         });
 
         $("#imgBrowser").kendoImageBrowser({
-
             transport: {
                 type: "imagebrowser-aspnetmvc",
                 read: "/ImageBrowser/Read",
@@ -42,14 +35,13 @@
                 uploadUrl: "/ImageBrowser/Upload",
                 imageUrl: "~/Content/Images/{0}"
             },
-            change: function () {
-                //this.value(); //Selected image URL
+            apply: function () {
                 if ($("#firebutton").val() == "upload1") {
                     $("#Banner").val(this.value());
                 } else {
                     $("#MainImage").val(this.value());
                 }
-                wndNewContact.close();
+                kendoWindow.close();
             }
         });
     });

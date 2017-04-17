@@ -4,29 +4,20 @@
 }
 <script type="text/javascript">
     $(document).ready(function () {
-
-        wndNewContact = $("#imgBrowser").kendoWindow({
+        kendoWindow = $("#imgBrowser").kendoWindow({
             actions: ["Close", "Refresh"],
             Title: "Choose your file:",
             visible: false,
             dragable: true,
             modal: true,
-            width: 800,
-            height: 415
-            //minHeight:300,
-
-            //height:300
-
-        }).data("kendoWindow")
+            width: 615
+        }).data("kendoWindow").center();
 
         $("#upload").click(function () {
             $("#firebutton").val($(this).attr('id'));
-            wndNewContact.open();
-            wndNewContact.center()
+            kendoWindow.open();
         });
-
         $("#imgBrowser").kendoImageBrowser({
-
             transport: {
                 type: "imagebrowser-aspnetmvc",
                 read: "/ImageBrowser/Read",
@@ -38,14 +29,15 @@
                     url: "/ImageBrowser/Create",
                     type: "POST"
                 },
-                thumbnailUrl: "/ImageBrowser/Thumbnail",
                 uploadUrl: "/ImageBrowser/Upload",
+                thumbnailUrl: "/ImageBrowser/Thumbnail",
                 imageUrl: "~/Content/Images/{0}"
             },
-            change: function () {
+            apply: function () {
                 $("#Filename").val(this.value());
-                wndNewContact.close();
+                kendoWindow.close();
             }
+
         });
     });
 </script>
@@ -111,6 +103,4 @@
         </div>
     }
 </div>
-<div>
-    <div id="imgBrowser" style="display: none;"> </div>
-</div>
+<div id="imgBrowser" style="display: none;"></div>
