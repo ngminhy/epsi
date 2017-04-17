@@ -25,7 +25,7 @@
         
         columns.Bound(p => p.Tag).Title("Tag").Width(50);
         //columns.Bound(p => p.Category.Name).Title("Category");
-        columns.Bound(u => u.FAQId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "FAQ") + "/#=FAQId#'><span class='k-icon k-edit'></span>Edit</a>");  
+        columns.Bound(u => u.FAQId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "FAQ") + "/#=FAQId#'><span class='k-icon k-i-edit'></span> Edit</a>");  
         columns.Command(cmd =>
         {
             

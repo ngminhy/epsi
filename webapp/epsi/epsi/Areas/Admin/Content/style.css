@@ -7,3 +7,21 @@
 #page-wrapper {
 	background: #FFF;
 }
+.form-group .input-inline {
+	margin-right: -15px;
+    margin-left: -15px;
+}
+.upload-image-icon {
+	font-size: 39px;
+	color: #737373;
+}
+.upload-image-icon:hover {
+	color: #737373;
+}
+a .btn-white {
+	color: #737373;
+}
+a .btn-white:hover {
+	color: #737373;
+	background-color: #f3f3f4;
+}

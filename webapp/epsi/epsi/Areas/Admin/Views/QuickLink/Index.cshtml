@@ -29,7 +29,7 @@
         columns.Bound(p => p.Order);
         columns.Bound(p => p.Link);
         columns.Bound(p => p.IsDeleted).Title("Active").Width(50);
-        columns.Bound(u => u.QuickLinkId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "QuickLink") + "/#=QuickLinkId#'><span class='k-icon k-edit'></span>Edit</a>");
+        columns.Bound(u => u.QuickLinkId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "QuickLink") + "/#=QuickLinkId#'><span class='k-icon k-i-edit'></span> Edit</a>");
         columns.Command(cmd =>
         {
 

@@ -29,7 +29,7 @@
         columns.Bound(p => p.CategoryName).Title("Category");
         columns.Bound(u => u.PageURL).Title("URL").ClientTemplate("/p/#=PageURL#"); 
         //columns.Bound(u => u.ProductId).Title("Picture").ClientTemplate("<a class='k-button' href='" + Url.Action("index", "Picture") + "/?ProductId=#=ProductId#'><span class='k-icon k-image'></span>Pictures</a>");
-        columns.Bound(u => u.ProductId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "Product") + "/#=ProductId#'><span class='k-icon k-edit'></span>Edit</a>");  
+        columns.Bound(u => u.ProductId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "Product") + "/#=ProductId#'><span class='k-icon k-i-edit'></span> Edit</a>");  
         
         columns.Command(cmd =>
         {            

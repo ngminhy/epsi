@@ -1,5 +1,7 @@
 ﻿@model epsi.Models.QuickLink
-
+@{
+    ViewBag.Title = "Create quicklink";
+}
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -47,96 +49,68 @@
         });
     });
 </script>
-@using (Html.BeginForm(ViewContext.RouteData.Values["Action"].ToString(), ViewContext.RouteData.Values["Controller"].ToString(),
-                                                new { ReturnUrl = ViewBag.ReturnUrl },
-                                                FormMethod.Post, new { @class = "form-horizontal" }))
-{
-    @Html.ValidationSummary(true)
-    <input type="hidden" id="firebutton" value="upload" />
-
-    <fieldset>
-
-        <legend>QuickLink</legend>
+<div class="col-sm-12">
+    @using (Html.BeginForm(ViewContext.RouteData.Values["Action"].ToString(), ViewContext.RouteData.Values["Controller"].ToString(), new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        <input type="hidden" id="firebutton" value="upload" />
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.Title, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Title)
-
-            </div>
-
+            @Html.LabelFor(model => model.Title)
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title)
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
+            @Html.LabelFor(model => model.Description)
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Description)
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Filename, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.Filename, new { @class = "form-control" })<a href="#" class="k-tool-icon k-insertImage" id="upload" style="text-decoration:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                @Html.ValidationMessageFor(model => model.Filename)
+            @Html.LabelFor(model => model.Filename)
+            <div class="input-inline">
+                <div class="col-sm-9">
+                    @Html.EditorFor(model => model.Filename, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Filename)
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" id="upload"><i class="fa fa-cloud-upload upload-image-icon"></i></a>
+                </div>
             </div>
-
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Tag, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.Tag, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Tag)
-            </div>
-
+            @Html.LabelFor(model => model.Tag)
+            @Html.EditorFor(model => model.Tag, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Tag)
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Order, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.Order, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Order)
-            </div>
-
+            @Html.LabelFor(model => model.Order)
+            @Html.EditorFor(model => model.Order, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Order)
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Link, new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.Link, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Link)
-            </div>
-
+            @Html.LabelFor(model => model.Link)
+            @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Link)
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.IsDeleted,"Active", new { @class = "col-sm-3 control-label no-padding-right" })
-            <div class="col-sm-9">
-                @Html.EditorFor(model => model.IsDeleted, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IsDeleted)
-            </div>
-
+            @Html.EditorFor(model => model.IsDeleted, new { htmlAttributes = new { @class = "i-checks" } })
+            @Html.LabelFor(model => model.IsDeleted,"Active")
+            @Html.ValidationMessageFor(model => model.IsDeleted)
         </div>
-
         <div class="editor-label">
-            &nbsp;
             @Html.HiddenFor(model => model.QuickLinkId)
             @Html.HiddenFor(model => model.IsDeleted)
             @Html.HiddenFor(model => model.Order)
         </div>
-
         <div class="form-group">
-            <label class="col-sm-3 control-label no-padding-right"></label>
-            <div class="col-sm-9">
-                <input type="submit" value="Create or Update" class="btn btn-info" />
+            <div class="text-center">
+                <a href="@Url.Action("Index")">
+                    <button type="button" class="btn btn-white"><i class="fa fa-reply"></i> Back to List</button>
+                </a>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save changes</button>
             </div>
-
         </div>
-
-    </fieldset>
-}
+    }
+</div>
 <div>
-    @Html.ActionLink("Back to List", "Index")
     <div id="imgBrowser" style="display: none;"> </div>
 </div>

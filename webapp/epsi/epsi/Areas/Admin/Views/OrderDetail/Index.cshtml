@@ -1,24 +1,25 @@
 ﻿@using epsi.Models;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Order detail";
     var order =(epsi.Models.Order) ViewBag.order;
 }
 @model IEnumerable<epsi.ViewModels.OrderDetailDto>
 <div class="row">
     <div class="col-md-6">
-        <b>Name:</b> @order.FullName <br />
-        <b>Phone:</b> @order.Phone <br />
-        <b>Email:</b> @order.Email <br />
-        <b>Address:</b> @order.Address <br />
-        <b>Note:</b> @order.Note <br />
+        <label>Order Code:</label><span> @order.OrderCode</span><br>
+        <label>Order Date:</label><span> @order.OrderDate</span><br>
+        <label>Status:</label><span> @order.OrderStatus</span><br>
+        <label>Note:</label><span> @order.Note</span><br>
     </div>
     <div class="col-md-6">
-        <b>Order Code:</b> @order.OrderCode <br />
-        <b>Order Date:</b> @order.OrderDate <br />
-        <b>Status:</b> @order.OrderStatus <br />
+        <label>Name:</label><span> @order.FullName</span><br>
+        <label>Phone:</label><span> @order.Phone</span><br>
+        <label>Email:</label><span> @order.Email</span><br>
+        <label>Address:</label><span> @order.Address</span>
     </div>
 </div>
-    @(Html.Kendo().Grid<epsi.ViewModels.OrderDetailDto>()
+<div class="hr-line-dashed"></div>
+@(Html.Kendo().Grid<epsi.ViewModels.OrderDetailDto>()
     .Name("grid")
     .Columns(columns =>
     {
@@ -39,22 +40,21 @@
         .Model(model =>  model.Id(p => p.OrderDetailId) )
                 .Read(read => read.Action("Get", "OrderDetail", new { OrderId = @ViewBag.OrderId }))
     )
-    )
-    <script type="text/javascript">
-        function error_handler(e) {
-            if (e.errors) {
-                var message = "Errors:\n";
-                $.each(e.errors, function (key, value) {
-                    if ('errors' in value) {
-                        $.each(value.errors, function () {
-                            message += this + "\n";
-                        });
-                    }
-                });
-                alert(message);
-            }
+)
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
         }
-
-    </script>
+    }
+</script>
 
 

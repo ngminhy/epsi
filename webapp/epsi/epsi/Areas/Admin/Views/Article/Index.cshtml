@@ -29,7 +29,7 @@
         columns.Bound(p => p.Active).Title("Active").Width(50);
         //columns.Bound(p => p.Category.Name).Title("Category");
         columns.Bound(u => u.PageURL).Title("URL").ClientTemplate("/a/#=PageURL#"); 
-        columns.Bound(u => u.ArticleId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "article") + "/#=ArticleId#'><span class='k-icon k-i-edit'></span>Edit</a>");  
+        columns.Bound(u => u.ArticleId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "article") + "/#=ArticleId#'><span class='k-icon k-i-edit'></span> Edit</a>");  
         columns.Command(cmd =>
         {
             
