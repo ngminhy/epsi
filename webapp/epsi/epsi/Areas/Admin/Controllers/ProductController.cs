@@ -33,7 +33,7 @@ namespace epsi.Areas.Admin.Controllers
                                 ProductId = p.ProductId,
                                 CategoryId = p.CategoryId,
                                 Code = p.Code,
-
+                                Price = p.Price,
                                 Description = p.Description,
                                 Tags = p.Tags,
                                 Name = p.Name,

@@ -22,11 +22,12 @@
     {
         columns.Bound(p => p.ProductId).Title("Id").Width("60px");
         columns.Bound(p => p.Name);
+        columns.Bound(p => p.Price).Format("{0:0,0}");
         columns.Bound(p => p.Description);
         //columns.Bound(p => p.Folder);        
         columns.Bound(p => p.CategoryName).Title("Category");
         columns.Bound(u => u.PageURL).Title("URL").ClientTemplate("/p/#=PageURL#"); 
-        //columns.Bound(u => u.ProductId).Title("Picture").ClientTemplate("<a class='k-button' href='" + Url.Action("index", "Picture") + "/?ProductId=#=ProductId#'><span class='k-icon k-image'></span>Pictures</a>");
+        columns.Bound(u => u.ProductId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("index", "RuleProduct") + "?productid=#=ProductId#'><span class='k-icon k-edit'></span>Rules</a>");
         columns.Bound(u => u.ProductId).Title("").ClientTemplate("<a class='k-button' href='" + Url.Action("edit", "Product") + "/#=ProductId#'><span class='k-icon k-edit'></span>Edit</a>");  
         
         columns.Command(cmd =>

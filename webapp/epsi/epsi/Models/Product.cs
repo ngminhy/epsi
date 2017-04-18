@@ -164,7 +164,7 @@ namespace epsi.Models
             }
         }
         public int ParentId { get; set; }
-
+        public List<RuleProduct> RuleProducts { get; set; }
         private string pageURL;
         public string PageURL
         {
